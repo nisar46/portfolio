@@ -377,7 +377,40 @@
 
         /* ADDITIONAL SECTIONS */
         .section-container {
-            padding: 6rem 5%;
+            padding: 8rem 5%;
+            transition: background 0.5s ease;
+        }
+
+        #experience {
+            background-color: #F8FAFC;
+            position: relative;
+        }
+
+        #experience::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, #FFFFFF, #F8FAFC);
+        }
+
+        #architecture {
+            background: #0F172A !important;
+            border-top: 1px solid rgba(2, 132, 199, 0.2);
+            position: relative;
+        }
+
+        #architecture::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #0F172A);
+            pointer-events: none;
         }
 
         .section-title {
