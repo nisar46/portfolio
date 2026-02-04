@@ -385,7 +385,6 @@
         #experience {
             background-color: #F8FAFC;
             position: relative;
-            padding-bottom: 2rem;
         }
 
         #experience::before {
@@ -400,20 +399,19 @@
 
         #architecture {
             background: #0F172A !important;
-            padding-top: 4rem;
+            border-top: 1px solid rgba(2, 132, 199, 0.2);
             position: relative;
         }
 
         #architecture::before {
             content: '';
             position: absolute;
-            top: -120px;
+            top: -100px;
             left: 0;
             width: 100%;
-            height: 120px;
-            background: linear-gradient(to bottom, #F8FAFC, #0F172A);
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #0F172A);
             pointer-events: none;
-            z-index: 1;
         }
 
         .section-title {
