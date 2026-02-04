@@ -498,27 +498,51 @@ footer p {
 }
 
 @media(max-width: 900px) {
-    .tech-grid {
-        flex-direction: column;
-        text-align: center;
+    .nav-links {
+        gap: 1rem;
     }
 
-    .tech-list {
-        justify-content: center;
+    .nav-item {
+        font-size: 0.8rem;
+    }
+
+    .cta-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
     }
 
     .hero {
         flex-direction: column;
         padding-top: 6rem;
         text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        margin: 0 auto 2rem;
     }
 
     .hero-actions {
         justify-content: center;
+        flex-direction: column;
     }
 
     .console-wrapper {
         width: 100%;
+        max-width: 100%;
+    }
+
+    .console-body {
+        height: 250px;
+        font-size: 0.8rem;
     }
 
     .stats-bar {
@@ -526,5 +550,55 @@ footer p {
         gap: 2rem;
         transform: none;
         margin: 2rem 5%;
+        padding: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .tech-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .tech-list {
+        justify-content: center;
+    }
+
+    .tech-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .creds-logo {
+        height: 45px;
+    }
+
+    .credentials-strip>div {
+        gap: 2rem !important;
+    }
+}
+
+@media(max-width: 480px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide nav links on very small screens or implement hamburger */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-container {
+        padding: 3rem 5%;
     }
 }
