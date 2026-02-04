@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logs = [
         { type: 'INFO', msg: 'System check initiated...', color: 'blue' },
         { type: 'INFO', msg: 'Scanning local directories for compliance...', color: 'blue' },
-        { type: 'WARN', msg: 'Legacy format detected in /rural_uploads', color: 'yellow' },
+        { type: 'WARN', msg: 'Legacy format detected in /regional_intake', color: 'yellow' },
         { type: 'ACTION', msg: 'Normalizing data to FHIR standards...', color: 'blue' },
         { type: 'SUCCESS', msg: 'Interoperability checks passed (14/14).', color: 'green' },
         { type: 'INFO', msg: 'DPDP Privacy Wrapper: ACTIVE', color: 'blue' },
