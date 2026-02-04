@@ -1,8 +1,14 @@
-# Nisar Ahmed
+# Nisar Ahmed | Health-Tech Product Architect
 
-### [🟢 LIVE PORTFOLIO WEBSITE](https://nisar46.github.io/portfolio/)
+### [🚀 View Live Dashboard](https://nisar46.github.io/portfolio/)
 
-[**📄 Download Resume (PDF)**](resume_pdf/nisar_resume1.pdf)
+**Operational & Compliance Architecture:**
+*   **ABDM 2.0 & DPDP Compliance Frameworks**
+*   **Rural Health-Tech Interoperability**
+*   **OmniIngest: High-Performance Data Ingestion**
 
 ---
-*This repository contains the source code for the portfolio hosted above.*
+[**📄 Download Professional Resume (PDF)**](resume_pdf/nisar_resume1.pdf)
+
+---
+*This repository contains the production source code for the portfolio dashboard hosted above.*
