@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed - Resume</title>
+    <title>Nisar_Ahmed_Resume_Feb2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -56,6 +56,20 @@
                 text-decoration: none;
                 color: inherit;
             }
+
+            .updated-timestamp {
+                display: block !important;
+                text-align: center;
+                font-size: 8pt;
+                color: #94a3b8;
+                margin-top: 20px;
+                border-top: 1px solid #e2e8f0;
+                padding-top: 10px;
+            }
+        }
+
+        .updated-timestamp {
+            display: none;
         }
 
         header {
@@ -413,6 +427,24 @@
             </ul>
         </div>
     </div>
+
+    <div class="updated-timestamp">
+        Validated & Generated: <span id="current-timestamp"></span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const now = new Date();
+            const options = {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            document.getElementById('current-timestamp').textContent = now.toLocaleString('en-US', options);
+        });
+    </script>
 
     <a href="javascript:window.print()" class="btn-download no-print">Save as PDF</a>
 
