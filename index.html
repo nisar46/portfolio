@@ -453,71 +453,105 @@
             color: #0c4a6e;
         }
 
-        /* BLUEPRINT STYLES */
+        /* BLUEPRINT STYLES - REFINED */
         .blueprint-container {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
+            padding: 4rem 2rem;
+            background: radial-gradient(circle at 2px 2px, rgba(2, 132, 199, 0.15) 1px, transparent 0);
+            background-size: 30px 30px;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
         .blueprint-flow {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 2;
         }
 
         .blueprint-node {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
             border-radius: 12px;
-            width: 200px;
-            padding: 1.5rem;
+            width: 220px;
+            padding: 2rem 1.5rem;
             text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .blueprint-node:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.3);
         }
 
         .highlight-node {
             border: 2px solid var(--accent-blue);
-            box-shadow: 0 0 20px rgba(2, 132, 199, 0.3);
-            transform: scale(1.1);
+            background: rgba(2, 132, 199, 0.05);
+            box-shadow: 0 0 30px rgba(2, 132, 199, 0.2);
+            transform: scale(1.05);
         }
 
         .node-header {
-            font-size: 0.7rem;
-            font-weight: 800;
+            font-size: 0.65rem;
+            font-weight: 900;
             color: var(--accent-blue);
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.8;
         }
 
         .node-content p {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #F8FAFC;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
         }
 
         .tech-tag {
             font-size: 0.7rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.2rem 0.5rem;
+            background: rgba(2, 132, 199, 0.2);
+            padding: 0.3rem 0.6rem;
             border-radius: 4px;
-            color: #94A3B8;
+            color: #38BDF8;
+            font-family: var(--font-code);
+            display: inline-block;
         }
 
         .blueprint-arrow {
             color: var(--accent-blue);
-            font-weight: bold;
-            font-family: var(--font-code);
-            opacity: 0.5;
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 80px;
         }
 
-        @media (max-width: 768px) {
+        .arrow-line {
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            position: relative;
+        }
+
+        .arrow-icon {
+            font-size: 1.2rem;
+            filter: drop-shadow(0 0 5px var(--accent-blue));
+        }
+
+        @media (max-width: 900px) {
             .blueprint-flow {
                 flex-direction: column;
+                gap: 2rem;
             }
 
             .blueprint-arrow {
@@ -527,6 +561,10 @@
 
             .highlight-node {
                 transform: scale(1);
+            }
+
+            .blueprint-node {
+                width: 280px;
             }
         }
 
@@ -950,32 +988,38 @@
                 <div class="blueprint-flow">
                     <!-- Source -->
                     <div class="blueprint-node">
-                        <div class="node-header">SOURCE</div>
+                        <div class="node-header">INPUT DATA</div>
                         <div class="node-content">
                             <p>Regional Hospital Nodes</p>
-                            <span class="tech-tag">Unstructured Data</span>
+                            <span class="tech-tag">Rural HL7/JSON</span>
                         </div>
                     </div>
 
-                    <div class="blueprint-arrow">─── ⚡ ───</div>
+                    <div class="blueprint-arrow">
+                        <span class="arrow-icon">⚡</span>
+                        <div class="arrow-line"></div>
+                    </div>
 
                     <!-- Engine -->
                     <div class="blueprint-node highlight-node">
-                        <div class="node-header">CORE ENGINE</div>
+                        <div class="node-header">PROCESSING</div>
                         <div class="node-content">
-                            <p>OmniIngest Processing</p>
-                            <span class="tech-tag">Rust/Python</span>
+                            <p>OmniIngest Engine</p>
+                            <span class="tech-tag">Rust & Python</span>
                         </div>
                     </div>
 
-                    <div class="blueprint-arrow">─── 🛡️ ───</div>
+                    <div class="blueprint-arrow">
+                        <span class="arrow-icon">🛡️</span>
+                        <div class="arrow-line"></div>
+                    </div>
 
                     <!-- Destination -->
                     <div class="blueprint-node">
-                        <div class="node-header">DESTINATION</div>
+                        <div class="node-header">COMPLIANT DATA</div>
                         <div class="node-content">
-                            <p>ABDM / FHIR Vault</p>
-                            <span class="tech-tag">DPDP Compliant</span>
+                            <p>ABDM / FHIR Cloud</p>
+                            <span class="tech-tag">DPDP Validated</span>
                         </div>
                     </div>
                 </div>
