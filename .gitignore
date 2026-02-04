@@ -1,0 +1,24 @@
+# Hide everything by default
+*
+
+# Allow the clean portfolio files
+!index.html
+!resume_pdf/
+!resume_pdf/*
+!.gitignore
+!README.md
+
+# Explicitly hide messy source/script files from GitHub
+style.css
+script.js
+cv.html
+*.bat
+.git/
+.antigravityignore
+Pages/
+clean_repo.bat
+deploy_portfolio.bat
+finish_it.bat
+force_update.bat
+push_corrections.bat
+audit_report_sim.log
