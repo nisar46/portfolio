@@ -15,6 +15,7 @@
         :root {
             --bg-color: #F8FAFC;
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
             --text-primary: #0F172A;
             --text-secondary: #475569;
             --accent-blue: #0284C7;
@@ -418,6 +419,8 @@
             font-weight: 800;
             margin-bottom: 3rem;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         .grid-layout {
@@ -828,7 +831,7 @@
             }
 
             .section-container {
-                padding: 4rem 5%;
+                padding: 7rem 5% 4rem;
             }
 
             .card {
