@@ -42,6 +42,29 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(addLog, Math.random() * 800 + 400);
     }
 
+    // Hamburger Menu Logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    const body = document.body;
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            // Prevent scrolling when menu is open
+            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-item, .cta-button').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+        });
+    }
+
     // Start the animation after a brief delay
     setTimeout(addLog, 1000);
 });
