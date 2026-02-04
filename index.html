@@ -453,6 +453,83 @@
             color: #0c4a6e;
         }
 
+        /* BLUEPRINT STYLES */
+        .blueprint-container {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blueprint-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .blueprint-node {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            width: 200px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-node {
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 20px rgba(2, 132, 199, 0.3);
+            transform: scale(1.1);
+        }
+
+        .node-header {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .node-content p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-tag {
+            font-size: 0.7rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: #94A3B8;
+        }
+
+        .blueprint-arrow {
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-family: var(--font-code);
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .blueprint-flow {
+                flex-direction: column;
+            }
+
+            .blueprint-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+
+            .highlight-node {
+                transform: scale(1);
+            }
+        }
+
         /* TECH STACK */
         .dark-mode {
             background: #0F172A;
@@ -862,6 +939,50 @@
                         <p>Architected a <strong>Pre-Check Agent</strong> that validates billing readiness in real-time,
                             reducing discharge TAT by ~50%.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SYSTEM ARCHITECTURE (Visual Deep Dive) -->
+        <section id="architecture" class="section-container" style="background: #0F172A; color: white;">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="blueprint-container">
+                <div class="blueprint-flow">
+                    <!-- Source -->
+                    <div class="blueprint-node">
+                        <div class="node-header">SOURCE</div>
+                        <div class="node-content">
+                            <p>Regional Hospital Nodes</p>
+                            <span class="tech-tag">Unstructured Data</span>
+                        </div>
+                    </div>
+
+                    <div class="blueprint-arrow">─── ⚡ ───</div>
+
+                    <!-- Engine -->
+                    <div class="blueprint-node highlight-node">
+                        <div class="node-header">CORE ENGINE</div>
+                        <div class="node-content">
+                            <p>OmniIngest Processing</p>
+                            <span class="tech-tag">Rust/Python</span>
+                        </div>
+                    </div>
+
+                    <div class="blueprint-arrow">─── 🛡️ ───</div>
+
+                    <!-- Destination -->
+                    <div class="blueprint-node">
+                        <div class="node-header">DESTINATION</div>
+                        <div class="node-content">
+                            <p>ABDM / FHIR Vault</p>
+                            <span class="tech-tag">DPDP Compliant</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blueprint-desc"
+                    style="max-width: 800px; margin: 3rem auto 0; text-align: center; color: #94A3B8; font-size: 0.95rem;">
+                    A scalable ingestion pipeline designed to normalize fragmented clinical data into
+                    standardized FHIR objects while enforcing real-time privacy guards and legal retention policies.
                 </div>
             </div>
         </section>
