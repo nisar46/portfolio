@@ -9,9 +9,9 @@
 !README.md
 
 # Explicitly hide messy source/script files from GitHub
-style.css
-script.js
-cv.html
+!style.css
+!script.js
+!cv.html
 *.bat
 .git/
 .antigravityignore
