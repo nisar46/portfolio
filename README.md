@@ -1,11 +1,12 @@
-# Nisar Ahmed | Health-Tech Product Architect
+# Nisar Ahmed | Agentic Health-Tech Architect & Solutions Orchestrator
 
-### [🚀 View Live Dashboard](https://nisar46.github.io/portfolio/)
+### [🚀 View Live Agentic Dashboard](https://nisar46.github.io/portfolio/)
 
-**Operational & Compliance Architecture:**
+**Agentic & Operational Architecture:**
+*   **Orchestrating Healthcare Workflows via AI Agents**
+*   **Vibe Coding / Rapid Agentic Prototyping**
 *   **ABDM 2.0 & DPDP Compliance Frameworks**
-*   **Rural Health-Tech Interoperability**
-*   **OmniIngest: High-Performance Data Ingestion**
+*   **OmniIngest: High-Performance Data Orchestration**
 
 ---
 [**📄 Download Professional Resume (PDF)**](resume_pdf/nisar_resume1.pdf)
