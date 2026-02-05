@@ -74,31 +74,30 @@
 
         header {
             border-bottom: 2px solid var(--primary);
-            padding-bottom: 15px;
-            /* Reduced */
-            margin-bottom: 20px;
-            /* Reduced */
+            padding-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: flex-start;
+            /* Aligned to top as requested */
         }
 
         .name-title h1 {
             font-size: 2.2rem;
-            /* Slightly smaller name */
             font-weight: 800;
             margin: 0;
-            line-height: 1;
+            line-height: 1.1;
             letter-spacing: -1px;
+            color: var(--primary);
         }
 
         .name-title h2 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--accent);
-            margin: 5px 0 0 0;
-            font-weight: 600;
+            margin: 8px 0 0 0;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .contact-info {
@@ -429,23 +428,6 @@
         </div>
     </div>
 
-    <div class="updated-timestamp">
-        Validated & Generated: <span id="current-timestamp"></span>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const now = new Date();
-            const options = {
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            };
-            document.getElementById('current-timestamp').textContent = now.toLocaleString('en-US', options);
-        });
-    </script>
 
     <a href="javascript:window.print()" class="btn-download no-print">Save as PDF</a>
 
