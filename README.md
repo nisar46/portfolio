@@ -9,7 +9,7 @@
 *   **OmniIngest: High-Performance Data Orchestration**
 
 ---
-[**📄 Download Professional Resume (PDF)**](resume_pdf/Nisar_pdf.pdf)
+[**📄 Download Professional Resume (PDF)**](resume_pdf/nisar_ahmed.pdf)
 
 ---
 *This repository contains the production source code for the portfolio dashboard hosted above.*
