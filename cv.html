@@ -19,7 +19,7 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.5;
-            color: #0F172A;
+            color: var(--primary);
             background: #fff;
             max-width: 800px;
             margin: 0 auto;
@@ -80,7 +80,7 @@
         }
 
         header {
-            border-bottom: 2px solid #0F172A;
+            border-bottom: 2px solid var(--primary);
             padding-bottom: 20px;
             margin-bottom: 25px;
             display: flex;
@@ -94,12 +94,12 @@
             margin: 0;
             line-height: 1.1;
             letter-spacing: -1px;
-            color: #0F172A;
+            color: var(--primary);
         }
 
         .name-title h2 {
             font-size: 1rem;
-            color: #0284C7;
+            color: var(--accent);
             margin: 8px 0 0 0;
             font-weight: 700;
             text-transform: uppercase;
@@ -109,7 +109,7 @@
         .contact-info {
             text-align: right;
             font-size: 0.9rem;
-            color: #475569;
+            color: var(--text-light);
             line-height: 1.4;
         }
 
@@ -122,8 +122,8 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 800;
-            color: #475569;
-            border-bottom: 1px solid #E2E8F0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
@@ -146,13 +146,13 @@
 
         .company {
             font-weight: 400;
-            color: #475569;
+            color: var(--text-light);
         }
 
         .date {
             font-size: 0.9rem;
             font-family: 'Inter', sans-serif;
-            color: #475569;
+            color: var(--text-light);
         }
 
         ul {
@@ -170,7 +170,7 @@
 
         li::before {
             content: "•";
-            color: #0284C7;
+            color: var(--accent);
             position: absolute;
             left: 0;
             font-weight: bold;
@@ -185,12 +185,12 @@
         .skill-category h3 {
             font-size: 0.9rem;
             margin: 0 0 8px 0;
-            color: #0F172A;
+            color: var(--primary);
         }
 
         .skill-list {
             font-size: 0.9rem;
-            color: #475569;
+            color: var(--text-light);
         }
 
         .tag-row {
@@ -205,14 +205,14 @@
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 600;
-            color: #475569;
+            color: var(--text-light);
         }
 
         .btn-download {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #0284C7;
+            background: var(--accent);
             color: white;
             padding: 12px 24px;
             border-radius: 50px;
@@ -240,7 +240,7 @@
             <div>+91 7019522735</div>
             <div><a href="https://linkedin.com/in/nisar-ahmed-8440763a3"
                     target="_blank">linkedin.com/in/nisar-ahmed-8440763a3</a></div>
-            <div>Bangalore, India | Open to Global Mobility</div>
+            <div>Bangalore, India</div>
         </div>
     </header>
 
@@ -252,19 +252,16 @@
         <div class="section-title">Technical Expertise</div>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>Agentic Intelligence</h3>
-                <div class="skill-list">Multi-Agent Orchestration, Semantic Routing, Agentic RAG, LangChain, Python
-                    (Scalable), Rust Engine</div>
+                <h3>Core Stack</h3>
+                <div class="skill-list">Agentic AI (Cursor/Composer), Python 3.10+, Rust, SQL, Polars, GenAI</div>
             </div>
             <div class="skill-category">
-                <h3>Enterprise Architecture</h3>
-                <div class="skill-list">Universal Engineering, Real-World Evidence (RWE), Microservices, Cloud
-                    (GCP/Azure), CI/CD/IaC</div>
+                <h3>Healthcare & Compliance</h3>
+                <div class="skill-list">DPDP Act 2023, HL7 FHIR R5, ABDM 2.0, HIPAA, Medical Law</div>
             </div>
             <div class="skill-category">
-                <h3>Governance & Compliance</h3>
-                <div class="skill-list">ABDM 2.0, DPDP Act Rule 8.3, HL7 FHIR R5, Clinical Reliability Shield, AES-256
-                </div>
+                <h3>Orchestration</h3>
+                <div class="skill-list">AI Governance, Data Privacy, AES-256 Cryptography, Ops Strategy</div>
             </div>
         </div>
     </div>
@@ -272,45 +269,34 @@
     <div class="section">
         <div class="section-title">Professional Summary</div>
         <p>
-            Senior Health-Tech Architect specialized in <strong>Agentic Solutions</strong> and <strong>Universal Health
-                Intelligence</strong> with 10+ years of clinical domain experience. I bridge the gap between fragmented
-            "Dark Data" and enterprise-grade intelligence by architecting <strong>ORCHESTRA™</strong>, a multi-agent
-            system designed for Pharma MNCs, Insurance, and Hospitals. Expert in orchestrating
-            <strong>DPDP-compliant</strong> and <strong>ABDM-ready</strong> agentic workflows that transform clinical
-            logic into high-integrity infrastructure.
+            Health-Tech Solutions Architect specialized in <strong>Agentic AI</strong> with 10+ years of clinical domain
+            experience. I bridge the gap between complex hospital operations and production-grade code. Having spent a
+            decade in the "trenches" of healthcare, I now orchestrate agentic workflows that turn clinical logic into
+            <strong>DPDP-compliant</strong> and <strong>ABDM-ready</strong> systems.
         </p>
     </div>
 
     <div class="section">
-        <div class="section-title">Hero Role: Universal Health Intelligence</div>
+        <div class="section-title">Hero Role: Production-Grade Orchestration</div>
 
-        <!-- Hero Role: ORCHESTRA -->
+        <!-- Hero Role: OmniIngest -->
         <div class="role-group"
-            style="border-left: 4px solid #0284C7; padding-left: 15px; background: #f8fafc; padding-top: 10px; padding-bottom: 5px;">
+            style="border-left: 4px solid var(--accent); padding-left: 15px; background: #f8fafc; padding-top: 10px; padding-bottom: 5px;">
             <div class="role-header">
-                <span class="role-title">Lead Architect | Project ORCHESTRA™</span>
+                <span class="role-title">Senior Agentic Solutions Architect</span>
                 <span class="company"> | OmniIngest Systems</span>
                 <span class="date">Nov 2025 - Present</span>
             </div>
-            <p style="margin-top: 5px; font-style: italic; color:#475569; font-size: 0.9rem;">
-                "Building the 'Google' for Reliable Healthcare Data—Universal Intelligence for the Global Health
-                Economy."
+            <p style="margin-top: 5px; font-style: italic; color: var(--text-light); font-size: 0.9rem;">
+                "I am building the production-grade systems I spent 10 years designing 'mentally' in the field."
             </p>
             <ul>
-                <li><strong>The Orchestrator:</strong> Architecting <strong>ORCHESTRA™</strong>, a multi-agent platform
-                    serving Pharma (RWE), Insurance (Fraud Audit), and Hospitals (Clinical Reliability) to rescue
-                    clinical "Dark Data."</li>
-                <li><strong>The Ingestion Engine (Rust):</strong> Engineered <strong>OmniIngest</strong>, a
-                    high-performance engine transforming unstructured medical records into type-safe <strong>HL7 FHIR
-                        R5</strong> streams.
-                </li>
-                <li><strong>Agentic RAG & Routing:</strong> Built a <strong>Semantic Router</strong> and RAG pipeline to
-                    cross-verify clinical workflows against <strong>Medical Law (IIT-KGP)</strong> and <strong>ABDM
-                        2.0</strong> governance.
-                </li>
-                <li><strong>The Safety Shield (DPDP):</strong> Developed an autonomous "Kill Switch" for <strong>DPDP
-                        Act Rule 8.3</strong>, enabling cryptographic data shredding across distributed agent networks.
-                </li>
+                <li><strong>Agentic Orchestrator:</strong> Utilizing "Vibe Coding" to translate 10+ years of clinical
+                    wisdom into robust healthcare microservices.</li>
+                <li><strong>Cryptographic Compliance:</strong> Engineered a "Kill Switch" for DPDP Act 2023 (Rule 8.3)
+                    using cryptographic shredding.</li>
+                <li><strong>FHIR R5 Remediation:</strong> Built a Rust-accelerated ingestion layer to normalize legacy
+                    hospital data into FHIR standards.</li>
             </ul>
         </div>
     </div>
@@ -330,15 +316,14 @@
                 <span class="tag">Certified Data Analyst</span>
             </div>
             <ul>
-                <li><strong>Systems Orchestration & Leadership:</strong> (Operations Manager) Directed end-to-end
-                    hospital logistics for 8+ years, optimizing resource allocation and patient flow. Reduced
-                    operational bottlenecks by 30% through strategic workflow redesign.</li>
-                <li><strong>Compliance Architecture:</strong> (Data Analyst) Standardized legacy patient records and
-                    audited clinical data for regulatory compliance. Architected the data logic that identified critical
-                    "Ingestion Failures" blocking national scale interoperability (ABDM).</li>
-                <li><strong>Strategic Domain Intelligence:</strong> Spent 5 years studying "ground truth" unstructured
-                    medical data in resource-constrained environments to build resilient, fault-tolerant tech solutions.
-                </li>
+                <li><strong>Systems Orchestration:</strong> (Operations Manager) Managed end-to-end hospital logistics,
+                    optimizing resource allocation and patient flow for over 8 years. Developed the manual operational
+                    frameworks that now serve as the logic for my AI agents.</li>
+                <li><strong>Compliance & Data Logic:</strong> (Data Analyst) Standardized legacy patient records and
+                    audited clinical data for regulatory compliance. Identified the critical "Ingestion Failures" in
+                    rural hospitals that block national interoperability (ABDM).</li>
+                <li><strong>Strategic Rural Exposure:</strong> Spent 5 years specifically studying the "ground truth" of
+                    unstructured medical data in resource-constrained environments to build resilient tech.</li>
             </ul>
         </div>
     </div>
@@ -378,11 +363,11 @@
         <div class="role-group">
             <ul>
                 <li><strong><a href="https://github.com/nisar46/OmniIngest-ABDM-2.0_Phase_0.1" target="_blank"
-                            style="text-decoration:none; color:#0F172A;">OmniIngest Identity
+                            style="text-decoration:none; color:var(--primary);">OmniIngest Identity
                             (GitHub)</a>:</strong> Full-stack repository demonstrating the "Safety Rails" architecture
                     and agent-orchestrated remediation engine.</li>
                 <li><strong><a href="https://github.com/nisar46/Healthcare-Data-Analysis-Journey" target="_blank"
-                            style="text-decoration:none; color:#0F172A;">The "5-Year Code"
+                            style="text-decoration:none; color:var(--primary);">The "5-Year Code"
                             Initiative</a>:</strong> Sustained technical growth through daily architectural reviews and
                     code commits.</li>
             </ul>
