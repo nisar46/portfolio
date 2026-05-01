@@ -1,4 +1,4 @@
-# Nisar Ahmed | Agentic Health-Tech Architect & Solutions Orchestrator
+# Nisar Ahmed | Clinical Subject Matter Expert & Health-Tech Architect
 
 ### [🚀 View Live Agentic Dashboard](https://nisar46.github.io/portfolio/)
 
