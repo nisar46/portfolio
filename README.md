@@ -37,7 +37,6 @@ A high-performance engine designed to solve the "Dark Data" crisis in hospitals.
 **Nisar Ahmed**  
 *Solutions Orchestrator | BCA (Pursuing)*  
 [LinkedIn Profile](https://linkedin.com)
+> *"Bridging the gap between clinical wisdom and engineering integrity."*
 
 [📥 Download CV](Nisar_Ahmed_CV.pdf)
-
-> *"Bridging the gap between clinical wisdom and engineering integrity."*
