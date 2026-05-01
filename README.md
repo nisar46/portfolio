@@ -6,7 +6,7 @@
 ![Architecture](https://img.shields.io/badge/Architecture-blueviolet?style=for-the-badge)
 
 ## 🏥 Professional Narrative
-I am a **Senior Clinical SME** transitioning 13 years of "Ground Truth" hospital management experience (Cloudnine, R K Nursing Home) into **Health-Tech Architecture**. My mission is to rescue fragmented clinical data and transform it into high-integrity, compliant infrastructure.
+I am a **Senior Clinical SME** transitioning 13 years of "Ground Truth" hospital management experience  into **Health-Tech Architecture**. My mission is to rescue fragmented clinical data and transform it into high-integrity, compliant infrastructure.
 
 I specialize in building the "Safety Rails" for healthcare data, ensuring that clinical workflows are not just digital, but **techno-legally sound**.
 
