@@ -1,420 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed - Resume</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Nisar Ahmed | Clinical SME & Architect</title>
     <style>
-        :root {
-            --primary: #0F172A;
-            --accent: #0284C7;
-            --text-light: #475569;
-            --border: #E2E8F0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.5;
-            color: var(--primary);
-            background: #fff;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-        }
-
-        @page {
-            size: A4;
-            margin: 1cm;
-        }
-
-        /* Print-friendly optimizations */
-        @media print {
-            body {
-                padding: 0;
-                max-width: 100%;
-                font-size: 10pt;
-                line-height: 1.4;
-            }
-
-            .section {
-                margin-bottom: 0.8rem !important;
-            }
-
-            p,
-            li,
-            .skill-list,
-            .company,
-            .date {
-                font-size: 10pt !important;
-            }
-
-            header {
-                padding-bottom: 10px !important;
-                margin-bottom: 15px !important;
-            }
-
-            .name-title h1 {
-                font-size: 1.8rem !important;
-            }
-
-            .role-header {
-                margin-bottom: 2px !important;
-            }
-
-            ul {
-                margin-bottom: 0.4rem !important;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-        }
-
-        header {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .name-title h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin: 0;
-            line-height: 1.1;
-            letter-spacing: -1px;
-            color: var(--primary);
-        }
-
-        .name-title h2 {
-            font-size: 1rem;
-            color: var(--accent);
-            margin: 8px 0 0 0;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-info {
-            text-align: right;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.4;
-        }
-
-        .section {
-            margin-bottom: 25px;
-        }
-
-        .section-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 800;
-            color: var(--text-light);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-
-        .role-group {
-            margin-bottom: 20px;
-        }
-
-        .role-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px;
-        }
-
-        .role-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .company {
-            font-weight: 400;
-            color: var(--text-light);
-        }
-
-        .date {
-            font-size: 0.9rem;
-            font-family: 'Inter', sans-serif;
-            color: var(--text-light);
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-
-        li::before {
-            content: "•";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .skill-category h3 {
-            font-size: 0.9rem;
-            margin: 0 0 8px 0;
-            color: var(--primary);
-        }
-
-        .skill-list {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .tag-row {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px;
-        }
-
-        .tag {
-            background: #F1F5F9;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-light);
-        }
-
-        .btn-download {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--accent);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-            transition: transform 0.2s;
-        }
-
-        .btn-download:hover {
-            transform: translateY(-2px);
-        }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; }
+        h1 { color: #0284C7; border-bottom: 2px solid #0284C7; }
+        h2 { color: #1e293b; margin-top: 30px; border-left: 5px solid #0284C7; padding-left: 10px; }
+        .contact { color: #64748b; margin-bottom: 20px; }
+        .job { margin-bottom: 20px; }
+        .job-title { font-weight: bold; color: #0f172a; }
+        .date { float: right; color: #64748b; }
+        ul { margin-top: 5px; }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="name-title">
-            <h1>Nisar Ahmed</h1>
-            <h2>AGENTIC HEALTH-TECH ARCHITECT | SOLUTIONS ORCHESTRATOR</h2>
-        </div>
-        <div class="contact-info">
-            <div>nisarr.aahmed@gmail.com</div>
-            <div>+91 7019522735</div>
-            <div>linkedin.com/in/nisar-ahmed 8440763a3</div>
-            <div>Bangalore, India | Open to Global Mobility</div>
-        </div>
-    </header>
-
-    <div class="section">
-        <div class="section-title">TECHNICAL EXPERTISE</div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Agentic Intelligence</h3>
-                <div class="skill-list">Multi-Agent Orchestration, Semantic Routing, Agentic RAG, LangChain, Python
-                    (Scalable), Rust Engine</div>
-            </div>
-            <div class="skill-category">
-                <h3>Enterprise Architecture</h3>
-                <div class="skill-list">Universal Engineering, Real-World Evidence (RWE), Microservices, Cloud
-                    (GCP/Azure), CI/CD/IaC</div>
-            </div>
-            <div class="skill-category">
-                <h3>Governance & Compliance</h3>
-                <div class="skill-list">ABDM 2.0, DPDP Act Rule 8.3, HL7 FHIR R5, Clinical Reliability Shield, AES-256
-                </div>
-            </div>
-        </div>
+    <h1>Nisar Ahmed</h1>
+    <div class="contact">
+        Clinical Subject Matter Expert | Health-Tech Architect<br>
+        13+ Years Healthcare Operations | specialized in ABDM 2.0 & DPDP Compliance
     </div>
 
-    <div class="section">
-        <div class="section-title">PROFESSIONAL SUMMARY</div>
-        <p>
-            Senior Health-Tech Architect specialized in <strong>Agentic Solutions</strong> and <strong>Universal Health
-                Intelligence</strong> with 10+ years of clinical domain experience. I bridge the gap between fragmented
-            "Dark Data" and enterprise-grade intelligence by architecting <strong>ORCHESTRA™</strong>, a multi-agent
-            system designed for Pharma MNCs, Insurance, and Hospitals. Expert in orchestrating
-            <strong>DPDP-compliant</strong> and <strong>ABDM-ready</strong> agentic workflows that transform clinical
-            logic into high integrity infrastructure.
-        </p>
+    <h2>Professional Summary</h2>
+    <p>Senior Clinical SME transitioning 13 years of hospital management "Ground Truth" (Cloudnine, R K Nursing Home) into Health-Tech Architecture. Expert in rescuing fragmented clinical "Dark Data" and architecting secure, 7-Pillar relational vaults that ensure 100% compliance with India's DPDP Act and ABDM 2.0 standards.</p>
+
+    <h2>Technical Core</h2>
+    <ul>
+        <li><strong>Architecture:</strong> 7-Pillar Relational Vaults, PII Isolation, SQL Clinical persistence.</li>
+        <li><strong>Compliance:</strong> DPDP Rule 8.3 (Hard-Delete Kill Switch), HIPAA safeguards, ABDM 2.0 Governance.</li>
+        <li><strong>Data Rescue:</strong> Heuristic extraction (Regex/Polars) of unstructured medical PDFs and HL7 records.</li>
+    </ul>
+
+    <h2>Clinical & Professional Evolution</h2>
+    
+    <div class="job">
+        <span class="job-title">Clinical SME & Lead Architect | OmniIngest Systems</span>
+        <span class="date">Nov 2025 - Present</span>
+        <ul>
+            <li>Developed the <strong>7-Pillar Hardened Vault</strong> architecture to secure clinical observations separately from patient PII.</li>
+            <li>Engineered the <strong>Rule 8.3 Incinerator</strong>, enabling autonomous cryptographic shredding of data for compliance.</li>
+        </ul>
     </div>
 
-    <div class="section">
-        <div class="section-title">HERO ROLE: UNIVERSAL HEALTH INTELLIGENCE</div>
-
-        <div class="role-group"
-            style="border-left: 4px solid var(--accent); padding-left: 15px; background: #f8fafc; padding-top: 10px; padding-bottom: 5px;">
-            <div class="role-header">
-                <span class="role-title">Lead Architect | Project ORCHESTRA™</span>
-                <span class="company"> | OmniIngest Systems</span>
-                <span class="date">Nov 2025 - Present</span>
-            </div>
-            <p style="margin-top: 5px; font-style: italic; color: var(--text-light); font-size: 0.9rem;">
-                "Building the 'Google' for Reliable Healthcare Data—Universal Intelligence for the Global Health
-                Economy."
-            </p>
-            <ul>
-                <li><strong>The Orchestrator:</strong> Architecting <strong>ORCHESTRA™</strong>, a multi-agent platform
-                    serving Pharma (RWE), Insurance (Fraud Audit), and Hospitals (Clinical Reliability) to rescue
-                    clinical "Dark Data."</li>
-                <li><strong>The Ingestion Engine (Rust):</strong> Engineered <strong>OmniIngest</strong>, a
-                    high-performance engine transforming unstructured medical records into type-safe <strong>HL7 FHIR
-                        R5</strong> streams.</li>
-                <li><strong>Agentic RAG & Routing:</strong> Built a <strong>Semantic Router</strong> and RAG pipeline to
-                    cross-verify clinical workflows against <strong>Medical Law (IIT-KGP)</strong> and <strong>ABDM
-                        2.0</strong> governance.</li>
-                <li><strong>The Safety Shield (DPDP):</strong> Developed an autonomous "Kill Switch" for <strong>DPDP
-                        Act Rule 8.3</strong>, enabling cryptographic data shredding across distributed agent networks.
-                </li>
-            </ul>
-        </div>
+    <div class="job">
+        <span class="job-title">Operations Manager | R K Nursing Home</span>
+        <span class="date">May 2012 - Oct 2025</span>
+        <ul>
+            <li>Directed end-to-end hospital logistics and data audits for over a decade.</li>
+            <li>Identified critical data gaps in legacy patient records that block national-scale interoperability.</li>
+        </ul>
     </div>
 
-    <div class="section">
-        <div class="section-title">CAREER EVOLUTION (2012–2025)</div>
-
-        <div class="role-group">
-            <div class="role-header">
-                <span class="role-title">Clinical Domain Expert & Systems Orchestrator</span>
-                <span class="company"> | R K Nursing Home</span>
-                <span class="date">May 2012 - Oct 2025</span>
-            </div>
-            <div style="margin-bottom: 10px; display: flex; gap: 10px;">
-                <span class="tag">Certified Operations Manager</span>
-                <span class="tag">Certified Data Analyst</span>
-            </div>
-            <ul>
-                <li><strong>Systems Orchestration & Leadership:</strong> (Operations Manager) Directed end-to-end
-                    hospital logistics for 8+ years, optimizing resource allocation and patient flow. Reduced
-                    operational bottlenecks by 30% through strategic workflow redesign.</li>
-                <li><strong>Compliance Architecture:</strong> (Data Analyst) Standardized legacy patient records and
-                    audited clinical data for regulatory compliance. Architected the data logic that identified critical
-                    "Ingestion Failures" blocking national scale interoperability (ABDM).</li>
-                <li><strong>Strategic Domain Intelligence:</strong> Spent 5 years studying "ground truth" unstructured
-                    medical data in resource constrained environments to build resilient, fault-tolerant tech solutions.
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">STRATEGIC CAREER MILESTONES</div>
-
-        <div class="role-group">
-            <div class="role-header">
-                <span class="role-title">Operations Manager</span>
-                <span class="company"> | K Arogya Advisory Services</span>
-                <span class="date">Dec 2018 - Aug 2020</span>
-            </div>
-            <ul>
-                <li><strong>Multi-Center Implementation:</strong> Led data-driven clinical workflow deployments across
-                    major institutions (KG Hospital, Ramaiah, SRM, etc.).</li>
-            </ul>
-        </div>
-
-        <div class="role-group">
-            <div class="role-header">
-                <span class="role-title">Customer Care Executive</span>
-                <span class="company"> | Cloudnine Group of Hospitals</span>
-                <span class="date">Nov 2015 - Nov 2016</span>
-            </div>
-            <ul>
-                <li><strong>Patient Relations:</strong> Managed critical healthcare communication, gaining deep insights
-                    into patient-side friction points.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">ENGINEERING PORTFOLIO</div>
-        <div class="role-group">
-            <ul>
-                <li><strong>OmniIngest Identity (GitHub):</strong> Full-stack repository demonstrating the "Safety
-                    Rails" architecture and agent orchestrated remediation engine.</li>
-                <li><strong>The "5-Year Code" Initiative:</strong> Sustained technical growth through daily
-                    architectural reviews and code commits.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">EDUCATION & CERTIFICATIONS</div>
-        <div class="role-group">
-            <div class="role-header">
-                <span class="role-title">Bachelor of Computer Application (BCA)</span>
-                <span class="company"> | University of Mysore</span>
-                <span class="date">2023 - 2026 (Pursuing)</span>
-            </div>
-            <ul>
-                <li>Foundational degree focusing on core Computer Applications, Database Management, and Systems
-                    Analysis—essential skills for a techno-legal specialist building compliance tools.</li>
-            </ul>
-        </div>
-
-        <div class="role-group">
-            <div class="role-header" style="margin-bottom: 10px;">
-                <span class="role-title">Professional Certifications</span>
-            </div>
-            <ul>
-                <li><strong>Data Science & AI Certification</strong> - Learnbay & IBM (Credential ID: 973125b) | Module
-                    Completed: Python | Pursuing: IBM Capstone (GenAI & DS)</li>
-                <li><strong>HIPAA Training Certification</strong> - HIPAA TRAINING.US (ID: HIPAA-0022256) | Ensures
-                    Python-based PII masking logic adheres to technical safeguards.</li>
-                <li><strong>DPDP Act v1.1 Certification</strong> - Adv. Prashant Mali (AI Governance, Legal Law)</li>
-            </ul>
-        </div>
-
-        <div class="role-group">
-            <div class="role-header" style="margin-bottom: 10px;">
-                <span class="role-title">Continuous Learning (In Progress)</span>
-            </div>
-            <ul>
-                <li><strong>Generative AI Developer</strong> - IIT Guwahati (GenAI, ML, AI Ethics)</li>
-                <li><strong>Medical Law Certification</strong> - IIT Kharagpur (Bioethics & Reg. Compliance)</li>
-                <li><strong>Healthcare Data Quality & Governance</strong> - Coursera (UC Davis)</li>
-            </ul>
-        </div>
-    </div>
-
-    <a href="javascript:window.print()" class="btn-download no-print">Save as PDF</a>
+    <h2>Education & Certifications</h2>
+    <ul>
+        <li><strong>BCA (Pursuing):</strong> Database Management & Systems Analysis.</li>
+        <li><strong>IBM Capstone:</strong> Data Science & Python (Module Complete).</li>
+        <li><strong>Medical Law (IIT-KGP):</strong> Bioethics & Regulatory Compliance.</li>
+        <li><strong>HIPAA Certified:</strong> Technical Safeguards for PII Masking.</li>
+    </ul>
 
 </body>
-
 </html>
