@@ -1,9 +1,9 @@
 # Nisar Ahmed | Clinical Subject Matter Expert & Health-Tech Architect
 > **13+ Years Healthcare Operations | Specialized in ABDM 2.0 & DPDP Governance**
 
-![Healthcare](https://shields.io)
-![Compliance](https://shields.io)
-![Architecture](https://shields.io)
+![Healthcare](https://img.shields.io/badge/Healthcare-blue?style=for-the-badge)
+![Compliance](https://img.shields.io/badge/Compliance-green?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-blueviolet?style=for-the-badge)
 
 ## 🏥 Professional Narrative
 I am a **Senior Clinical SME** transitioning 13 years of "Ground Truth" hospital management experience (Cloudnine, R K Nursing Home) into **Health-Tech Architecture**. My mission is to rescue fragmented clinical data and transform it into high-integrity, compliant infrastructure.
