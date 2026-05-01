@@ -4,61 +4,78 @@
     <meta charset="UTF-8">
     <title>Nisar Ahmed | Clinical SME & Architect</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; }
-        h1 { color: #0284C7; border-bottom: 2px solid #0284C7; }
-        h2 { color: #1e293b; margin-top: 30px; border-left: 5px solid #0284C7; padding-left: 10px; }
-        .contact { color: #64748b; margin-bottom: 20px; }
-        .job { margin-bottom: 20px; }
-        .job-title { font-weight: bold; color: #0f172a; }
-        .date { float: right; color: #64748b; }
-        ul { margin-top: 5px; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: 40px auto; padding: 20px; background-color: #f8fafc; }
+        .cv-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        h1 { color: #0284C7; margin-bottom: 5px; }
+        .sub-header { color: #64748b; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; pb: 10px; }
+        h2 { color: #1e293b; margin-top: 30px; border-left: 5px solid #0284C7; padding-left: 15px; text-transform: uppercase; font-size: 1rem; }
+        .job { margin-bottom: 25px; position: relative; }
+        .job-title { font-weight: bold; color: #0f172a; font-size: 1.1rem; }
+        .company { color: #0284C7; font-weight: 600; }
+        .date { float: right; color: #64748b; font-weight: normal; }
+        .download-btn { display: inline-block; padding: 10px 20px; background: #0284C7; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 20px; font-weight: bold; }
+        ul { margin-top: 8px; }
+        li { margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
+<div class="cv-card">
+    <a href="#" class="download-btn">📥 Download PDF Resume</a>
+    
     <h1>Nisar Ahmed</h1>
-    <div class="contact">
-        Clinical Subject Matter Expert | Health-Tech Architect<br>
-        13+ Years Healthcare Operations | specialized in ABDM 2.0 & DPDP Compliance
+    <div class="sub-header">
+        Clinical Subject Matter Expert | Health-Tech Solutions Architect<br>
+        13+ Years Healthcare Operations | specialized in ABDM 2.0 & DPDP
     </div>
 
     <h2>Professional Summary</h2>
-    <p>Senior Clinical SME transitioning 13 years of hospital management "Ground Truth" (Cloudnine, R K Nursing Home) into Health-Tech Architecture. Expert in rescuing fragmented clinical "Dark Data" and architecting secure, 7-Pillar relational vaults that ensure 100% compliance with India's DPDP Act and ABDM 2.0 standards.</p>
+    <p>Bridging the gap between 13 years of clinical "Ground Truth" and modern engineering. Expert in hospital operations, healthcare data governance, and architecting DPDP-compliant clinical engines. Specialized in rescuing unstructured data and hardening it into 7-Pillar relational vaults.</p>
 
-    <h2>Technical Core</h2>
-    <ul>
-        <li><strong>Architecture:</strong> 7-Pillar Relational Vaults, PII Isolation, SQL Clinical persistence.</li>
-        <li><strong>Compliance:</strong> DPDP Rule 8.3 (Hard-Delete Kill Switch), HIPAA safeguards, ABDM 2.0 Governance.</li>
-        <li><strong>Data Rescue:</strong> Heuristic extraction (Regex/Polars) of unstructured medical PDFs and HL7 records.</li>
-    </ul>
+    <h2>Clinical & Technical Evolution</h2>
 
-    <h2>Clinical & Professional Evolution</h2>
-    
+    <!-- Current Work -->
     <div class="job">
-        <span class="job-title">Clinical SME & Lead Architect | OmniIngest Systems</span>
-        <span class="date">Nov 2025 - Present</span>
+        <span class="date">Oct 2025 - Present</span>
+        <span class="job-title">SME & Solutions Architect</span><br>
+        <span class="company">OmniIngest Systems (Project ORCHESTRA™)</span>
         <ul>
-            <li>Developed the <strong>7-Pillar Hardened Vault</strong> architecture to secure clinical observations separately from patient PII.</li>
-            <li>Engineered the <strong>Rule 8.3 Incinerator</strong>, enabling autonomous cryptographic shredding of data for compliance.</li>
+            <li>Architected the <strong>7-Pillar Clinical Vault</strong> for secure PII/Observation isolation.</li>
+            <li>Engineered the <strong>Rule 8.3 "Incinerator"</strong> for automated DPDP compliance.</li>
         </ul>
     </div>
 
+    <!-- R K Nursing Home -->
     <div class="job">
-        <span class="job-title">Operations Manager | R K Nursing Home</span>
         <span class="date">May 2012 - Oct 2025</span>
+        <span class="job-title">Operations Manager & Clinical Domain Expert</span><br>
+        <span class="company">R K Nursing Home</span>
         <ul>
-            <li>Directed end-to-end hospital logistics and data audits for over a decade.</li>
-            <li>Identified critical data gaps in legacy patient records that block national-scale interoperability.</li>
+            <li>Directed end-to-end hospital logistics, resource allocation, and patient flow for 13 years.</li>
+            <li>Led clinical data audits and standardized legacy records for regulatory readiness.</li>
+            <li>Reduced operational bottlenecks by 30% through strategic workflow redesign.</li>
+        </ul>
+    </div>
+
+    <!-- Cloudnine -->
+    <div class="job">
+        <span class="date">Nov 2015 - Nov 2016</span>
+        <span class="job-title">Customer Care Executive (Clinical Relations)</span><br>
+        <span class="company">Cloudnine Group of Hospitals</span>
+        <ul>
+            <li>Managed high-stakes patient communication and resolved clinical friction points.</li>
+            <li>Gained deep insights into maternal and child healthcare data standards.</li>
         </ul>
     </div>
 
     <h2>Education & Certifications</h2>
     <ul>
         <li><strong>BCA (Pursuing):</strong> Database Management & Systems Analysis.</li>
-        <li><strong>IBM Capstone:</strong> Data Science & Python (Module Complete).</li>
-        <li><strong>Medical Law (IIT-KGP):</strong> Bioethics & Regulatory Compliance.</li>
+        <li><strong>IBM Capstone:</strong> Data Science & AI Certification (Python Module Complete).</li>
+        <li><strong>IIT Kharagpur:</strong> Medical Law (Bioethics & Regulatory Compliance).</li>
         <li><strong>HIPAA Certified:</strong> Technical Safeguards for PII Masking.</li>
     </ul>
+</div>
 
 </body>
 </html>
