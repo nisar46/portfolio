@@ -7,8 +7,9 @@
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #1e293b; max-width: 850px; margin: 40px auto; padding: 20px; background-color: #f8fafc; }
         .cv-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-        h1 { color: #0284c7; margin-bottom: 5px; font-size: 2.2rem; }
-        .sub-header { color: #64748b; font-size: 1.1rem; margin-bottom: 25px; border-bottom: 2px solid #38bdf8; padding-bottom: 15px; }
+        h1 { color: #0284c7; margin-bottom: 5px; font-size: 2.2rem; text-transform: uppercase; }
+        .contact-info { color: #64748b; margin-bottom: 25px; border-bottom: 2px solid #38bdf8; padding-bottom: 15px; font-weight: 500; font-size: 0.95rem; }
+        .contact-info a { color: #0284c7; text-decoration: none; }
         h2 { color: #0f172a; margin-top: 35px; border-left: 5px solid #0284c7; padding-left: 15px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
         .job { margin-bottom: 30px; }
         .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
@@ -17,25 +18,23 @@
         .date { color: #64748b; font-weight: 500; font-size: 0.95rem; }
         ul { margin-top: 10px; padding-left: 20px; }
         li { margin-bottom: 8px; }
-        .tech-stack { background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 20px; }
-        .tech-item { font-weight: bold; color: #0284c7; }
-        @media print {
-            body { background: white; margin: 0; padding: 0; }
-            .cv-card { box-shadow: none; border: none; padding: 0; }
-        }
+        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        .tech-item { font-weight: bold; color: #0284c7; margin-bottom: 5px; display: block; }
+        @media print { body { background: white; margin: 0; padding: 0; } .cv-card { box-shadow: none; border: none; padding: 0; } }
     </style>
 </head>
 <body>
 
 <div class="cv-card">
     <h1>NISAR AHMED</h1>
-    <div class="sub-header">
-        Senior Clinical SME & Health-Tech Architect<br>
-        13+ Years Healthcare Operations | Specialized in ABDM 2.0 & DPDP Governance
+    <div class="contact-info">
+        Senior Clinical SME & Health-Tech Architect | 13+ Years Healthcare Operations<br>
+        Bangalore, India | +91 7019522735 | <a href="mailto:nisarr.aahmed@gmail.com">nisarr.aahmed@gmail.com</a><br>
+        <a href="https://github.com">://github.com</a> | <a href="https://linkedin.com">://linkedin.com</a>
     </div>
 
     <h2>Professional Summary</h2>
-    <p>Senior Clinical SME & Health-Tech Architect with 13+ years of healthcare operations and data governance expertise. Specialized in bridging clinical "ground-truth" reality with high-level software engineering, focusing on <strong>ABDM 2.0 interoperability</strong>, <strong>FHIR R5 standards</strong>, and strict <strong>DPDP Act compliance</strong>. Proven track record of managing <strong>200+ daily patient encounters</strong> and maintaining <strong>99.9% data integrity</strong> across high-volume clinical environments.</p>
+    <p>Senior Clinical SME & Health-Tech Architect with 13+ years of healthcare operations and data governance expertise. Specialized in bridging clinical <strong>"ground-truth"</strong> reality with high-level software engineering, focusing on <strong>ABDM 2.0 interoperability</strong>, <strong>FHIR R5 standards</strong>, and strict <strong>DPDP Act compliance</strong>. Proven track record of managing <strong>200+ daily patient encounters</strong> and maintaining <strong>99.9% data integrity</strong> across high-volume clinical environments.</p>
 
     <h2>Professional Experience</h2>
 
@@ -46,24 +45,24 @@
         </div>
         <span class="company">Self-Directed Research & Development</span>
         <ul>
-            <li>Architected a strategic phase to bridge 13 years of clinical "ground-truth" experience with high-level engineering for the <strong>OmniIngest-Clinical-Engine</strong>.</li>
-            <li>Designed the <strong>'7-Pillar Vault'</strong>, establishing relational schemas for strict PII isolation and ABDM-compliant clinical data streams.</li>
-            <li>Engineered <strong>'The Incinerator'</strong> module, integrating DPDP Act Rule 8.3 hard-delete logic to guarantee automated and compliant data privacy management.</li>
-            <li>Currently formalizing technical depth through <strong>BCA (Final Year)</strong> to bridge clinical domain expertise with computer applications.</li>
+            <li>Architecting the <strong>OmniIngest-Clinical-Engine</strong> to bridge 13 years of domain expertise with modern data engineering for automated clinical data standardization.</li>
+            <li>Designing <strong>'ClinoSyn'</strong>: Leveraging GenAI, LLMs, and LangGraph for intelligent clinical synonym mapping to ensure automated alignment with <strong>FHIR R5 standards</strong>.</li>
+            <li>Engineered the <strong>'7-Pillar Vault'</strong> and <strong>'The Incinerator'</strong> module, integrating <strong>AWS/Azure cloud security</strong> logic to guarantee DPDP Act Rule 8.3 compliant data privacy management.</li>
+            <li>Formalizing technical depth through <strong>BCA (Final Year)</strong> to bridge clinical domain expertise with computer applications.</li>
         </ul>
     </div>
 
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Data Analyst / Clinical Domain Lead (Consultancy)</span>
+            <span class="job-title">Data Analyst / Clinical Domain Lead</span>
             <span class="date">Oct 2020 – Oct 2025</span>
         </div>
         <span class="company">R K Nursing Home</span>
         <ul>
-            <li><strong>Architected end-to-end clinical data pipelines</strong>, ensuring 99.9% data integrity for government and regulatory reporting.</li>
+            <li><strong>Architected end-to-end clinical data pipelines</strong>, ensuring 99.9% data integrity for state and central government regulatory reporting.</li>
             <li>Managed and optimized workflows for <strong>200+ daily patient encounters</strong> across multidisciplinary hospital environments.</li>
-            <li><strong>Architected the OmniIngest Prototype:</strong> Built a Python-driven engine to convert unstructured clinical records into structured vaults, targeting an <strong>85% reduction</strong> in manual processing time.</li>
-            <li>Spearheaded <strong>Metadata Intelligence</strong>: Designed <strong>'ClinoSyn'</strong>, a self-learning brain for clinical synonym mapping to ensure superior data integrity and automated alignment with <strong>FHIR R5 standards</strong>.</li>
+            <li>Developed the <strong>OmniIngest Prototype:</strong> A Python-driven engine to convert unstructured clinical records into structured vaults, targeting an <strong>85% reduction</strong> in manual processing time.</li>
+            <li>Led the digital transition of legacy paper records into structured formats, reducing data retrieval lag by <strong>30%</strong>.</li>
         </ul>
     </div>
 
@@ -86,44 +85,36 @@
         </div>
         <span class="company">R K Nursing Home</span>
         <ul>
-            <li>Managed strategic leadership initiatives for end-to-end clinical logistics, successfully reducing operational bottlenecks by <strong>30% through standardized data capture</strong>.</li>
-            <li>Supervised clinical staff to ensure 100% compliance with privacy protocols and patient safety standards.</li>
+            <li>Managed strategic leadership initiatives for clinical logistics, reducing operational bottlenecks by <strong>30% through standardized data capture</strong>.</li>
         </ul>
     </div>
 
-    <div class="job">
-        <div class="job-header">
-            <span class="job-title">Customer Care Executive</span>
-            <span class="date">Nov 2015 – Nov 2016</span>
+    <h2>Tech Stack & Cloud Infrastructure</h2>
+    <div class="tech-stack-grid">
+        <div>
+            <span class="tech-item">CLOUD & INFRA:</span>
+            AWS (S3, Lambda), Azure Health Data Services, Docker.
         </div>
-        <span class="company">Cloudnine Group of Hospitals</span>
-        <ul>
-            <li>Maintained quality standards by managing premium patient relations, mastering strict healthcare privacy protocols and clinical communication.</li>
-            <li>Identified frontline data fragmentation issues, forming the basis for later architectural remediation strategies.</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <div class="job-header">
-            <span class="job-title">Healthcare Operations Coordinator</span>
-            <span class="date">May 2012 – Nov 2015</span>
+        <div>
+            <span class="tech-item">AI & GENAI:</span>
+            LLMs (GPT/Claude), LangGraph, Prompt Engineering, Vector DBs.
         </div>
-        <span class="company">R K Nursing Home</span>
-        <ul>
-            <li>Orchestrated foundational frontline clinical operations and manual record maintenance, gaining vital "ground-truth" insights required to solve data fragmentation at scale.</li>
-        </ul>
+        <div>
+            <span class="tech-item">CORE TECH:</span>
+            Python (Pandas/Polars), SQL (PostgreSQL), Cursor/Composer.
+        </div>
+        <div>
+            <span class="tech-item">HEALTH-TECH:</span>
+            HL7 FHIR R5, ABDM 2.0 Interoperability, HIPAA/DPDP Compliance.
+        </div>
     </div>
 
-    <h2>Education & Tech Stack</h2>
-    <div class="tech-stack">
-        <ul>
-            <li><span class="tech-item">BCA (Pursuing):</span> University of Mysore | Final Year (Formalizing 13Y systems expertise)</li>
-            <li><span class="tech-item">Executive Program in Generative AI:</span> IIT Guwahati | Specializing in Agentic Orchestration</li>
-            <li><span class="tech-item">IBM Professional Capstone:</span> Data Science & AI | In-Progress</li>
-            <li><span class="tech-item">Medical Law:</span> IIT Kharagpur | Regulatory & Ethical Frameworks (DPDP/ABDM)</li>
-            <li><span class="tech-item">Python for Data Science:</span> Completed (Learnbay)</li>
-        </ul>
-    </div>
+    <h2>Education</h2>
+    <ul>
+        <li><strong>BCA (Final Year):</strong> University of Mysore | Formalizing 13Y systems expertise</li>
+        <li><strong>Executive Program in GenAI:</strong> IIT Guwahati | Specializing in LLM Orchestration</li>
+        <li><strong>Medical Law:</strong> IIT Kharagpur | Focus: DPDP & ABDM</li>
+    </ul>
 </div>
 
 </body>
