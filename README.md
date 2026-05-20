@@ -1,42 +1,42 @@
-# Nisar Ahmed | Clinical Subject Matter Expert & Health-Tech Architect
-> **13+ Years Healthcare Operations | Specialized in ABDM 2.0 & DPDP Governance**
+# Nisar Ahmed | Clinical Data Analyst & Healthcare Operations Specialist
+> **13+ Years Healthcare Operations | Specialized in ABDM Workflows & DPDP Data Privacy Compliance**
 
 ![Healthcare](https://img.shields.io/badge/Healthcare-blue?style=for-the-badge)
 ![Compliance](https://img.shields.io/badge/Compliance-green?style=for-the-badge)
-![Architecture](https://img.shields.io/badge/Architecture-blueviolet?style=for-the-badge)
+![Data_Analytics](https://shields.io)
 
 ## 🏥 Professional Narrative
-I am a **Senior Clinical SME** transitioning 13 years of "Ground Truth" hospital management experience  into **Health-Tech Architecture**. My mission is to rescue fragmented clinical data and transform it into high-integrity, compliant infrastructure.
+I am an experienced healthcare professional transitioning 13 years of active "ground-truth" hospital operations experience into the health-tech data space. My mission is to help agile teams organize unstructured clinical records and build clean, secure, and compliant data pipelines.
 
-I specialize in building the "Safety Rails" for healthcare data, ensuring that clinical workflows are not just digital, but **techno-legally sound**.
-
----
-
-## 🛠️ Core Architectural Pillars
-
-### 1. Clinical Data Governance (ABDM 2.0)
-Architecting systems that align with India's **ABDM 2.0** standards, focusing on Health Information Provider (HIP) compliance and seamless clinical data exchange.
-
-### 2. The 7-Pillar Vault Architecture
-Implementation of relational data isolation strategies to secure PII (Personally Identifiable Information) while maintaining high-performance clinical observations and lab result streams.
-
-### 3. Regulatory "Kill-Switch" (DPDP Rule 8.3)
-Hard-coding **Right to Erasure** natively into the database. I build systems where "Hard-Delete" isn't an afterthought—it's a core governance feature.
+I specialize in mapping real-world medical data flows to relational systems, ensuring information is clinically accurate, standardized, and fully compliant with healthcare data laws.
 
 ---
 
-## 📁 Featured Project: OmniIngest-Clinical-Engine
-A high-performance engine designed to solve the "Dark Data" crisis in hospitals. 
-*   **Rescue:** Heuristic extraction of unstructured PDF/CSV/HL7 data.
-*   **Harden:** Persistent storage in a 7-Pillar SQL Vault.
-*   **Compliance:** Real-time audit logging and cryptographic PII shredding.
+## 🛠️ Core Functional Focus Areas
+
+### 1. Healthcare Data Management & Standardization
+Mapping dynamic, non-standard medical terminologies and vendor formats into clean, structured data tables. Ensuring incoming medical parameters line up perfectly with standard electronic health record (EHR) requirements.
+
+### 2. Operational Data Integrity (ABDM Workflows)
+Coordinating data flows that align cleanly with India's **Ayushman Bharat Digital Mission (ABDM)** standards, focusing on patient records organization and seamless front-desk triage logging.
+
+### 3. Programmatic Privacy Triage (DPDP Act Compliance)
+Enforcing programmatic data safety rails natively inside collection scripts. I focus on building automated data triage loops (Processed, Quarantined) that validate patient consent parameters under the **DPDP Act 2023** before any records are committed to long-term database storage.
 
 ---
 
-## 👨‍💻 Author & Architect
+## 📁 Core Practical Project: OmniIngest Data Engineering Framework
+A dedicated data handling tool designed to streamline file intake and standardization workflows across busy clinic nodes.
+*   **Ingest & Parse:** Utilizing Polars high-speed lazy evaluation streams to smoothly check structural patterns in raw data.
+*   **Adapt & Map:** Reading runtime translation dictionaries to map variant vendor schemas into unified relational keys.
+*   **Verify & Secure:** Enforcing atomic transactional rollbacks to drop and quarantine records instantly if patient consent validation parameters drop.
+
+---
+
+## 👨‍💻 Professional Profile
 **Nisar Ahmed**  
-*Solutions Orchestrator | BCA (Pursuing)*  
+*Clinical Data Specialist | BCA (Final Year)*  
 [LinkedIn Profile](https://linkedin.com)
-> *"Bridging the gap between clinical wisdom and engineering integrity."*
+> *"Bridging the gap between active clinical operations and practical digital data solutions."*
 
-[📥 Download CV](Nisar_Ahmed_CV.pdf)
+[📥 View Professional CV](cv.html)
