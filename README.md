@@ -1,9 +1,10 @@
 # Nisar Ahmed | Clinical Data Analyst & Healthcare Operations Specialist
 > **13+ Years Healthcare Operations | Specialized in ABDM Workflows & DPDP Data Privacy Compliance**
 
-![Healthcare](https://shields.io)
-![Compliance](https://shields.io)
-![Data Analytics](https://shields.io)
+![Healthcare](https://img.shields.io/badge/Domain-Healthcare_Operations-0284c7.svg?style=for-the-badge)
+![Compliance](https://img.shields.io/badge/Compliance-DPDP_%26_ABDM-red.svg?style=for-the-badge)
+![Data Analytics](https://img.shields.io/badge/Focus-Data_Analytics-10b981.svg?style=for-the-badge)
+
 
 ## 🏥 Professional Narrative
 I am an experienced healthcare professional transitioning 13 years of active "ground-truth" hospital operations experience into the health-tech data space. My mission is to help agile teams organize unstructured clinical records and build clean, secure, and compliant data pipelines.
