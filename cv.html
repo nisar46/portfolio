@@ -20,6 +20,7 @@
         li { margin-bottom: 8px; }
         .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 20px; }
         .tech-item { font-weight: bold; color: #0284c7; margin-bottom: 5px; display: block; }
+        .badge { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-left: 5px; display: inline-block; vertical-align: middle; }
         @media print { body { background: white; margin: 0; padding: 0; } .cv-card { box-shadow: none; border: none; padding: 0; } }
     </style>
 </head>
@@ -28,94 +29,125 @@
 <div class="cv-card">
     <h1>NISAR AHMED</h1>
     <div class="contact-info">
-        Clinical Data Analyst & Healthcare Operations Specialist | 13+ Years Healthcare Experience<br>
-        Bangalore, India | +91 7019522735 | <a href="mailto:nisarr.aahmed@gmail.com">nisarr.aahmed@gmail.com</a><br>
-        <a href="https://github.com/nisar46">github.com/nisar46</a> | <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3">linkedin.com/in/nisar-ahmed-8440763a3</a>
+        Clinical Data Analyst & Healthcare Operations Specialist | Health-Tech Compliance<br>
+        📍 Bengaluru, Karnataka, India | 📞 +91 7019522735 | ✉️ <a href="mailto:nisarr.aahmed@gmail.com">nisarr.aahmed@gmail.com</a><br>
+        🌐 <a href="https://github.io" target="_blank">nisar46.github.io/portfolio</a> | 🐙 <a href="https://github.com/nisar46" target="_blank">github.com/nisar46</a> | 🔗 <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank">linkedin.com/in/nisar-ahmed-8440763a3</a>
     </div>
 
     <h2>Professional Summary</h2>
-    <p>Dedicated Healthcare Data Specialist with 13+ years of clinical operations and medical data coordination experience. Expert at bridging the gap between clinical workflows and data management systems, focusing on data cleanup, electronic health record (EHR) mapping, and operational alignment with ABDM standards and DPDP Act data privacy rules. Proven background in maintaining data quality across high-volume environments processing <strong>200+ daily patient records</strong>.</p>
+    <p>Clinical Data Analyst and Healthcare Ops Specialist with <strong>13+ years experience</strong> bridging clinical workflows and modern data infrastructure. Expert in standardizing variant EHR payloads into relational databases while enforcing compliance under the ABDM Framework and DPDP Act 2023. Fluent in both clinical and engineering domains, specializing in the electronic extraction, clean-up, and governance of high-volume medical datasets.</p>
+
+    <h2>Core Competencies & Tools</h2>
+    <div class="tech-stack-grid">
+        <div>
+            <span class="tech-item">PROGRAMMING & DATA:</span>
+            Python, SQL, Polars, Regex, MongoDB, Relational Schemas, ETL Pipelines.
+        </div>
+        <div>
+            <span class="tech-item">HEALTH COMPLIANCE:</span>
+            ABDM Workflows, DPDP Act 2023, EHR Standards, Patient Consent Governance.
+        </div>
+        <div>
+            <span class="tech-item">ANALYTICS & BI:</span>
+            Advanced Excel (Macros/Auditing), Tableau, Power BI.
+        </div>
+        <div>
+            <span class="tech-item">AI & DEPLOYMENT:</span>
+            Generative AI, RAG (Retrieval-Augmented Generation), LLMs, NLP, Model Deployment.
+        </div>
+    </div>
+
+    <h2>Ecosystem Projects</h2>
+    
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">OmniIngest Ecosystem & Clinosyn OS</span>
+            <span class="date">Nov 2025 – Present</span>
+        </div>
+        <span class="company">Independent Architecture Projects</span>
+        <ul>
+            <li><strong>OmniIngest (ABDM 2.0):</strong> Developed an automated clinical data ingestion layer built using Polars to parse and normalize unstructured EHR payloads with parallel bitwise patient consent validation filters under the DPDP Act.</li>
+            <li><strong>OmniIngest Universal:</strong> Refactored and scaled the core high-performance Python/Polars ETL pipeline beyond healthcare to support dynamic, multi-sector structured format translation.</li>
+            <li><strong>Clinosyn OS:</strong> Architecting a GenAI-driven clinical intelligence layer using Streamlit, LLMs, and an offline local RAG engine to query verified data tables safely decoupled from ingestion boundaries.</li>
+        </ul>
+    </div>
 
     <h2>Professional Experience</h2>
 
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Healthcare Data Systems Optimization (Technical R&D)</span>
-            <span class="date">Oct 2025 – Present</span>
+            <span class="job-title">Independent Researcher | Healthcare Data & Interoperability</span>
+            <span class="date">Nov 2025 – Present</span>
         </div>
-        <span class="company">Self-Directed Technical Development</span>
+        <span class="company">Remote / Technical R&D</span>
         <ul>
-            <li>Developing <strong>OmniIngest</strong>: A data-handling script repository designed to parse, remap, and validate unstructured clinical payloads using Polars and SQL.</li>
-            <li>Building data mapping workflows to standardize erratic naming structures into unified relational tables.</li>
-            <li>Implementing data triage scripts to logically enforce patient consent validation filters under privacy laws.</li>
-            <li>Completing final year <strong>BCA</strong> coursework to formalize practical software application skills with extensive clinical operational history.</li>
+            <li>Conducting systems engineering and architectural R&D on high-integrity medical database design, health-tech compliance frameworks, and local privacy firewalls.</li>
+            <li>Defined practical backend parsing and ingestion rules by analyzing FHIR/HL7 standards alongside National Health Authority (NHA) ABDM gateway specifications.</li>
         </ul>
     </div>
 
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Clinical Data Analyst / Domain Lead</span>
+            <span class="job-title">Data Analyst (Contractual)</span>
             <span class="date">Oct 2020 – Oct 2025</span>
         </div>
-        <span class="company">R K Nursing Home</span>
+        <span class="company">R K Nursing Home — Bangalore Rural, India</span>
         <ul>
-            <li>Coordinated and verified internal clinical data collection tables, ensuring information precision for mandatory healthcare reporting metrics.</li>
-            <li>Supervised patient file intake, medical record organization, and data workflows for <strong>200+ daily patient encounters</strong> across departments.</li>
-            <li>Designed text parsing and validation protocols to translate unstructured clinical documents into organized database columns.</li>
-            <li>Led the digital transformation of historical patient archives into electronic formats, reducing data retrieval delays by <strong>30%</strong>.</li>
+            <li>Managed end-to-end data quality assurance and healthcare operational governance workflows, converting historical paper archives into electronic health structures.</li>
+            <li>Standardized thousands of highly variable clinical data matrices via custom automated Python cleaning scripts, entirely removing manual logging errors.</li>
+            <li>Built custom Python/SQL processing pipelines and deployed Advanced Excel macros for operational auditing, financial reconciliation, and compliance reporting.</li>
+            <li>Designed unified relational database schemas that consolidated disparate patient registration log tables, therapeutic treatments, and hospital bill mappings.</li>
         </ul>
     </div>
 
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Clinical Operations Manager</span>
+            <span class="job-title">Operations Manager</span>
             <span class="date">Dec 2018 – Aug 2020</span>
         </div>
-        <span class="company">K Arogia Advisory Services</span>
+        <span class="company">K Arogia Advisory Services Pvt. Ltd. — Bengaluru, India</span>
         <ul>
-            <li>Managed clinical operational workflows and data coordination processes across network partner centers including Ramaiah, SRM, and KG Hospital.</li>
-            <li>Standardized record-capturing procedures to create smooth data transitions between frontline check-in desks and administration databases.</li>
+            <li>Oversaw critical operational workflows and digital patient tracking pipelines for post-discharge recovery continuity across strategic hospital networks.</li>
+            <li>Standardized secure communication data pipelines among active care coordinators, patients, and healthcare facilities to ensure perfect clinical logging consistency.</li>
         </ul>
     </div>
 
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Healthcare Operations Manager</span>
+            <span class="job-title">Operations Manager</span>
             <span class="date">Nov 2016 – Nov 2018</span>
         </div>
-        <span class="company">R K Nursing Home</span>
+        <span class="company">R K Nursing Home — Bengaluru, India</span>
         <ul>
-            <li>Directed patient administrative logistics and filing operations, reducing operational queue times by <strong>30%</strong> via refined data-entry standards.</li>
+            <li>Directed full-facility operations, staff resource scheduling, and administrative throughput optimization workflows across active clinical departments.</li>
+            <li>Designed and executed point-of-care patient management protocols, establishing the hospital's operational framework for modern digital transformations.</li>
         </ul>
     </div>
 
-    <h2>Core Competencies & Tools</h2>
-    <div class="tech-stack-grid">
-        <div>
-            <span class="tech-item">DATA MANAGEMENT:</span>
-            SQL, MongoDB (NoSQL), Polars, Data Warehousing Concepts.
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Customer Care Executive</span>
+            <span class="date">Nov 2015 – Nov 2016</span>
         </div>
-        <div>
-            <span class="tech-item">DATA COMPLIANCE:</span>
-            ABDM Record Formats, Data Privacy Management (DPDP Act 2023).
+        <span class="company">Cloudnine Group of Hospitals — Bengaluru, India</span>
+        <ul>
+            <li>Managed patient relations and point-of-care frontdesk service loops at a premier maternal healthcare network.</li>
+            <li>Identified major administrative delays caused by fragmented database fields across siloed delivery desks, inspiring a long-term professional technical pivot into clinical data engineering.</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">PRO & Operations Coordinator</span>
+            <span class="date">May 2012 – Nov 2015</span>
         </div>
-        <div>
-            <span class="tech-item">PROGRAMMING PLATFORMS:</span>
-            Python (Clinical Data Processing), Git/GitHub Version Control.
-        </div>
-        <div>
-            <span class="tech-item">OPERATIONS WORKFLOWS:</span>
-            EHR Mapping, High-Volume Patient Triage, Technical Documentation.
-        </div>
+        <span class="company">R K Nursing Home — Bangalore Rural, India</span>
+        <ul>
+            <li>Coordinated public relations pipelines, clinical department communication grids, and foundational administrative filing workflows.</li>
+        </ul>
     </div>
 
     <h2>Education & Certifications</h2>
     <ul>
-        <li><strong>BCA (Final Year):</strong> University of Mysore | Software & Database Applications Focus</li>
-        <li><strong>Executive Program in Generative AI for Healthcare:</strong> IIT Guwahati</li>
-        <li><strong>Medical Law Certification:</strong> IIT Kharagpur | Focus: Data Privacy & Governance</li>
-    </ul>
-</div>
-
-</body>
-</html>
+        <li><strong>BCA — Bachelor of Computer Applications:</strong> University of Mysore (Expected: 2026) <span class="badge">Final Semester · Capstone Synopsis Approved</span></li>
+        <li><strong>Advanced Data Science & AI Program:</strong> Learnbay <span class="badge">✅ Completed</span></li>
