@@ -21,6 +21,8 @@
         .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 20px; }
         .tech-item { font-weight: bold; color: #0284c7; margin-bottom: 5px; display: block; }
         .badge { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-left: 5px; display: inline-block; vertical-align: middle; }
+        .repo-links { background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 6px; padding: 12px; margin: 10px 0; font-size: 0.9rem; }
+        .repo-links a { color: #6b21a8; font-weight: 600; text-decoration: none; }
         @media print { body { background: white; margin: 0; padding: 0; } .cv-card { box-shadow: none; border: none; padding: 0; } }
     </style>
 </head>
@@ -29,46 +31,71 @@
 <div class="cv-card">
     <h1>NISAR AHMED</h1>
     <div class="contact-info">
-        Clinical Data Analyst & Healthcare Operations Specialist | Health-Tech Compliance<br>
+        Clinical Data Analyst | Healthcare Data Engineering | ABDM Compliance & Health-Tech Ops<br>
         📍 Bengaluru, Karnataka, India | 📞 +91 7019522735 | ✉️ <a href="mailto:nisarr.aahmed@gmail.com">nisarr.aahmed@gmail.com</a><br>
         🌐 <a href="https://github.io" target="_blank">nisar46.github.io/portfolio</a> | 🐙 <a href="https://github.com/nisar46" target="_blank">github.com/nisar46</a> | 🔗 <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank">linkedin.com/in/nisar-ahmed-8440763a3</a>
     </div>
 
     <h2>Professional Summary</h2>
-    <p>Clinical Data Analyst and Healthcare Ops Specialist with <strong>13+ years experience</strong> bridging clinical workflows and modern data infrastructure. Expert in standardizing variant EHR payloads into relational databases while enforcing compliance under the ABDM Framework and DPDP Act 2023. Fluent in both clinical and engineering domains, specializing in the electronic extraction, clean-up, and governance of high-volume medical datasets.</p>
+    <p>Clinical Data Analyst with <strong>13+ years of healthcare operations</strong> and 5+ years of healthcare data management experience [Master Context, 0.1.2]. Skilled in Python, SQL, ETL pipelines, Power BI, ABDM compliance, and healthcare data governance [Master Context, 0.1.2]. Built ABDM-compliant data ingestion systems and standardized 15,000+ patient records, enabling improved reporting accuracy, regulatory compliance, and operational efficiency [Master Context, 0.1.2].</p>
 
     <h2>Core Competencies & Tools</h2>
     <div class="tech-stack-grid">
         <div>
             <span class="tech-item">PROGRAMMING & DATA:</span>
-            Python, SQL, Polars, Regex, MongoDB, Relational Schemas, ETL Pipelines.
+            Python, SQL, Polars, Pandas, NumPy, Regex, MongoDB, Relational Schemas, ETL Pipelines, Data Modeling, Database Design, Data Transformation [Master Context, 0.1.2].
         </div>
         <div>
             <span class="tech-item">HEALTH COMPLIANCE:</span>
-            ABDM Workflows, DPDP Act 2023, EHR Standards, Patient Consent Governance.
+            ABDM 2.0, DPDP Act 2023, EHR, HL7, FHIR, Data Governance, Patient Consent Frameworks, Stakeholder Management, Data Validation [Master Context, 0.1.2].
         </div>
         <div>
             <span class="tech-item">ANALYTICS & BI:</span>
-            Advanced Excel (Macros/Auditing), Tableau, Power BI.
+            Power BI, Advanced Excel (Macros), Business Intelligence, Data Visualization, KPI Reporting, Dashboard Development, Statistical Analysis, Data Quality [Master Context, 0.1.2].
         </div>
         <div>
-            <span class="tech-item">AI & DEPLOYMENT:</span>
-            Generative AI, RAG (Retrieval-Augmented Generation), LLMs, NLP, Model Deployment.
+            <span class="tech-item">AI & RETRIEVAL:</span>
+            LLMs, RAG, Prompt Engineering, NLP, Generative AI, Machine Learning, Model Deployment, Llama3, Ollama, System Guardrails [Master Context, 0.1.2].
         </div>
     </div>
 
-    <h2>Ecosystem Projects</h2>
+    <h2>Key Projects</h2>
     
     <div class="job">
         <div class="job-header">
-            <span class="job-title">OmniIngest Ecosystem & Clinosyn OS</span>
+            <span class="job-title">OmniIngest Platform — Universal Ingestion Container & ABDM 2.0 Core</span>
             <span class="date">Nov 2025 – Present</span>
         </div>
-        <span class="company">Independent Architecture Projects</span>
+        <span class="company">Independent Research Project</span>
+        <div class="repo-links">
+            🔗 <strong>Repositories:</strong> 
+            <a href="https://github.com" target="_blank">OmniIngest-Clinical-Engine</a> | 
+            <a href="https://github.com" target="_blank">OmniIngest_Universal</a> [Master Context, 0.1.2]
+        </div>
         <ul>
-            <li><strong>OmniIngest (ABDM 2.0):</strong> Developed an automated clinical data ingestion layer built using Polars to parse and normalize unstructured EHR payloads with parallel bitwise patient consent validation filters under the DPDP Act.</li>
-            <li><strong>OmniIngest Universal:</strong> Refactored and scaled the core high-performance Python/Polars ETL pipeline beyond healthcare to support dynamic, multi-sector structured format translation.</li>
-            <li><strong>Clinosyn OS:</strong> Architecting a GenAI-driven clinical intelligence layer using Streamlit, LLMs, and an offline local RAG engine to query verified data tables safely decoupled from ingestion boundaries.</li>
+            <li>Built a secure, ABDM 2.0-compliant data ingestion core standardizing heterogeneous EHR payloads, 14-digit ABHA tokens, and explicit consent metadata strictly in accordance with DPDP Act 2023 mandates [Master Context, 0.1.2].</li>
+            <li>Scaled the core data architecture into a comprehensive 5-sector interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing manual cross-departmental data wrangling by an estimated 80% [Master Context, 0.1.2].</li>
+            <li>Engineered a real-time, asynchronous FastAPI ingress webhook listener fortified with AES-256-CBC decryption, enabling split-second operational floor transactions to stream securely into the centralized SQLite master database [Master Context, 0.1.2].</li>
+            <li>Designed a zero-bottleneck Hybrid Relational-JSON schema utilizing Polars LazyFrames, securely packing dynamic, polymorphic clinical variables into a single payload_vault column to mitigate 99.9% of rigid database schema crashes [Master Context, 0.1.2].</li>
+        </ul>
+    </div>
+
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Clinosyn Platform — Healthcare OS & Universal Conversational System</span>
+            <span class="date">2026 – Present</span>
+        </div>
+        <span class="company">Independent Research Project</span>
+        <div class="repo-links">
+            🔗 <strong>Repositories:</strong> 
+            <a href="https://github.com" target="_blank">Clinosyn-Healthcare-OS</a> | 
+            <a href="https://github.com" target="_blank">Clinosyn_Universal</a> [Master Context, 0.1.2]
+        </div>
+        <ul>
+            <li>Architected an offline, privacy-first Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline leveraging local Llama3 (via Ollama) to autonomously query both historic ABDM tables and live multi-sector transaction vaults [Master Context, 0.1.2].</li>
+            <li>Executed native json_extract() querying algorithms to translate conversational text prompts into optimized SQLite commands, enabling seamless contextual analysis directly against unstructured payload vaults while eliminating cloud-API token fees and severe hallucination risks [Master Context, 0.1.2].</li>
+            <li>Engineered a Streamlit-powered clinical operating terminal featuring real-time ingestion analytics, active patient PII masking arrays, and a validated 98.2% high-integrity FHIR pipeline processing success metric [Master Context, 0.1.2].</li>
+            <li>Integrated a comprehensive data governance suite equipped with an interactive, Rule 8.3 cascading cryptographic "Kill-Switch", capable of autonomously severing downstream data access to guarantee instant DPDP Act compliance demonstrations [Master Context, 0.1.2].</li>
         </ul>
     </div>
 
@@ -81,8 +108,9 @@
         </div>
         <span class="company">Remote / Technical R&D</span>
         <ul>
-            <li>Conducting systems engineering and architectural R&D on high-integrity medical database design, health-tech compliance frameworks, and local privacy firewalls.</li>
-            <li>Defined practical backend parsing and ingestion rules by analyzing FHIR/HL7 standards alongside National Health Authority (NHA) ABDM gateway specifications.</li>
+            <li>Conducting dedicated R&D on universal clinical data ingestion architectures and healthcare data privacy frameworks for the Indian regulatory context (ABDM + DPDP Act 2023) [Master Context, 0.1.2].</li>
+            <li>Developing OmniIngest Universal and Clinosyn Universal, scaling the core Python/Polars pipeline to ingest, filter, and parse multi-department JSON vaults conversationally via local LLMs [Master Context, 0.1.2].</li>
+            <li>Analyzed FHIR/HL7 interoperability standards and ABDM gateway specifications to translate complex clinical floor workflows into robust system database specifications [Master Context, 0.1.2].</li>
         </ul>
     </div>
 
@@ -93,61 +121,4 @@
         </div>
         <span class="company">R K Nursing Home — Bangalore Rural, India</span>
         <ul>
-            <li>Managed end-to-end data quality assurance and healthcare operational governance workflows, converting historical paper archives into electronic health structures.</li>
-            <li>Standardized thousands of highly variable clinical data matrices via custom automated Python cleaning scripts, entirely removing manual logging errors.</li>
-            <li>Built custom Python/SQL processing pipelines and deployed Advanced Excel macros for operational auditing, financial reconciliation, and compliance reporting.</li>
-            <li>Designed unified relational database schemas that consolidated disparate patient registration log tables, therapeutic treatments, and hospital bill mappings.</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <div class="job-header">
-            <span class="job-title">Operations Manager</span>
-            <span class="date">Dec 2018 – Aug 2020</span>
-        </div>
-        <span class="company">K Arogia Advisory Services Pvt. Ltd. — Bengaluru, India</span>
-        <ul>
-            <li>Oversaw critical operational workflows and digital patient tracking pipelines for post-discharge recovery continuity across strategic hospital networks.</li>
-            <li>Standardized secure communication data pipelines among active care coordinators, patients, and healthcare facilities to ensure perfect clinical logging consistency.</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <div class="job-header">
-            <span class="job-title">Operations Manager</span>
-            <span class="date">Nov 2016 – Nov 2018</span>
-        </div>
-        <span class="company">R K Nursing Home — Bengaluru, India</span>
-        <ul>
-            <li>Directed full-facility operations, staff resource scheduling, and administrative throughput optimization workflows across active clinical departments.</li>
-            <li>Designed and executed point-of-care patient management protocols, establishing the hospital's operational framework for modern digital transformations.</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <div class="job-header">
-            <span class="job-title">Customer Care Executive</span>
-            <span class="date">Nov 2015 – Nov 2016</span>
-        </div>
-        <span class="company">Cloudnine Group of Hospitals — Bengaluru, India</span>
-        <ul>
-            <li>Managed patient relations and point-of-care frontdesk service loops at a premier maternal healthcare network.</li>
-            <li>Identified major administrative delays caused by fragmented database fields across siloed delivery desks, inspiring a long-term professional technical pivot into clinical data engineering.</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <div class="job-header">
-            <span class="job-title">PRO & Operations Coordinator</span>
-            <span class="date">May 2012 – Nov 2015</span>
-        </div>
-        <span class="company">R K Nursing Home — Bangalore Rural, India</span>
-        <ul>
-            <li>Coordinated public relations pipelines, clinical department communication grids, and foundational administrative filing workflows.</li>
-        </ul>
-    </div>
-
-    <h2>Education & Certifications</h2>
-    <ul>
-        <li><strong>BCA — Bachelor of Computer Applications:</strong> University of Mysore (Expected: 2026) <span class="badge">Final Semester · Capstone Synopsis Approved</span></li>
-        <li><strong>Advanced Data Science & AI Program:</strong> Learnbay <span class="badge">✅ Completed</span></li>
+            <li>Developed SQL queries and ETL workflows to cleanse and transform patient data, standardizing 15,000+ records across clinical registries and eliminating manual entry errors [Master Context, 0.1.2].</li>
