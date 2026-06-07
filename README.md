@@ -3,7 +3,7 @@
 
 ![Healthcare](https://img.shields.io/badge/Domain-Healthcare_Operations-0284c7.svg?style=for-the-badge)
 ![Compliance](https://img.shields.io/badge/Compliance-DPDP_%26_ABDM-red.svg?style=for-the-badge)
-![Data Analytics](https://shields.io)
+
 
 ## 🏥 Professional Narrative
 I am a domain-first data specialist transitioning 13 years of active "ground-truth" clinical operations experience into the health-tech data space [Master Context, 0.1.2, 0.1.3]. My focus is helping engineering teams organize unstructured clinical records, eliminate database schema bottlenecks, and build high-performance, legally compliant data pipelines.
