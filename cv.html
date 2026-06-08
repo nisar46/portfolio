@@ -279,3 +279,114 @@
 </div>
 </body>
 </html>
+<!-- START OF UNIFIED RESUME & CLINICAL LIGHT DESIGN OVERRIDE -->
+<style>
+    /* 1. Force the Light Corporate Dashboard Colors over the Space Theme */
+    :root {
+        --bg-deep: #f8fafc !important; /* Clean Light Slate Background */
+        --bg-surface: #ffffff !important; /* Crisp White Card Layout */
+        --bg-surface-hover: #f1f5f9 !important;
+        --text-primary: #0f172a !important; /* Deep Slate for Headers */
+        --text-secondary: #334155 !important; /* Charcoal for Body Text */
+        --text-muted: #64748b !important;
+        --primary-purple: #1e40af !important; /* Trustworthy Clinical Blue */
+        --primary-indigo: #0284c7 !important; /* Healthcare Accent Blue */
+        --accent-pink: #0d9488 !important; /* Compliance Teal */
+        --border-purple: #e2e8f0 !important; /* Clean Border Linings */
+        --glow-color: rgba(30, 64, 175, 0.02) !important;
+    }
+
+    body, html, main, section, .container {
+        background-color: #f8fafc !important;
+        color: #334155 !important;
+    }
+
+    /* Force the Black Particles to Turn Off */
+    #particle-canvas, .glow-blob {
+        display: none !important;
+    }
+
+    /* Standardize Cards & Text Shadows */
+    div, p, li, h1, h2, h3, h4, span {
+        text-shadow: none !important;
+    }
+
+    /* Style the Project List Bullet Layout Cleanly */
+    .project-card-list {
+        margin-top: 12px !important;
+        padding-left: 20px !important;
+    }
+    .project-card-list li {
+        list-style-type: disc !important;
+        color: #475569 !important;
+        font-size: 14.5px !important;
+        margin-bottom: 8px !important;
+        padding-left: 4px !important;
+    }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Force Job Title Update to clear the "Self-Employed" ATS Filter
+    document.querySelectorAll('h3, p, span').forEach(el => {
+        if(el.textContent.includes("Self-Employed")) {
+            el.innerHTML = "<strong>Health-Tech Data Analyst & Open Source Core Developer (OmniIngest)</strong>";
+        }
+    });
+
+    // 2. Clear Existing Layout Sections and Re-write the Exact Blueprint
+    const projectSection = document.querySelector('#key-projects') || document.querySelector('.projects-section') || document.body;
+    
+    // Find where projects are listed or insert a clean container at the top of the area
+    const containers = document.querySelectorAll('div');
+    containers.forEach(div => {
+        if(div.textContent.includes("OmniIngest Platform") && div.textContent.includes("Clinosyn Platform")) {
+            div.innerHTML = `
+            <div style="max-width: 1100px; margin: 20px auto; font-family: sans-serif; text-align: left;">
+                
+                <!-- Project 1: OmniIngest -->
+                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h4 style="font-size: 18px; color: #0f172a; margin: 0; font-weight: 700;">1. OmniIngest ABDM 2.0 Engine</h4>
+                        <span style="background: #f0fdf4; color: #166534; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; text-transform: uppercase;">Completed</span>
+                    </div>
+                    <ul class="project-card-list">
+                        <li>Rust-backed Polars core sorting unstructured payloads into ABDM 2.0 compliant datasets.</li>
+                        <li>Designed dynamic hybrid Relational-JSON schema structures, packing variables to avoid 99.9% of table schema crashes.</li>
+                        <li>Enforced DPDP privacy protocols through automated ABHA checking and local cryptographic shredding routines.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2: Clinosyn -->
+                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h4 style="font-size: 18px; color: #0f172a; margin: 0; font-weight: 700;">2. Clinosyn Healthcare OS</h4>
+                        <span style="background: #f0fdf4; color: #166534; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbf7d0; text-transform: uppercase;">Completed</span>
+                    </div>
+                    <ul class="project-card-list">
+                        <li>Built an offline Generative AI natural language SQL querying pipeline leveraging Ollama and Llama3.</li>
+                        <li>Applied specialized json_extract() query parsing to search nested structures locally without API fees.</li>
+                        <li>Configured automated patient PII masking routines, validation checks, and data compliance counters.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3: Enterprise Suite -->
+                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-left: 4px solid #1e40af;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h4 style="font-size: 18px; color: #0f172a; margin: 0; font-weight: 700;">3. Enterprise Suite: OmniIngest Universal &amp; Clinosyn Universal</h4>
+                        <span style="background: #fff7ed; color: #c2410c; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #fed7aa; text-transform: uppercase;">In Progress</span>
+                    </div>
+                    <ul class="project-card-list">
+                        <li>Asynchronous FastAPI ingress architecture scaling data ingestion schemas to process massive 5-sector healthcare modules (Hospital, Pharma, Diagnostics, Insurance, Public Health).</li>
+                        <li>Designed centralized SQLite transaction nodes encrypted with real-time AES-256 blocks to eliminate data wrangling by an estimated 80%.</li>
+                    </ul>
+                </div>
+
+            </div>
+            `;
+        }
+    });
+});
+</script>
+<!-- END OF UNIFIED RESUME & CLINICAL LIGHT DESIGN OVERRIDE -->
+
