@@ -87,15 +87,6 @@ The cross-sector intelligence dashboard above OmniIngest Universal.
 
 > *"Bridging the gap between active clinical operations and practical digital data solutions."*
 
----
 
-## 🗂️ Repository Contents
-
-| File | URL | Description |
-|:---|:---|:---|
-| `index.html` | [/portfolio/](https://nisar46.github.io/portfolio) | Portfolio landing page |
-| `cv.html` | [/portfolio/cv.html](https://nisar46.github.io/portfolio/cv.html) | Interactive resume / CV |
-
----
 
 *© 2026 Nisar Ahmed · Licensed under MIT*
