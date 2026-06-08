@@ -5,7 +5,7 @@
 ![Compliance](https://img.shields.io/badge/Compliance-DPDP_%26_ABDM-red.svg?style=for-the-badge)
 ![Portfolio](https://img.shields.io/badge/Site-nisar46.github.io%2Fportfolio-black.svg?style=for-the-badge)
 
-> 🌐 **Live Site:** [nisar46.github.io/portfolio](https://nisar46.github.io/portfolio) &nbsp;|&nbsp; 📄 **[View CV](https://nisar46.github.io/portfolio/cv.html)**
+📄 **[View CV](https://nisar46.github.io/portfolio/cv.html)**
 
 ---
 
