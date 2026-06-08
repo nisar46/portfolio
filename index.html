@@ -1046,3 +1046,42 @@ h1, h2, h3, h4, p, span, div {
     text-shadow: none !important;
 }
 </style>
+
+<style>
+/* ==========================================================================
+   NISAR'S FINAL PORTFOLIO BACKGROUND FIX
+   ========================================================================== */
+body, 
+main, 
+#main-wrapper, 
+section, 
+.experience-section, 
+.timeline-section, 
+div[class*="background"], 
+div[class*="experience"] {
+    background-color: #f1f5f9 !important; /* Forces the whole dark page background to clean light gray */
+    background: #f1f5f9 !important;
+}
+
+/* Force the Background Card wrapper to turn crisp white */
+div:has(> h2), 
+.bg-white, 
+[class*="card"] {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+/* Force the timeline text descriptions to turn charcoal for easy reading */
+p, li, span, h3, h4, .text-muted, [class*="text"] {
+    color: #334155 !important;
+}
+
+/* Keep headers sharp and readable */
+h1, h2, .section-title {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+</style>
+
