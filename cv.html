@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed | Clinical Data Analyst & Healthcare Operations Specialist</title>
+    <title>Nisar Ahmed | Clinical Data Analyst CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #1e293b; max-width: 850px; margin: 40px auto; padding: 20px; background-color: #f8fafc; }
+        body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #1e293b; max-width: 850px; margin: 40px auto; padding: 20px; background-color: #f8fafc; }
         .cv-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-        h1 { color: #0284c7; margin-bottom: 5px; font-size: 2.2rem; text-transform: uppercase; }
+        h1 { color: #0284c7; margin-bottom: 5px; font-size: 2.2rem; text-transform: uppercase; font-weight: 700; letter-spacing: -0.5px; }
         .contact-info { color: #64748b; margin-bottom: 25px; border-bottom: 2px solid #38bdf8; padding-bottom: 15px; font-weight: 500; font-size: 0.95rem; }
         .contact-info a { color: #0284c7; text-decoration: none; }
-        h2 { color: #0f172a; margin-top: 35px; border-left: 5px solid #0284c7; padding-left: 15px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; }
+        h2 { color: #0f172a; margin-top: 35px; border-left: 5px solid #0284c7; padding-left: 15px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; font-weight: 700; }
         .job { margin-bottom: 30px; }
         .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
         .job-title { font-weight: 700; color: #0f172a; font-size: 1.15rem; }
         .company { color: #0284c7; font-weight: 600; font-size: 1rem; }
         .date { color: #64748b; font-weight: 500; font-size: 0.95rem; }
         ul { margin-top: 10px; padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 20px; }
-        .tech-item { font-weight: bold; color: #0284c7; margin-bottom: 5px; display: block; }
-        .badge { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-left: 5px; display: inline-block; vertical-align: middle; }
+        li { margin-bottom: 8px; font-size: 0.95rem; color: #334155; }
+        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #f1f5f9; padding: 20px; border-radius: 8px; margin-top: 20px; font-size: 0.95rem; }
+        .tech-item { font-weight: bold; color: #0284c7; margin-bottom: 5px; display: block; font-size: 0.9rem; letter-spacing: 0.5px; }
         .repo-links { background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 6px; padding: 12px; margin: 10px 0; font-size: 0.9rem; }
         .repo-links a { color: #6b21a8; font-weight: 600; text-decoration: none; }
-        @media print { body { background: white; margin: 0; padding: 0; } .cv-card { box-shadow: none; border: none; padding: 0; } }
+        .catalyst-box { font-size: 0.9rem; font-style: italic; color: #64748b; margin-top: 10px; border-left: 3px solid #cbd5e1; padding-left: 10px; background: #f8fafc; padding: 8px 12px; border-radius: 0 4px 4px 0; }
+        .status-badge { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; padding: 3px 8px; border-radius: 4px; margin-left: 10px; vertical-align: middle; }
+        .status-completed { background: #d1fae5; color: #065f46; border: 1px solid #34d399; }
+        .status-progress { background: #fef3c7; color: #92400e; border: 1px solid #fbbf24; }
+        @media print { body { background: white; margin: 0; padding: 0; } .cv-card { box-shadow: none; border: none; padding: 0; } .tech-stack-grid { background: transparent; padding: 0; border: none; gap: 10px; } }
     </style>
 </head>
 <body>
@@ -37,7 +41,7 @@
     </div>
 
     <h2>Professional Summary</h2>
-    <p>Clinical Data Analyst with <strong>13+ years of healthcare operations</strong> and <strong>5+ years of healthcare data management experience</strong>. Skilled in Python, SQL, ETL pipelines, Power BI, ABDM compliance, and healthcare data governance. Built ABDM-compliant data ingestion systems and standardized 15,000+ patient records, enabling improved reporting accuracy, regulatory compliance, and operational efficiency.</p>
+    <p style="font-size: 0.95rem; color: #334155;">Clinical Data Analyst with <strong>13+ years of healthcare operations</strong> and <strong>5+ years of healthcare data management experience</strong>. Skilled in Python, SQL, ETL pipelines, Power BI, ABDM compliance, and healthcare data governance. Built ABDM-compliant data ingestion systems and standardized <strong>15,000+ patient records</strong>, enabling improved reporting accuracy, regulatory compliance, and operational efficiency.</p>
 
     <h2>Core Competencies & Tools</h2>
     <div class="tech-stack-grid">
@@ -47,7 +51,7 @@
         </div>
         <div>
             <span class="tech-item">HEALTH COMPLIANCE:</span>
-            ABDM 2.0, DPDP Act 2023, EHR, HL7, FHIR, Data Governance, Patient Consent Frameworks, Stakeholder Management, Data Validation.
+            ABDM 2.0, DPDP Act 2023, EHR, HL7, FHIR R5, Data Governance, Patient Consent Frameworks, Stakeholder Management, Data Validation.
         </div>
         <div>
             <span class="tech-item">ANALYTICS & BI:</span>
@@ -63,38 +67,38 @@
     
     <div class="job">
         <div class="job-header">
-            <span class="job-title">OmniIngest Platform — Universal Ingestion Container & ABDM 2.0 Core</span>
+            <span class="job-title">OmniIngest Platform — Universal Ingestion Container & ABDM 2.0 Core <span class="status-badge status-completed">Completed</span></span>
             <span class="date">Nov 2025 – Present</span>
         </div>
         <span class="company">Independent Research Project</span>
         <div class="repo-links">
             🔗 <strong>Repositories:</strong> 
             <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank">OmniIngest-Clinical-Engine</a> | 
-            <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank">OmniIngest_Universal</a>
+            <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank">OmniIngest_Universal (In Progress)</a>
         </div>
         <ul>
             <li>Built a secure, ABDM 2.0-compliant data ingestion core standardizing heterogeneous EHR payloads, 14-digit ABHA tokens, and explicit consent metadata strictly in accordance with DPDP Act 2023 mandates.</li>
-            <li>Scaled the core data architecture into a comprehensive 5-sector interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing manual cross-departmental data wrangling by an estimated 80%.</li>
+            <li>Scaled the core data architecture into a comprehensive 5-sector interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing manual cross-departmental data wrangling by an estimated <strong>80%</strong>.</li>
             <li>Engineered a real-time, asynchronous FastAPI ingress webhook listener fortified with AES-256-CBC decryption, enabling split-second operational floor transactions to stream securely into the centralized SQLite master database.</li>
-            <li>Designed a zero-bottleneck Hybrid Relational-JSON schema utilizing Polars LazyFrames, securely packing dynamic, polymorphic clinical variables into a single payload_vault column to mitigate 99.9% of rigid database schema crashes.</li>
+            <li>Designed a zero-bottleneck Hybrid Relational-JSON schema utilizing Polars LazyFrames, securely packing dynamic, polymorphic clinical variables into a single payload_vault column to mitigate <strong>99.9%</strong> of rigid database schema crashes.</li>
         </ul>
     </div>
 
     <div class="job">
         <div class="job-header">
-            <span class="job-title">Clinosyn Platform — Healthcare OS & Universal Conversational System</span>
+            <span class="job-title">Clinosyn Platform — Healthcare OS & Universal Conversational System <span class="status-badge status-completed">Completed</span></span>
             <span class="date">2026 – Present</span>
         </div>
         <span class="company">Independent Research Project</span>
         <div class="repo-links">
             🔗 <strong>Repositories:</strong> 
             <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank">Clinosyn-Healthcare-OS</a> | 
-            <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank">Clinosyn_Universal</a>
+            <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank">Clinosyn_Universal (In Progress)</a>
         </div>
         <ul>
             <li>Architected an offline, privacy-first Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline leveraging local Llama3 (via Ollama) to autonomously query both historic ABDM tables and live multi-sector transaction vaults.</li>
             <li>Executed native json_extract() querying algorithms to translate conversational text prompts into optimized SQLite commands, enabling seamless contextual analysis directly against unstructured payload vaults while eliminating cloud-API token fees and severe hallucination risks.</li>
-            <li>Engineered a Streamlit-powered clinical operating terminal featuring real-time ingestion analytics, active patient PII masking arrays, and a validated 98.2% high-integrity FHIR pipeline processing success metric.</li>
+            <li>Engineered a Streamlit-powered clinical operating terminal featuring real-time ingestion analytics, active patient PII masking arrays, and a validated <strong>98.2%</strong> high-integrity FHIR pipeline processing success metric.</li>
             <li>Integrated a comprehensive data governance suite equipped with an interactive, Rule 8.3 cascading cryptographic "Kill-Switch", capable of autonomously severing downstream data access to guarantee instant DPDP Act compliance demonstrations.</li>
         </ul>
     </div>
@@ -121,7 +125,7 @@
         </div>
         <span class="company">R K Nursing Home — Bangalore Rural, India</span>
         <ul>
-            <li>Developed SQL queries and ETL workflows to cleanse and transform patient data, standardizing 15,000+ records across clinical registries and eliminating manual entry errors.</li>
+            <li>Developed SQL queries and ETL workflows to cleanse and transform patient data, standardizing <strong>15,000+ records</strong> across clinical registries and eliminating manual entry errors.</li>
             <li>Built Power BI dashboards tracking patient admissions, treatment progress, billing, and operational KPIs — enabling real-time visibility for hospital management.</li>
             <li>Automated compliance reporting using Python and Excel, reducing manual reporting effort and ensuring audit-readiness under ABDM and regulatory frameworks.</li>
             <li>Designed relational database schemas to consolidate patient registration, treatment, and billing data into a unified, queryable system for analytics consumption.</li>
@@ -163,7 +167,7 @@
         <ul>
             <li>Managed patient relations and critical healthcare communication workflows at Bangalore's premier maternity and childcare hospital chain.</li>
         </ul>
-        <p style="font-size: 0.9rem; font-style: italic; color: #64748b; margin-top: 5px; border-left: 3px solid #cbd5e1; padding-left: 10px;"><strong>The Catalyst:</strong> Observed firsthand how fragmented point-of-care data created administrative delays and compliance gaps — directly inspiring my career pivot toward ABDM interoperability, EHR standardization, and clinical data engineering.</p>
+        <div class="catalyst-box"><strong>The Catalyst:</strong> Observed firsthand how fragmented point-of-care data created administrative delays and compliance gaps — directly inspiring my career pivot toward ABDM interoperability, EHR standardization, and clinical data engineering.</div>
     </div>
 
     <div class="job">
@@ -180,7 +184,7 @@
 
     <h2>Education & Certifications</h2>
     <ul>
-        <li><strong>BCA — Bachelor of Computer Applications</strong> | University of Mysore | Status: Final Semester (Expected 2026)</li>
+        <li><strong>BCA — Bachelor of Computer Applications</strong> | University of Mysore | Status: Expected 2026</li>
         <li><strong>IBM Data Science Professional Certificate</strong> | IBM / Learnbay Institute | Status: Completed</li>
         <li><strong>Advanced Data Science & AI Program</strong> | Learnbay Institute | Status: Completed</li>
         <li><strong>Generative AI & LLM Workflows</strong> | E&ICT Academy, IIT Guwahati | Status: Completed</li>
