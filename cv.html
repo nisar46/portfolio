@@ -369,24 +369,68 @@ document.addEventListener("DOMContentLoaded", function() {
                         <li>Configured automated patient PII masking routines, validation checks, and data compliance counters.</li>
                     </ul>
                 </div>
+<!-- SYSTEM RE-ALIGNMENT MATRIX & LIGHT CLINICAL OVERRIDE -->
+<style>
+    /* 1. Safely Flip Theme Variables to Clinical Light Layout */
+    :root {
+        --bg-deep: #f8fafc !important; /* Crisp Light Slate Background */
+        --bg-surface: #ffffff !important; /* Pure White Card Surfaces */
+        --bg-surface-hover: #f1f5f9 !important;
+        --text-primary: #0f172a !important; /* Deep Slate Headings */
+        --text-secondary: #334155 !important; /* Sharp Charcoal Body Text */
+        --text-muted: #64748b !important;
+        --primary-purple: #1e40af !important; /* Trustworthy Clinical Navy Blue */
+        --primary-indigo: #0284c7 !important; /* Clear Accent Cyan Blue */
+        --accent-pink: #0d9488 !important; /* Legal Compliance Mint Teal */
+        --border-purple: #e2e8f0 !important; /* Clean Border Grid Layouts */
+        --glow-color: rgba(30, 64, 175, 0.02) !important;
+    }
 
-                <!-- Project 3: Enterprise Suite -->
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-left: 4px solid #1e40af;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <h4 style="font-size: 18px; color: #0f172a; margin: 0; font-weight: 700;">3. Enterprise Suite: OmniIngest Universal &amp; Clinosyn Universal</h4>
-                        <span style="background: #fff7ed; color: #c2410c; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; border: 1px solid #fed7aa; text-transform: uppercase;">In Progress</span>
-                    </div>
-                    <ul class="project-card-list">
-                        <li>Asynchronous FastAPI ingress architecture scaling data ingestion schemas to process massive 5-sector healthcare modules (Hospital, Pharma, Diagnostics, Insurance, Public Health).</li>
-                        <li>Designed centralized SQLite transaction nodes encrypted with real-time AES-256 blocks to eliminate data wrangling by an estimated 80%.</li>
-                    </ul>
-                </div>
+    /* 2. Global Canvas Neutralization */
+    body, html, main, section, .container, #main-wrapper {
+        background-color: #f8fafc !important;
+        color: #334155 !important;
+    }
 
-            </div>
-            `;
+    #particle-canvas, .glow-blob {
+        display: none !important;
+    }
+
+    div, p, li, h1, h2, h3, h4, span {
+        text-shadow: none !important;
+    }
+
+    /* 3. Style Badges to look like Medical Compliance Elements */
+    span:contains("Completed"), span:contains("COMPLETED") {
+        background-color: #f0fdf4 !important;
+        color: #166534 !important;
+        border: 1px solid #bbf7d0 !important;
+        padding: 2px 8px !important;
+        border-radius: 4px !important;
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+    }
+
+    span:contains("In Progress"), span:contains("IN PROGRESS") {
+        background-color: #fff7ed !important;
+        color: #c2410c !important;
+        border: 1px solid #fed7aa !important;
+        padding: 2px 8px !important;
+        border-radius: 4px !important;
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+    }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Force current job title alignment safely without touching container architecture
+    document.querySelectorAll('h3, p, span, div').forEach(el => {
+        if(el.textContent.includes("Self-Employed / Remote")) {
+            el.innerHTML = el.innerHTML.replace("Self-Employed / Remote", "Health-Tech Data Analyst & Open Source Core Developer (OmniIngest)");
         }
     });
 });
 </script>
-<!-- END OF UNIFIED RESUME & CLINICAL LIGHT DESIGN OVERRIDE -->
+<!-- END OF SYSTEM RE-ALIGNMENT MATRIX & LIGHT CLINICAL OVERRIDE -->
 
