@@ -3,7 +3,7 @@
 
 ![Healthcare](https://img.shields.io/badge/Domain-Healthcare_Operations-0284c7.svg?style=for-the-badge)
 ![Compliance](https://img.shields.io/badge/Compliance-DPDP_%26_ABDM-red.svg?style=for-the-badge)
-![Portfolio](https://img.shields.io/badge/Site-nisar46.github.io%2Fportfolio-black.svg?style=for-the-badge)
+
 
 📄 **[View CV](https://nisar46.github.io/portfolio/cv.html)**
 
