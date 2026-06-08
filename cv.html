@@ -195,4 +195,16 @@
 </body>
 </html>
 
+<script>
+/* ==========================================================================
+   NISAR'S LINKEDIN LINK INJECTION PATCH (PASTE AT THE VERY BOTTOM)
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('div').forEach(el => {
+        if(el.textContent.includes("://linkedin.com")) {
+            el.innerHTML = "🔗 <a href='https://://linkedin.com-8440763a3' target='_blank' style='color: #1e40af; text-decoration: none; font-weight: 600;'>://linkedin.com-8440763a3</a>";
+        }
+    });
+});
+</script>
             
