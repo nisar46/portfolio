@@ -3,263 +3,656 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed | Clinical Data Analyst & Health-Tech Engineer</title>
+    <title>Nisar Ahmed | Clinical Data Analyst & Health-Tech Developer</title>
     <!-- Modern Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CSS Reset & Variables */
+        /* CSS Reset & Variable System */
         :root {
-            --bg-color: #f8fafc;
-            --surface-color: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --secondary: #0ea5e9;
-            --border-color: #e2e8f0;
-            --success: #10b981;
-            --warning: #f59e0b;
+            --bg-deep: #05020c;
+            --bg-surface: rgba(18, 10, 32, 0.65);
+            --bg-surface-hover: rgba(26, 15, 46, 0.85);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --primary-purple: #a855f7;
+            --primary-indigo: #6366f1;
+            --accent-pink: #d946ef;
+            --border-purple: rgba(168, 85, 247, 0.2);
+            --border-purple-active: rgba(168, 85, 247, 0.5);
+            --glow-color: rgba(168, 85, 247, 0.15);
+            --transition-speed: 0.3s;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
-        h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
-        p { font-size: 1.05rem; color: var(--text-muted); }
-        a { text-decoration: none; color: var(--primary); transition: color 0.2s; }
-        a:hover { color: var(--primary-hover); }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-deep); 
+            color: var(--text-primary); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { 
+            background: rgba(168, 85, 247, 0.3); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(168, 85, 247, 0.6); }
+
+        /* Background Glow Blobs */
+        .glow-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--glow-color) 0%, rgba(5, 2, 12, 0) 70%);
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .blob-1 { top: -100px; right: -100px; }
+        .blob-2 { top: 40%; left: -200px; }
+        .blob-3 { bottom: -100px; right: -100px; }
+
+        /* Canvas Particle container */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
 
         /* Layout & Containers */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-        section { padding: 6rem 0; }
+        section { padding: 8rem 0 6rem 0; position: relative; z-index: 2; }
 
         /* Navbar */
-        .navbar { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-color); z-index: 1000; padding: 1rem 0; }
+        .navbar { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background: rgba(5, 2, 12, 0.75); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid var(--border-purple); 
+            z-index: 1000; 
+            padding: 1.25rem 0; 
+            transition: all var(--transition-speed);
+        }
+        .navbar.scrolled {
+            padding: 0.9rem 0;
+            background: rgba(5, 2, 12, 0.9);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); }
-        .logo span { color: var(--primary); }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--primary); }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); text-decoration: none; letter-spacing: -0.03em; }
+        .logo span { background: linear-gradient(135deg, var(--primary-purple), var(--accent-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+        .nav-links a { color: var(--text-secondary); font-weight: 500; font-size: 0.95rem; text-decoration: none; position: relative; transition: color var(--transition-speed); }
+        .nav-links a:hover { color: var(--primary-purple); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-pink));
+            transition: width var(--transition-speed) ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
 
         /* Buttons */
-        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease; }
-        .btn-primary { background-color: var(--primary); color: white; border: 2px solid var(--primary); box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); }
-        .btn-primary:hover { background-color: var(--primary-hover); border-color: var(--primary-hover); color: white; transform: translateY(-2px); box-shadow: 0 6px 8px -1px rgba(37, 99, 235, 0.3); }
-        .btn-outline { background-color: transparent; color: var(--text-main); border: 2px solid var(--border-color); }
-        .btn-outline:hover { border-color: var(--text-main); transform: translateY(-2px); }
+        .btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.6rem; 
+            padding: 0.8rem 1.8rem; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            cursor: pointer; 
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+        }
+        .btn-primary { 
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-indigo) 100%); 
+            color: white; 
+            border: none;
+            box-shadow: 0 4px 15px -3px rgba(168, 85, 247, 0.4); 
+        }
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 25px -3px rgba(168, 85, 247, 0.6); 
+        }
+        .btn-outline { 
+            background-color: transparent; 
+            color: var(--text-primary); 
+            border: 2px solid var(--border-purple); 
+        }
+        .btn-outline:hover { 
+            border-color: var(--primary-purple); 
+            background-color: rgba(168, 85, 247, 0.1);
+            transform: translateY(-2px); 
+        }
+        .btn-glow-cv {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+            border: 1.5px solid var(--primary-purple);
+            color: var(--text-primary);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+        }
+        .btn-glow-cv:hover {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-indigo) 100%);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
 
         /* Hero Section */
-        .hero { padding-top: 10rem; padding-bottom: 4rem; min-height: 80vh; display: flex; align-items: center; }
-        .hero-badge { display: inline-block; padding: 0.5rem 1rem; background: #eff6ff; color: var(--primary); border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1.5rem; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); color: var(--text-main); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.25rem; max-width: 700px; margin-bottom: 2.5rem; line-height: 1.8; }
-        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .hero { 
+            padding-top: 11rem; 
+            padding-bottom: 5rem; 
+            min-height: 95vh; 
+            display: flex; 
+            align-items: center; 
+            position: relative;
+        }
+        .hero-content { position: relative; z-index: 10; max-width: 850px; }
+        .hero-badge { 
+            display: inline-block; 
+            padding: 0.5rem 1.2rem; 
+            background: rgba(168, 85, 247, 0.1); 
+            color: var(--primary-purple); 
+            border: 1px solid var(--border-purple);
+            border-radius: 100px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            margin-bottom: 2rem; 
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .hero h1 { 
+            font-size: clamp(2.8rem, 6vw, 4.8rem); 
+            color: var(--text-primary); 
+            margin-bottom: 1.5rem; 
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary-purple) 20%, var(--accent-pink) 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { 
+            font-size: 1.25rem; 
+            color: var(--text-secondary);
+            margin-bottom: 3rem; 
+            line-height: 1.8; 
+            font-weight: 400;
+        }
+        .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 4rem; }
 
         /* Stats Bar */
-        .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-top: 4rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
-        .stat-item h3 { font-size: 2rem; color: var(--primary); margin-bottom: 0.25rem; }
-        .stat-item p { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .stats-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 2rem; 
+            background: var(--bg-surface); 
+            border: 1px solid var(--border-purple); 
+            border-radius: 16px; 
+            padding: 2.5rem 2rem; 
+            backdrop-filter: blur(12px);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4); 
+        }
+        .stat-item { text-align: center; }
+        .stat-item h3 { 
+            font-size: 2.8rem; 
+            background: linear-gradient(135deg, var(--text-primary), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem; 
+            font-weight: 800;
+        }
+        .stat-item p { 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            color: var(--text-muted);
+        }
 
         /* Section Headers */
-        .section-header { margin-bottom: 3rem; }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .section-header p { max-width: 600px; }
+        .section-header { margin-bottom: 4rem; text-align: center; }
+        .section-header h2 { 
+            font-size: 2.6rem; 
+            margin-bottom: 1rem; 
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-header p { max-width: 600px; margin: 0 auto; color: var(--text-muted); font-size: 1.1rem; }
 
         /* Badges */
-        .tech-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-        .tech-badge { padding: 0.35rem 0.85rem; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-muted); border-radius: 6px; font-size: 0.85rem; font-weight: 500; }
+        .tech-badges { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1.2rem; }
+        .tech-badge { 
+            padding: 0.4rem 0.9rem; 
+            background: rgba(168, 85, 247, 0.05); 
+            border: 1px solid var(--border-purple); 
+            color: var(--text-secondary); 
+            border-radius: 6px; 
+            font-size: 0.85rem; 
+            font-weight: 500; 
+            transition: all var(--transition-speed);
+        }
+        .tech-badge:hover {
+            border-color: var(--primary-purple);
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Competency Grid */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .comp-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-purple);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            transition: all var(--transition-speed);
+        }
+        .comp-card:hover {
+            border-color: var(--primary-purple);
+            background: var(--bg-surface-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -10px var(--glow-color);
+        }
+        .comp-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary-purple);
+        }
 
         /* Projects Grid */
-        .project-group-title { font-size: 1.5rem; margin-bottom: 1.5rem; padding-left: 1rem; border-left: 4px solid var(--primary); color: var(--text-main); }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
-        .project-card { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all 0.3s ease; display: flex; flex-direction: column; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: #cbd5e1; }
-        .project-status { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 100px; margin-bottom: 1rem; }
-        .status-completed { background: #d1fae5; color: #065f46; }
-        .status-wip { background: #fef3c7; color: #92400e; }
-        .project-card h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
-        .project-card p { font-size: 1rem; margin-bottom: 1.5rem; }
+        .project-group-title { 
+            font-size: 1.6rem; 
+            margin-bottom: 2rem; 
+            padding-left: 1rem; 
+            border-left: 4px solid var(--primary-purple); 
+            color: var(--text-primary); 
+            font-weight: 700;
+        }
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
+            gap: 2.2rem; 
+            margin-bottom: 5rem; 
+        }
+        .project-card { 
+            background: var(--bg-surface); 
+            border: 1px solid var(--border-purple); 
+            border-radius: 16px; 
+            padding: 2.5rem 2rem; 
+            transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1); 
+            display: flex; 
+            flex-direction: column; 
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--primary-indigo));
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+        }
+        .project-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.3); 
+            border-color: var(--border-purple-active); 
+        }
+        .project-card:hover::before { opacity: 1; }
+        .project-status { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.4rem; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            padding: 0.3rem 0.8rem; 
+            border-radius: 100px; 
+            margin-bottom: 1.5rem; 
+            align-self: flex-start;
+        }
+        .status-completed { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .status-wip { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+        .project-card h3 { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
+        .project-card p { font-size: 0.98rem; margin-bottom: 1.5rem; color: var(--text-secondary); }
         .project-features { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
-        .project-features li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--text-muted); }
-        .project-features li::before { content: '→'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+        .project-features li { position: relative; padding-left: 1.5rem; margin-bottom: 0.85rem; font-size: 0.95rem; color: var(--text-secondary); }
+        .project-features li::before { 
+            content: '✓'; 
+            position: absolute; 
+            left: 0; 
+            color: var(--primary-purple); 
+            font-weight: bold; 
+        }
         .project-links { margin-top: auto; }
 
         /* Timeline (Experience) */
-        .timeline { position: relative; border-left: 2px solid var(--border-color); padding-left: 2rem; margin-left: 1rem; }
-        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline { position: relative; border-left: 2px solid var(--border-purple); padding-left: 2.5rem; margin-left: 1rem; }
+        .timeline-item { position: relative; margin-bottom: 4rem; }
         .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-dot { position: absolute; left: -2.45rem; top: 0; width: 16px; height: 16px; background: white; border: 3px solid var(--primary); border-radius: 50%; }
-        .timeline-date { font-size: 0.875rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem; }
-        .timeline-item h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
-        .timeline-item h4 { font-size: 1rem; color: var(--text-muted); font-weight: 500; margin-bottom: 1rem; }
+        .timeline-dot { 
+            position: absolute; 
+            left: -3.05rem; 
+            top: 0.2rem; 
+            width: 18px; 
+            height: 18px; 
+            background: var(--bg-deep); 
+            border: 4px solid var(--primary-purple); 
+            border-radius: 50%; 
+            box-shadow: 0 0 10px var(--primary-purple);
+            transition: all var(--transition-speed);
+        }
+        .timeline-item:hover .timeline-dot {
+            background: var(--primary-purple);
+            transform: scale(1.3);
+            box-shadow: 0 0 20px var(--primary-purple);
+        }
+        .timeline-date { font-size: 0.9rem; font-weight: 700; color: var(--primary-purple); margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+        .timeline-item h3 { font-size: 1.4rem; margin-bottom: 0.25rem; font-weight: 700; }
+        .timeline-item h4 { font-size: 1.05rem; color: var(--text-muted); font-weight: 500; margin-bottom: 1.2rem; }
         .timeline-item ul { list-style: none; }
-        .timeline-item ul li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
-        .timeline-item ul li::before { content: '•'; position: absolute; left: 0; color: var(--text-muted); }
-        .catalyst-note { background: #eff6ff; border-left: 3px solid var(--primary); padding: 1rem; border-radius: 0 8px 8px 0; margin-top: 1rem; font-style: italic; font-size: 0.9rem; color: #1e3a8a; }
+        .timeline-item ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.65rem; color: var(--text-secondary); font-size: 0.98rem; }
+        .timeline-item ul li::before { content: '•'; position: absolute; left: 0.5rem; color: var(--primary-purple); font-weight: bold; }
+        .catalyst-note { 
+            background: rgba(168, 85, 247, 0.05); 
+            border-left: 3px solid var(--primary-purple); 
+            padding: 1.2rem; 
+            border-radius: 0 12px 12px 0; 
+            margin-top: 1.2rem; 
+            font-style: italic; 
+            font-size: 0.95rem; 
+            color: var(--text-secondary); 
+        }
+        .catalyst-note strong { color: var(--primary-purple); }
+
+        /* Credentials Cards */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+        .edu-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-purple);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            transition: all var(--transition-speed);
+        }
+        .edu-card:hover {
+            border-color: var(--primary-purple);
+            background: var(--bg-surface-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -10px var(--glow-color);
+        }
+        .edu-card h4 {
+            color: var(--primary-purple);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .edu-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .edu-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
 
         /* Footer */
-        footer { background: var(--surface-color); border-top: 1px solid var(--border-color); padding: 3rem 0; text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
-        .social-links a { font-size: 1.5rem; color: var(--text-muted); transition: color 0.2s, transform 0.2s; }
-        .social-links a:hover { color: var(--primary); transform: translateY(-3px); }
+        footer { 
+            background: rgba(3, 1, 8, 0.95); 
+            border-top: 1px solid var(--border-purple); 
+            padding: 4rem 0; 
+            text-align: center; 
+            position: relative;
+            z-index: 10;
+        }
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+        .social-links a { 
+            font-size: 1.7rem; 
+            color: var(--text-secondary); 
+            transition: all var(--transition-speed); 
+        }
+        .social-links a:hover { 
+            color: var(--primary-purple); 
+            transform: translateY(-5px) scale(1.1);
+            text-shadow: 0 0 10px var(--primary-purple);
+        }
+        footer p { font-size: 0.95rem; color: var(--text-muted); }
 
-        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.5rem; } }
+        /* Responsiveness */
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .hero h1 { font-size: 3rem; } 
+            section { padding: 5rem 0; }
+            .timeline { padding-left: 1.5rem; }
+            .timeline-dot { left: -2.05rem; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
+    <!-- Canvas Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="main-nav">
         <div class="container nav-content">
             <a href="#" class="logo">Nisar<span>Ahmed</span></a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="cv.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">View CV</a>
+                <a href="#education">Education &amp; Credentials</a>
+                <a href="cv.html" class="btn btn-glow-cv" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Interactive CV</a>
             </div>
         </div>
     </nav>
 
+    <!-- Glowing Background Orbs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <span class="hero-badge">Clinical Data Analyst & Health-Tech Engineer</span>
-            <h1>Bridging Clinical Operations with Modern Software Engineering.</h1>
-            <p>I build high-performance, legally compliant data architectures and intelligent AI pipelines. I leverage 13+ years of healthcare operations experience to engineer systems that eliminate bottlenecks and adhere strictly to ABDM 2.0 and DPDP Act standards.</p>
-            
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">Explore My Work</a>
-                <a href="mailto:nisarr.aahmed@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+            <div class="hero-content">
+                <span class="hero-badge">Clinical Data &amp; Compliance Engineering</span>
+                <h1>Hi, I am <span>Nisar Ahmed</span></h1>
+                <p>I merge <strong>13+ years of clinical operations experience</strong> with advanced data technologies. I build legally compliant, crash-proof clinical ingestion channels and local, privacy-first GenAI database query engines engineered to fit Indian digital health standards (ABDM 2.0 &amp; DPDP Act 2023).</p>
+                
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">See My Architectures <i class="fas fa-arrow-right"></i></a>
+                    <a href="cv.html" class="btn btn-outline"><i class="fas fa-file-invoice"></i> View Full CV</a>
+                    <a href="mailto:nisarr.aahmed@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
+                </div>
             </div>
 
+            <!-- Stats Dashboard Section -->
             <div class="stats-container">
                 <div class="stat-item">
-                    <h3>13+</h3>
+                    <h3 class="counter" data-target="13">0</h3>
                     <p>Years Ops Experience</p>
                 </div>
                 <div class="stat-item">
-                    <h3>15k+</h3>
-                    <p>Records Standardized</p>
+                    <h3 class="counter-k" data-target="15">0</h3>
+                    <p>Clinical Records Cleaned</p>
                 </div>
                 <div class="stat-item">
-                    <h3>99.9%</h3>
-                    <p>Schema Crash Mitigation</p>
+                    <h3 class="counter-pct" data-target="99.9">0</h3>
+                    <p>Database Crash Avoidance</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" style="background-color: white;">
+    <!-- About / Competencies Section -->
+    <section id="about">
         <div class="container">
             <div class="section-header">
-                <h2>About Me</h2>
-                <p>A domain-first specialist combining deep clinical workflow expertise with modern engineering tools.</p>
+                <h2>Domain &amp; Technical Capabilities</h2>
+                <p>Bridging ground-floor medical workflows with robust software architectures.</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                <div>
-                    <p style="margin-bottom: 1rem;">I am transitioning 13 years of active "ground-truth" clinical operations experience into the health-tech data space. My focus is helping engineering teams organize unstructured clinical records, eliminate database schema bottlenecks, and build high-performance data pipelines.</p>
-                    <p>I specialize in mapping real-world medical workflows to relational systems, ensuring information is standardized and fully compliant with national digital health standards (ABDM) and privacy acts (DPDP).</p>
+            <div class="comp-grid">
+                <!-- Competency 1 -->
+                <div class="comp-card">
+                    <h3><i class="fas fa-database"></i> Programming &amp; Data</h3>
+                    <p>Constructing clean pipelines and resilient databases tailored to dynamic clinic environments.</p>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">Polars (LazyFrames)</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">ETL Pipelines</span>
+                        <span class="tech-badge">JSON Structs</span>
+                    </div>
                 </div>
-                
-                <div>
-                    <h3 style="margin-bottom: 1rem;">Core Competencies</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-main);">Programming & Data</h4>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Python</span> <span class="tech-badge">SQL</span>
-                            <span class="tech-badge">Polars</span> <span class="tech-badge">SQLite</span>
-                            <span class="tech-badge">ETL Pipelines</span>
-                        </div>
+
+                <!-- Competency 2 -->
+                <div class="comp-card">
+                    <h3><i class="fas fa-brain"></i> AI &amp; Cognitive Retrieval</h3>
+                    <p>Designing completely offline, zero-cloud dependency Generative AI engines to protect patient confidentiality.</p>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Local Llama3</span>
+                        <span class="tech-badge">Ollama</span>
+                        <span class="tech-badge">RAG</span>
+                        <span class="tech-badge">NL-to-SQL</span>
+                        <span class="tech-badge">Guardrails</span>
                     </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-main);">AI & Retrieval</h4>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Local Llama3</span> <span class="tech-badge">Ollama</span>
-                            <span class="tech-badge">RAG</span> <span class="tech-badge">NL-to-SQL</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-main);">Compliance</h4>
-                        <div class="tech-badges">
-                            <span class="tech-badge">ABDM 2.0</span> <span class="tech-badge">DPDP Act 2023</span>
-                            <span class="tech-badge">FHIR R5</span> <span class="tech-badge">PII Masking</span>
-                        </div>
+                </div>
+
+                <!-- Competency 3 -->
+                <div class="comp-card">
+                    <h3><i class="fas fa-shield-alt"></i> Compliance &amp; Standards</h3>
+                    <p>Mapping clinical workflows directly to statutory health-tech standards and state legal mandates.</p>
+                    <div class="tech-badges">
+                        <span class="tech-badge">ABDM 2.0</span>
+                        <span class="tech-badge">DPDP Act 2023</span>
+                        <span class="tech-badge">FHIR R5</span>
+                        <span class="tech-badge">HL7 Standards</span>
+                        <span class="tech-badge">PII Masking</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <div class="section-header">
-                <h2>Engineering Architecture</h2>
-                <p>Systems built for speed, offline privacy, and rigorous compliance.</p>
+                <h2>Production Architectures</h2>
+                <p>Live, functional, open-source architectures standardizing and securing clinical records.</p>
             </div>
 
-            <h3 class="project-group-title">Healthcare Suite (Completed)</h3>
+            <!-- Suite 1 -->
+            <h3 class="project-group-title">Healthcare Core Suite (Completed)</h3>
             <div class="projects-grid">
                 
+                <!-- Project 1 -->
                 <div class="project-card">
                     <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
-                    <h3>OmniIngest ABDM 2.0</h3>
-                    <p>A high-performance clinical data middleware designed to solve the "Dark Data" crisis in healthcare.</p>
+                    <h3>OmniIngest ABDM 2.0 Engine</h3>
+                    <p>A type-safe clinical data ingestion middleware translating raw medical logs into standardized structures.</p>
                     <ul class="project-features">
-                        <li>Built a Rust-accelerated (Polars) data ingestion core standardizing unstructured EHR payloads into type-safe, ABDM-compliant streams.</li>
-                        <li>Designed a Hybrid Relational-JSON schema utilizing LazyFrames, safely packing polymorphic variables to mitigate <strong>99.9%</strong> of schema crashes.</li>
-                        <li>Enforced DPDP Rule 8.3 via autonomous PII shredding and a cascading cryptographic "Kill-Switch".</li>
+                        <li>Rust-backed Polars core sorting unstructured payloads into ABDM 2.0 compliant datasets.</li>
+                        <li>Designed dynamic hybrid Relational-JSON schema structures, packing variables to avoid <strong>99.9%</strong> of table schema crashes.</li>
+                        <li>Enforced DPDP privacy protocols through automated ABHA checking and local cryptographic shredding routines.</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Repository</a>
+                        <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" class="btn btn-outline btn-glow-cv"><i class="fab fa-github"></i> View Engine Repo</a>
                     </div>
                 </div>
 
+                <!-- Project 2 -->
                 <div class="project-card">
                     <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
                     <h3>Clinosyn Healthcare OS</h3>
-                    <p>An interactive clinical intelligence terminal acting as the secure AI top-layer over the OmniIngest database.</p>
+                    <p>An interactive operations terminal serving as a secure AI retrieval portal for historic registries.</p>
                     <ul class="project-features">
-                        <li>Architected an offline, privacy-first Natural Language-to-SQL Generative RAG pipeline leveraging local Llama3 to query historic tables.</li>
-                        <li>Executed native <code>json_extract()</code> querying algorithms to translate conversational prompts directly against unstructured vaults.</li>
-                        <li>Engineered active patient PII masking arrays achieving a validated <strong>98.2%</strong> high-integrity processing success metric.</li>
+                        <li>Built an offline Generative AI natural language SQL querying pipeline leveraging Ollama and Llama3.</li>
+                        <li>Applied specialized <code>json_extract()</code> query parsing to search nested structures locally without API fees.</li>
+                        <li>Configured automated patient PII masking routines, validation checks, and data compliance counters.</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Repository</a>
+                        <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" class="btn btn-outline btn-glow-cv"><i class="fab fa-github"></i> View OS Repo</a>
                     </div>
                 </div>
 
             </div>
 
-            <h3 class="project-group-title">Enterprise Universal Suite (In Progress)</h3>
+            <!-- Suite 2 -->
+            <h3 class="project-group-title">Enterprise Scaling (In Progress)</h3>
             <div class="projects-grid" style="margin-bottom: 0;">
                 
+                <!-- Project 3 -->
                 <div class="project-card">
-                    <span class="project-status status-wip"><i class="fas fa-hammer"></i> In Progress</span>
+                    <span class="project-status status-wip"><i class="fas fa-spinner fa-spin"></i> In Progress</span>
                     <h3>OmniIngest Universal</h3>
-                    <p>Scaling the core clinical architecture beyond healthcare to a 5-sector commercial interoperability framework.</p>
+                    <p>Expanding the ingestion core into a 5-sector commercial framework (Hospitals, Diagnostics, Pharma, Insurance, Public Health).</p>
                     <ul class="project-features">
-                        <li>Scaling the ingestion core for Hospital, Pharma, Diagnostics, Insurance, and Public Health, reducing data wrangling by an estimated <strong>80%</strong>.</li>
-                        <li>Engineering a real-time, asynchronous FastAPI ingress webhook listener fortified with AES decryption for split-second floor transactions.</li>
+                        <li>Configuring FastAPI asynchronous ingress ports with integrated AES-256 decryption.</li>
+                        <li>Accelerating raw tabular sorting steps to minimize cross-departmental processing time by <strong>80%</strong>.</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Repository</a>
+                        <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Repo</a>
                     </div>
                 </div>
 
+                <!-- Project 4 -->
                 <div class="project-card">
-                    <span class="project-status status-wip"><i class="fas fa-hammer"></i> In Progress</span>
+                    <span class="project-status status-wip"><i class="fas fa-spinner fa-spin"></i> In Progress</span>
                     <h3>Clinosyn Universal</h3>
-                    <p>The cross-sector enterprise intelligence dashboard operating above the OmniIngest Universal pipeline.</p>
+                    <p>The enterprise dashboard offering natural language querying and analytical summary views over the multi-sector databases.</p>
                     <ul class="project-features">
-                        <li>Building an intelligence layer for multi-sector GenAI queries, real-time analytics dashboards, and operational summaries.</li>
-                        <li>Syncing with the master database to enable conversational querying across all 5 data sectors without cloud dependencies.</li>
+                        <li>Developing cross-sector LLM queries enabling users to pull reports using normal conversational text.</li>
+                        <li>Integrating compliance audits, consent indicators, and automated reporting layouts.</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Repository</a>
+                        <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Repo</a>
                     </div>
                 </div>
 
@@ -267,109 +660,133 @@
         </div>
     </section>
 
-    <section id="experience" style="background-color: white;">
+    <!-- Experience Section -->
+    <section id="experience" style="background: rgba(10, 5, 22, 0.4);">
         <div class="container">
             <div class="section-header">
-                <h2>Professional Background</h2>
-                <p>Real-world hospital operations informing robust technical solutions.</p>
+                <h2>Clinical &amp; Analyst Background</h2>
+                <p>13+ years of hospital floor operations and healthcare data integration experience.</p>
             </div>
 
             <div class="timeline">
+                <!-- Exp 1 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Nov 2025 – Present</div>
-                    <h3>Independent Researcher | Healthcare Data & Interoperability</h3>
-                    <h4>Remote (Technical R&D)</h4>
+                    <h3>Independent Researcher | Healthcare Data &amp; Interoperability</h3>
+                    <h4>Remote (Technical R&amp;D)</h4>
                     <ul>
-                        <li>Conducting dedicated R&D on universal clinical data ingestion architectures and Indian data privacy frameworks (ABDM + DPDP Act 2023).</li>
-                        <li>Developing OmniIngest Universal and Clinosyn Universal pipelines via optimized local LLM structures.</li>
+                        <li>Conducting technical studies on universal clinical record processing and consent management structures matching Indian ABDM protocols.</li>
+                        <li>Coding the OmniIngest and Clinosyn universal platforms using Python, Polars LazyFrames, SQLite, and offline LLM schemas.</li>
+                        <li>Translating statutory privacy rules (DPDP Act) into functional DB code like automated data shredding and client access control gates.</li>
                     </ul>
                 </div>
 
+                <!-- Exp 2 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Oct 2020 – Oct 2025</div>
                     <h3>Data Analyst (Contractual)</h3>
                     <h4>R K Nursing Home — Bangalore Rural, India</h4>
                     <ul>
-                        <li>Developed targeted SQL queries and pipeline workflows standardizing 15,000+ records across registries.</li>
-                        <li>Built Power BI reporting dashboards tracking core operational throughput, admissions, and metrics.</li>
-                        <li>Automated local compliance monitoring using Python scripts, ensuring ongoing healthcare system audit readiness.</li>
+                        <li>Designed SQL queries, database structures, and ETL pipelines to manage patient registries, standardizing <strong>15,000+ files</strong>.</li>
+                        <li>Created Power BI operational dashboard reports, providing managers with real-time throughput metrics.</li>
+                        <li>Developed Python audit code that scanned records for entry issues, helping maintain compliance and data quality.</li>
+                        <li>Transcoded clinical workflow requirements into specifications for the OmniIngest ingestion pipeline.</li>
                     </ul>
                 </div>
 
+                <!-- Exp 3 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Dec 2018 – Aug 2020</div>
                     <h3>Operations Manager</h3>
                     <h4>K Arogia Advisory Services Pvt. Ltd. — Bengaluru, India</h4>
                     <ul>
-                        <li>Managed end-to-end operational workflows and patient tracking pipelines for post-discharge care.</li>
-                        <li>Coordinated digital tracking of patient care plans across remote care teams.</li>
+                        <li>Oversaw post-discharge tracking tables and client monitoring databases for a health-tech services company.</li>
+                        <li>Coordinated remote patient monitoring tables and care plans across teams, minimizing follow-up gaps.</li>
+                        <li>Standardized communications data logs, syncing telehealth metrics into the central coordination database.</li>
                     </ul>
                 </div>
 
+                <!-- Exp 4 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Nov 2016 – Nov 2018</div>
                     <h3>Operations Manager</h3>
                     <h4>R K Nursing Home — Bangalore Rural, India</h4>
                     <ul>
-                        <li>Managed full-facility daily operations, staff coordination, and patient throughput workflows.</li>
+                        <li>Directed daily hospital operations, department scheduling, vendor invoicing, and patient admission flows.</li>
+                        <li>Redesigned administrative workflow pipelines, reducing delays and increasing daily throughput.</li>
                     </ul>
                 </div>
 
+                <!-- Exp 5 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Nov 2015 – Nov 2016</div>
                     <h3>Customer Care Executive</h3>
                     <h4>Cloudnine Group of Hospitals — Bengaluru, India</h4>
                     <ul>
-                        <li>Managed patient relations and critical healthcare communication workflows at a premier hospital chain.</li>
+                        <li>Managed client communication registries and patient reception tables for a premier hospital branch.</li>
                     </ul>
                     <div class="catalyst-note">
-                        <strong>The Catalyst:</strong> Observed firsthand how fragmented point-of-care data created severe administrative delays and compliance gaps, directly inspiring my career pivot toward ABDM interoperability and clinical data engineering.
+                        <strong>The Catalyst:</strong> Witnessing the clinical delays and tracking issues caused by manual data entries inspired my career pivot towards ABDM interoperability and clinical database development.
                     </div>
+                </div>
+
+                <!-- Exp 6 (New / Restored) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">May 2012 – Nov 2015</div>
+                    <h3>PRO &amp; Operations Coordinator</h3>
+                    <h4>R K Nursing Home — Bangalore Rural, India</h4>
+                    <ul>
+                        <li>Managed front-end patient relations, admissions registries, and ledger indexing across hospital wings.</li>
+                        <li>Supervised manual data ledgers, laying structural foundations for future digital transition and patient records archiving.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education">
         <div class="container">
             <div class="section-header">
-                <h2>Education & Credentials</h2>
+                <h2>Education &amp; Credentials</h2>
+                <p>Academic foundations and health-tech specialized certifications.</p>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                
-                <div style="background: white; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <h4 style="color: var(--primary); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem;">Degree</h4>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Bachelor of Computer Applications (BCA)</h3>
-                    <p style="font-size: 0.95rem;">University of Mysore | Expected 2026</p>
+            
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h4>BCA Degree</h4>
+                    <h3>Bachelor of Computer Applications</h3>
+                    <p>University of Mysore | Expected 2026</p>
                 </div>
 
-                <div style="background: white; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <h4 style="color: var(--primary); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem;">Executive Certification</h4>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Medical Law & Ethics (DPDP Act)</h3>
-                    <p style="font-size: 0.95rem;">IIT Kharagpur (NPTEL)</p>
+                <div class="edu-card">
+                    <h4>Legal &amp; Policy</h4>
+                    <h3>Medical Law &amp; Ethics (DPDP Act)</h3>
+                    <p>IIT Kharagpur (NPTEL)</p>
                 </div>
 
-                <div style="background: white; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <h4 style="color: var(--primary); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem;">Executive Certification</h4>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Generative AI & LLM Workflows</h3>
-                    <p style="font-size: 0.95rem;">E&ICT Academy, IIT Guwahati</p>
+                <div class="edu-card">
+                    <h4>Machine Learning</h4>
+                    <h3>Generative AI &amp; LLM Workflows</h3>
+                    <p>E&amp;ICT Academy, IIT Guwahati</p>
                 </div>
 
-                <div style="background: white; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <h4 style="color: var(--primary); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.5rem;">Certification</h4>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">IBM Data Science Professional</h3>
-                    <p style="font-size: 0.95rem;">IBM / Learnbay Institute</p>
+                <div class="edu-card">
+                    <h4>Data Science</h4>
+                    <h3>IBM Data Science Professional</h3>
+                    <p>IBM / Learnbay Institute</p>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="social-links">
@@ -377,10 +794,229 @@
                 <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="mailto:nisarr.aahmed@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
-            <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: var(--text-main);">Nisar Ahmed</h3>
-            <p>Clinical Data Analyst & Health-Tech Engineer &copy; 2026</p>
+            <p style="margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 700; font-size: 1.1rem;">Nisar Ahmed</p>
+            <p>Clinical Data Analyst &amp; Health-Tech Developer &copy; 2026. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Interactive Canvas & Animation Scripts -->
+    <script>
+        // Navbar Scrolled Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Interactive Canvas Particle Background
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+        const colors = ['#a855f7', '#6366f1', '#d946ef'];
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 120
+        };
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+
+            update() {
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                // Mouse interaction
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                        this.x += 2;
+                    }
+                    if (mouse.x > this.x && this.x > this.size * 10) {
+                        this.x -= 2;
+                    }
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                        this.y += 2;
+                    }
+                    if (mouse.y > this.y && this.y > this.size * 10) {
+                        this.y -= 2;
+                    }
+                }
+
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.width * canvas.height) / 18000;
+            numberOfParticles = Math.min(numberOfParticles, 80); // Cap it
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.4) - 0.2;
+                let directionY = (Math.random() * 0.4) - 0.2;
+                let color = colors[Math.floor(Math.random() * colors.length)];
+
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < (canvas.width / 7)) {
+                        opacityValue = 1 - (distance / 120);
+                        ctx.strokeStyle = `rgba(168, 85, 247, ${opacityValue * 0.15})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        init();
+        animate();
+
+        // Animate Counters
+        const runCounters = () => {
+            // Standard integers
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let count = 0;
+                const speed = 20; // Lower is faster
+                const increment = Math.ceil(target / speed);
+                
+                const updateCount = () => {
+                    count += increment;
+                    if (count >= target) {
+                        counter.innerText = target + '+';
+                    } else {
+                        counter.innerText = count;
+                        setTimeout(updateCount, 40);
+                    }
+                };
+                updateCount();
+            });
+
+            // Counters ending with 'k+'
+            const countersK = document.querySelectorAll('.counter-k');
+            countersK.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let count = 0;
+                const speed = 15;
+                const increment = Math.ceil(target / speed);
+                
+                const updateCount = () => {
+                    count += increment;
+                    if (count >= target) {
+                        counter.innerText = target + 'k+';
+                    } else {
+                        counter.innerText = count;
+                        setTimeout(updateCount, 50);
+                    }
+                };
+                updateCount();
+            });
+
+            // Float percentage counters
+            const countersPct = document.querySelectorAll('.counter-pct');
+            countersPct.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                let count = 0;
+                const speed = 25;
+                const increment = target / speed;
+                
+                const updateCount = () => {
+                    count += increment;
+                    if (count >= target) {
+                        counter.innerText = target.toFixed(1) + '%';
+                    } else {
+                        counter.innerText = count.toFixed(1) + '%';
+                        setTimeout(updateCount, 30);
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Scroll observer for counters trigger
+        let animated = false;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    runCounters();
+                    animated = true;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats-container'));
+    </script>
 </body>
 </html>
