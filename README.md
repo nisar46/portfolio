@@ -58,7 +58,7 @@ An interactive clinical intelligence terminal acting as the secure AI top-layer 
 
 ### 🚧 Enterprise Universal Suite — In Progress (Independent Research)
 
-> Projects 3 & 4 evolve the healthcare pipeline to a cross-sector commercial scale. Currently at README/architecture stage with active development ongoing.
+> Projects 3 & 4 evolve the healthcare pipeline to a cross-sector commercial scale. Currently at architecture stage with active development ongoing.
 
 #### 3. OmniIngest Universal
 Scaling the core clinical ingestion engine beyond healthcare to a 5-sector interoperability framework.
