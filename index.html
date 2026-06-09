@@ -1172,3 +1172,32 @@ strong, code {
     font-family: inherit !important;
 }
 </style>
+<!-- START OF UNIFIED SYSTEM SYNC SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Remove Machine Learning and enforce clean GenAI tags
+    document.querySelectorAll('div, span, li').forEach(el => {
+        if (el.textContent.includes("Machine Learning")) {
+            el.innerHTML = el.innerHTML.replace("Machine Learning,", "");
+            el.innerHTML = el.innerHTML.replace("Machine Learning", "");
+        }
+    });
+
+    // 2. Automatically sync your current job title to match your Resume and cv.html
+    document.querySelectorAll('h3, h4, div, p, span').forEach(el => {
+        if (el.textContent.includes("Independent Researcher | Healthcare Data")) {
+            el.innerHTML = el.innerHTML.replace(
+                "Independent Researcher | Healthcare Data & Interoperability", 
+                "Health-Tech Data Analyst & Open Source Core Developer (OmniIngest)"
+            );
+        }
+        if (el.textContent.includes("Remote (Technical R&D)")) {
+            el.innerHTML = el.innerHTML.replace(
+                "Remote (Technical R&D)", 
+                "OmniIngest Open Source Ecosystem | Remote"
+            );
+        }
+    });
+});
+</script>
+<!-- END OF UNIFIED SYSTEM SYNC SCRIPT -->
