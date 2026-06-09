@@ -1201,3 +1201,22 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <!-- END OF UNIFIED SYSTEM SYNC SCRIPT -->
+<!-- FORCE RESUME SYNC FOR INDEX.HTML HOME PAGE -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Target the main title heading directly
+    document.querySelectorAll('h3').forEach(el => {
+        if (el.textContent.includes("Independent Researcher")) {
+            el.textContent = "Health-Tech Data Analyst & Open Source Core Developer (OmniIngest)";
+        }
+    });
+
+    // 2. Target the sub-heading location text directly
+    document.querySelectorAll('div, p, span').forEach(el => {
+        if (el.textContent.trim() === "Remote (Technical R&D)") {
+            el.innerHTML = "<strong>OmniIngest Open Source Ecosystem | Remote</strong>";
+        }
+    });
+});
+</script>
+<!-- END OF FORCE RESUME SYNC -->
