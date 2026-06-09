@@ -3,247 +3,695 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed | Extended Interactive CV</title>
+    <title>Nisar Ahmed | Clinical Data Analyst CV</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        /* CSS Variables - Light Theme */
         :root {
-            --bg-dark: #0f172a;
-            --card-dark: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-blue: #0284c7;
+            --bg-color: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-card: #f8fafc;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --primary-purple: #0284c7; /* Mapped to blue for consistency */
+            --primary-indigo: #0ea5e9;
+            --accent-pink: #38bdf8;
+            --border-purple: #e2e8f0;
+            --border-purple-active: #cbd5e1;
+            --glow-color: rgba(2, 132, 199, 0.1);
             --accent-green: #10b981;
-            --badge-purple: rgba(139, 92, 246, 0.15);
-            --badge-text: #c084fc;
+            --accent-orange: #f59e0b;
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
         }
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Calibri', 'Segoe UI', -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-primary); 
+            line-height: 1.6;
+            padding: 40px 20px;
+            background-image: radial-gradient(circle at 50% 0%, #e0f2fe 0%, transparent 50%),
+                              radial-gradient(circle at 100% 100%, #f3e8ff 0%, transparent 50%);
+            background-attachment: fixed;
         }
-        .navbar {
+
+        /* CV Card Container (Interactive Mode) */
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-purple);
+            border-radius: 24px;
+            padding: 4rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        /* Top Bar Options */
+        .top-options {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-purple);
+            padding-bottom: 1.5rem;
         }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-        .logo span { color: var(--accent-blue); }
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text-main); }
-        .btn-cv-nav {
-            background-color: var(--accent-blue);
-            color: #fff !important;
-            padding: 6px 16px;
-            border: 1px solid var(--accent-blue);
-            border-radius: 6px;
-        }
-        .cv-header-section {
-            padding: 50px 8% 30px 8%;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .cv-header-section h2 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .cv-header-section .subtitle {
-            font-size: 11.5pt;
-            font-weight: bold;
-            color: var(--text-muted);
-            margin: 0 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .cv-header-section .contact-meta {
-            font-size: 9pt;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-        .cv-header-section .contact-meta a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .cv-header-section .contact-meta a:hover { text-decoration: underline; }
-        .container { max-width: 940px; margin: 0 auto; padding: 0 8% 60px 8%; }
-        h3 {
-            font-size: 1.4rem;
-            margin: 40px 0 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 6px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: var(--text-main);
-        }
-        .job-card {
-            background-color: var(--card-dark);
-            padding: 22px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 2px;
-            color: var(--text-main);
-        }
-        .card-sub {
-            font-style: italic;
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
-        ul { margin: 0; padding-left: 18px; color: var(--text-muted); }
-        li { margin-bottom: 5px; text-align: justify; font-size: 0.95rem; }
         .btn-back {
-            display: inline-block;
-            color: var(--accent-blue);
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             transition: color 0.2s;
         }
-        .btn-back:hover { color: #38bdf8; }
+        .btn-back:hover { color: var(--primary-purple); }
+
+        .btn-print {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-indigo) 100%);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px -3px rgba(2, 132, 199, 0.4);
+            transition: all 0.2s;
+        }
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px -3px rgba(2, 132, 199, 0.6);
+        }
+
+        /* CV Header */
+        .cv-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--primary-purple);
+            padding-bottom: 2rem;
+        }
+        .cv-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--primary-purple);
+        }
+        .cv-header .subtitle {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover { color: var(--primary-purple); }
+
+        /* CV Sections */
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid var(--primary-purple);
+            padding-left: 1rem;
+            font-weight: 700;
+        }
+
+        p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; }
+
+        /* Skills Grid */
+        .skills-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-top: 1rem;
+        }
+        .skill-row {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .skill-row:last-child { margin-bottom: 0; }
+        .skill-cat {
+            font-weight: 700;
+            color: var(--text-primary);
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        .skill-items {
+            color: var(--text-secondary);
+        }
+
+        /* Projects Section */
+        .project-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .project-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .project-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        .project-links {
+            background: #ffffff;
+            border: 1px solid var(--border-purple);
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin-top: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .project-links a {
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .project-links a:hover { text-decoration: underline; }
+
+        .status-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+        }
+        .status-completed { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .status-wip { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+        ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+        li { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem; line-height: 1.6; }
+
+        /* Experience Section */
+        .job-block {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .job-block:last-child { margin-bottom: 0; }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .job-company {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+        .job-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .catalyst-box {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 0.8rem;
+            border-left: 3px solid var(--primary-purple);
+            padding-left: 0.8rem;
+            background: rgba(2, 132, 199, 0.05);
+            padding: 0.8rem 1rem;
+            border-radius: 0 6px 6px 0;
+        }
+        .catalyst-box strong { color: var(--primary-purple); }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .edu-item strong {
+            color: var(--text-primary);
+        }
+
+        /* Snapshot Block */
+        .snapshot-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 12px;
+            padding: 1.8rem;
+            font-size: 0.95rem;
+        }
+        .snapshot-container p {
+            margin-bottom: 0.6rem;
+        }
+        .snapshot-container p:last-child { margin-bottom: 0; }
+        .snapshot-container strong {
+            color: var(--primary-purple);
+        }
+
+        /* Print Media Style Overrides (ATS-Friendly layout) */
+        @media print {
+            body {
+                background: white !important;
+                color: #111 !important;
+                font-family: 'Inter', 'Segoe UI', Arial, sans-serif !important;
+                font-size: 10pt !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .cv-container {
+                max-width: 210mm !important; /* A4 width */
+                margin: 0 auto !important;
+                background: #fff !important;
+                border: none !important;
+                padding: 24px 40px 28px !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                backdrop-filter: none !important;
+            }
+            .cv-header {
+                text-align: center !important;
+                border-bottom: 1.8px solid #111 !important;
+                padding-bottom: 9px !important;
+                margin-bottom: 10px !important;
+            }
+            .cv-header h1 {
+                font-size: 22pt !important;
+                font-weight: 700 !important;
+                color: #111 !important;
+                letter-spacing: -0.3px !important;
+                background: none !important;
+                -webkit-text-fill-color: initial !important;
+                margin-bottom: 2px !important;
+            }
+            .cv-header .subtitle {
+                font-size: 10pt !important;
+                font-weight: 500 !important;
+                color: #222 !important;
+                margin-bottom: 6px !important;
+            }
+            .contact-info {
+                font-size: 8.2pt !important;
+                color: #333 !important;
+                line-height: 1.7 !important;
+                gap: 0.8rem !important;
+            }
+            .contact-info a {
+                color: #111 !important;
+            }
+            h2 {
+                font-size: 9.5pt !important;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.8px !important;
+                color: #111 !important;
+                border-bottom: 1.4px solid #111 !important;
+                border-left: none !important;
+                padding-left: 0 !important;
+                padding-bottom: 2px !important;
+                margin-top: 15px !important;
+                margin-bottom: 7px !important;
+            }
+            p {
+                font-size: 9.3pt !important;
+                line-height: 1.66 !important;
+                color: #1a1a1a !important;
+            }
+            .skills-container {
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                margin-top: 0 !important;
+            }
+            .skill-row {
+                font-size: 9pt !important;
+                line-height: 1.7 !important;
+                color: #1a1a1a !important;
+                margin-bottom: 3px !important;
+            }
+            .skill-cat {
+                color: #111 !important;
+                font-weight: 700 !important;
+            }
+            .skill-items {
+                color: #1a1a1a !important;
+            }
+            .project-block {
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                margin-bottom: 8px !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .project-header {
+                margin-bottom: 1px !important;
+            }
+            .project-title {
+                font-size: 9.8pt !important;
+                font-weight: 700 !important;
+                color: #111 !important;
+            }
+            .project-meta {
+                font-size: 8.2pt !important;
+                color: #555 !important;
+            }
+            .project-links {
+                display: none !important; /* Hide repo links bar in print or make it simple */
+            }
+            .status-badge {
+                border: none !important;
+                background: transparent !important;
+                color: #111 !important;
+                font-weight: 700 !important;
+                font-size: 8pt !important;
+                padding: 0 !important;
+                margin-left: 4px !important;
+            }
+            .status-badge::before {
+                content: '(';
+            }
+            .status-badge::after {
+                content: ')';
+            }
+            ul {
+                padding-left: 16px !important;
+                margin-top: 2px !important;
+            }
+            li {
+                font-size: 8.8pt !important;
+                color: #1a1a1a !important;
+                line-height: 1.60 !important;
+                margin-bottom: 2px !important;
+            }
+            .job-block {
+                margin-bottom: 8px !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .job-header {
+                margin-bottom: 2px !important;
+            }
+            .job-title {
+                font-size: 9.8pt !important;
+                font-weight: 700 !important;
+                color: #111 !important;
+            }
+            .job-company {
+                font-size: 9pt !important;
+                font-weight: 700 !important;
+                color: #111 !important;
+                margin-bottom: 0 !important;
+                display: inline-block;
+            }
+            .job-company::before {
+                content: ' | ';
+            }
+            .job-meta {
+                font-size: 8.5pt !important;
+                color: #444 !important;
+            }
+            .catalyst-box {
+                font-size: 8.5pt !important;
+                color: #444 !important;
+                font-style: italic !important;
+                margin-top: 3px !important;
+                padding-left: 4px !important;
+                border-left: 2px solid #bbb !important;
+                background: transparent !important;
+                padding: 0 !important;
+            }
+            .catalyst-box strong {
+                color: #111 !important;
+            }
+            .edu-item {
+                font-size: 9pt !important;
+                line-height: 1.65 !important;
+                color: #1a1a1a !important;
+                margin-bottom: 4px !important;
+            }
+            .edu-item strong {
+                color: #111 !important;
+            }
+            .snapshot-container {
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                font-size: 8.8pt !important;
+                line-height: 1.70 !important;
+                color: #1a1a1a !important;
+            }
+            .snapshot-container p {
+                margin-bottom: 1px !important;
+            }
+            .snapshot-container strong {
+                color: #111 !important;
+            }
+            @page {
+                margin: 8mm 10mm;
+                size: A4;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="logo">Nisar<span>Ahmed</span></div>
-    <div class="nav-links">
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#certifications">Certifications</a>
-        <a href="index.html" class="btn-cv-nav">&larr; Main Portfolio</a>
+    <div class="cv-container">
+        <!-- Top Options (Navigation & Print) -->
+        <div class="top-options no-print">
+            <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <button class="btn-print" onclick="window.print()"><i class="fas fa-print"></i> Save / Print PDF</button>
+        </div>
+
+        <!-- Header -->
+        <div class="cv-header">
+            <h1>Nisar Ahmed</h1>
+            <div class="subtitle">Clinical Data Analyst | Healthcare Data Engineering | ABDM Compliance &amp; Health-Tech Ops</div>
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</span>
+                <span><i class="fas fa-phone"></i> +91 7019522735</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:nisarr.aahmed@gmail.com">nisarr.aahmed@gmail.com</a></span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank">linkedin.com/in/nisar-ahmed-8440763a3</a></span>
+                <span><i class="fas fa-globe"></i> <a href="https://nisar46.github.io/portfolio" target="_blank">nisar46.github.io/portfolio</a></span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <h2>Professional Summary</h2>
+        <p>Results-driven <strong>Clinical Data Analyst</strong> with <strong>13+ years of healthcare operations</strong> and <strong>5+ years of hands-on healthcare data management and analytics experience</strong>. Proven expertise in <strong>Python, SQL, ETL pipelines, Power BI, Pandas, clinical informatics</strong>, and <strong>healthcare data governance</strong>. Built end-to-end ABDM-compliant healthcare data pipelines, standardized <strong>15,000+ patient records</strong>, and developed offline Generative AI query engines — enabling improved reporting accuracy, data-driven decision making, regulatory compliance, and operational efficiency across clinical environments. Adept at translating complex medical workflows into robust, scalable data architecture solutions.</p>
+
+        <!-- Core Skills -->
+        <h2>Core Skills &amp; Tech Stack</h2>
+        <div class="skills-container">
+            <div class="skill-row">
+                <span class="skill-cat">Programming &amp; Data:</span>
+                <span class="skill-items">Python, SQL, Pandas, NumPy, Polars ETL, Regex, SQLite, MySQL, MongoDB, Relational Schemas, Data Modeling, Database Design, Data Transformation, API Integration, JSON Processing, Data Pipelines</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-cat">Analytics &amp; BI:</span>
+                <span class="skill-items">Power BI, Tableau, Advanced Excel (Macros), Business Intelligence, Healthcare Analytics, Data Visualization, KPI Reporting, Dashboard Development, Statistical Analysis, Data Quality, Root Cause Analysis, Reporting Automation</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-cat">AI &amp; Cognitive Retrieval:</span>
+                <span class="skill-items">LLMs, RAG, Prompt Engineering, NLP, Generative AI, Machine Learning, Model Deployment, Llama3, Ollama, System Guardrails, Clinical Informatics</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-cat">Health Compliance &amp; Ops:</span>
+                <span class="skill-items">ABDM 2.0, DPDP Act 2023, EHR Standards, HL7, FHIR R5, Healthcare Data Governance, Patient Data Privacy, Patient Consent Frameworks, Stakeholder Management, Workflow Optimization, Data Validation, Audit Readiness</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-cat">Tools &amp; Collaboration:</span>
+                <span class="skill-items">GitHub, Streamlit, FastAPI, Jupyter Notebook, VS Code, Microsoft Office, Google Workspace, Agile Methodology</span>
+            </div>
+        </div>
+
+        <!-- Key Projects -->
+        <h2>Key Projects</h2>
+
+        <div class="project-block">
+            <div class="project-header">
+                <span class="project-title">1. OmniIngest Platform — Universal Ingestion Container &amp; ABDM 2.0 Core <span class="status-badge status-completed">Completed</span></span>
+                <span class="project-meta">Nov 2025 – Present</span>
+            </div>
+            <div class="project-links no-print">
+                <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank"><i class="fab fa-github"></i> ABDM 2.0 Core</a>
+                <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank"><i class="fab fa-github"></i> Universal Container</a>
+            </div>
+            <ul>
+                <li>Built a secure, ABDM 2.0-compliant data ingestion core standardizing heterogeneous EHR payloads, 14-digit ABHA tokens, and explicit consent metadata strictly in accordance with DPDP Act 2023 mandates.</li>
+                <li>Scaled the core data architecture into a comprehensive 5-sector interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing manual cross-departmental data wrangling by an estimated <strong>80%</strong>.</li>
+                <li>Engineered a real-time, asynchronous <strong>FastAPI</strong> ingress webhook listener fortified with <strong>AES-256-CBC decryption</strong>, enabling split-second operational floor transactions to stream securely into the centralized SQLite master database.</li>
+                <li>Designed a zero-bottleneck Hybrid Relational-JSON schema utilizing <strong>Polars LazyFrames</strong>, securely packing dynamic, polymorphic clinical variables into a single <code>payload_vault</code> column to mitigate <strong>99.9%</strong> of rigid database schema crashes.</li>
+            </ul>
+        </div>
+
+        <div class="project-block">
+            <div class="project-header">
+                <span class="project-title">2. Clinosyn Platform — Healthcare OS &amp; Universal Conversational System <span class="status-badge status-completed">Completed</span></span>
+                <span class="project-meta">2026 – Present</span>
+            </div>
+            <div class="project-links no-print">
+                <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank"><i class="fab fa-github"></i> Healthcare OS UI</a>
+                <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank"><i class="fab fa-github"></i> Universal Conversational</a>
+            </div>
+            <ul>
+                <li>Architected an offline, privacy-first <strong>Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline</strong> leveraging local <strong>Llama3</strong> (via Ollama) to autonomously query both historic ABDM tables and live multi-sector transaction vaults.</li>
+                <li>Executed native <code>json_extract()</code> querying algorithms to translate conversational text prompts into optimized SQLite commands, enabling seamless contextual analysis directly against unstructured payload vaults while eliminating cloud-API token fees and severe hallucination risks.</li>
+                <li>Engineered a <strong>Streamlit-powered clinical operating terminal</strong> featuring real-time ingestion analytics, active patient PII masking arrays, and a validated <strong>98.2%</strong> high-integrity FHIR pipeline processing success metric.</li>
+                <li>Integrated a comprehensive data governance suite equipped with an interactive, Rule 8.3 cascading cryptographic <strong>"Kill-Switch"</strong>, capable of autonomously severing downstream data access to guarantee instant DPDP Act compliance demonstrations.</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <h2>Professional Experience</h2>
+
+        <div class="job-block">
+            <div class="job-header">
+                <span class="job-title">Clinical Data Analyst | Healthcare Systems Research &amp; ABDM Development</span>
+                <span class="job-meta">Nov 2025 – Present &nbsp;|&nbsp; Self-Employed / Remote</span>
+            </div>
+            <ul>
+                <li>Designed and built end-to-end <strong>clinical data pipelines</strong> using Python, Polars, and SQLite, standardizing multi-format EHR payloads into ABDM 2.0-compliant healthcare analytics datasets.</li>
+                <li>Developed <strong>OmniIngest</strong> — an open-source healthcare data engineering platform for ingesting, validating, and governing patient records across Hospital, Pharma, Diagnostics, Insurance, and Public Health verticals.</li>
+                <li>Engineered an offline <strong>Generative AI (RAG + NL-to-SQL)</strong> clinical query terminal (Clinosyn) using Llama3 and Ollama, enabling natural language data analysis without cloud-API dependencies.</li>
+                <li>Conducted applied research on <strong>FHIR R5, HL7 interoperability standards</strong>, and ABDM gateway specifications to translate clinical floor workflows into robust database schemas and API integration specifications.</li>
+                <li>Maintained <strong>patient data privacy compliance</strong> through automated PII masking, ABHA token validation, and DPDP Act 2023 cryptographic data shredding routines.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="job-header">
+                <span class="job-title">Data Analyst (Contractual)</span>
+                <span class="job-company">R K Nursing Home</span>
+                <span class="job-meta">Oct 2020 – Oct 2025 &nbsp;|&nbsp; Bangalore Rural, India</span>
+            </div>
+            <ul>
+                <li>Developed <strong>SQL queries and ETL workflows</strong> to cleanse and transform patient data, standardizing <strong>15,000+ records</strong> across clinical registries and eliminating manual entry errors.</li>
+                <li>Built <strong>Power BI dashboards</strong> tracking patient admissions, treatment progress, billing, and operational KPIs — enabling real-time visibility for hospital management.</li>
+                <li>Automated compliance reporting using Python and Excel, reducing manual reporting effort and ensuring audit-readiness under ABDM and regulatory frameworks.</li>
+                <li>Designed relational database schemas to consolidate patient registration, treatment, and billing data into a unified, queryable system for analytics consumption.</li>
+                <li>Documented functional requirements, data dictionaries, and transformation logic for the OmniIngest workflow — translating clinical realities into engineering specifications.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="job-header">
+                <span class="job-title">Operations Manager</span>
+                <span class="job-company">K Arogia Advisory Services Pvt. Ltd.</span>
+                <span class="job-meta">Dec 2018 – Aug 2020 &nbsp;|&nbsp; Bengaluru, India</span>
+            </div>
+            <ul>
+                <li>Managed end-to-end operational data workflows and patient tracking pipelines for a health-tech startup specializing in <strong>post-discharge care management</strong>.</li>
+                <li>Coordinated digital tracking of post-discharge patient care plans across remote care teams, reducing follow-up gaps and improving recovery compliance.</li>
+                <li>Oversaw structured collection of daily patient health metrics, telehealth session logs, and remote monitoring records into the central coordination database.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="job-header">
+                <span class="job-title">Operations Manager</span>
+                <span class="job-company">R K Nursing Home</span>
+                <span class="job-meta">Nov 2016 – Nov 2018 &nbsp;|&nbsp; Bangalore Rural, India</span>
+            </div>
+            <ul>
+                <li>Managed full-facility daily operations including department coordination, staff management, vendor relations, and patient throughput optimization.</li>
+                <li>Orchestrated administrative and patient coordination workflows to eliminate inter-departmental bottlenecks, <strong>improving daily patient throughput</strong> while maintaining care quality.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="job-header">
+                <span class="job-title">Customer Care Executive</span>
+                <span class="job-company">Cloudnine Group of Hospitals</span>
+                <span class="job-meta">Nov 2015 – Nov 2016 &nbsp;|&nbsp; Bengaluru, India</span>
+            </div>
+            <ul>
+                <li>Managed patient relations and critical healthcare communication workflows at Bangalore's premier maternity and childcare hospital chain.</li>
+            </ul>
+            <div class="catalyst-box">
+                <strong>The Catalyst:</strong> Observed firsthand how <strong>fragmented point-of-care data</strong> created administrative delays and compliance gaps — directly inspiring my career pivot toward ABDM interoperability, EHR standardization, and clinical data engineering.
+            </div>
+        </div>
+
+        <div class="job-block">
+            <div class="job-header">
+                <span class="job-title">PRO &amp; Operations Coordinator</span>
+                <span class="job-company">R K Nursing Home</span>
+                <span class="job-meta">May 2012 – Nov 2015 &nbsp;|&nbsp; Bangalore Rural, India</span>
+            </div>
+            <ul>
+                <li>Managed front-end public relations, multi-department coordination, and foundational administrative registration protocols across clinical wings.</li>
+                <li>Supervised manual patient admission records and ledger indexing, creating the initial structured workflow protocols that paved the way for future institutional data digitization.</li>
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <h2>Education &amp; Certifications</h2>
+        <div class="edu-item"><strong>BCA — Bachelor of Computer Applications</strong> | University of Mysore | Status: Final Semester (Expected 2026)</div>
+        <div class="edu-item"><strong>IBM Data Science Professional Certificate</strong> | IBM / Learnbay Institute | Status: Completed</div>
+        <div class="edu-item"><strong>Advanced Data Science &amp; AI Program</strong> | Learnbay Institute | Status: Completed</div>
+        <div class="edu-item"><strong>Generative AI &amp; LLM Workflows</strong> | E&amp;ICT Academy, IIT Guwahati | Status: Completed</div>
+        <div class="edu-item"><strong>Medical Law &amp; Ethics (DPDP Act)</strong> | IIT Kharagpur (NPTEL) | Status: Completed</div>
+        <div class="edu-item"><strong>Python Programming &amp; SQL for Data Analysis</strong> | Learnbay Institute | Status: Completed</div>
+
+        <!-- Profile Snapshot -->
+        <h2>Profile Snapshot</h2>
+        <div class="snapshot-container">
+            <p><strong>Domain Expertise:</strong> 13+ years clinical operations across hospitals, health-tech startups, and rural healthcare facilities (2012 – Present)</p>
+            <p><strong>Technical Pivot:</strong> Active since 2020 — data analytics, ETL pipelines, ABDM compliance engineering, GenAI/RAG application development</p>
+            <p><strong>Regulatory Niche:</strong> ABDM + DPDP Act 2023 — rare clinical ops + compliance tech combination with deep domain credibility</p>
+            <p><strong>Open Source:</strong> OmniIngest — ABDM-compliant EHR ingestion engine | Clinosyn Universal — offline RAG clinical query terminal</p>
+            <p><strong>Languages:</strong> English, Kannada, Hindi</p>
+        </div>
     </div>
-</div>
-
-<div class="cv-header-section">
-    <h2>NISAR AHMED</h2>
-    <div class="subtitle">Health &ndash; Tech Data Analyst | Healthcare Systems Research &amp; ABDM Development</div>
-    <div class="contact-meta">
-        Bengaluru, Karnataka, India &nbsp;|&nbsp; +91 7019522335 &nbsp;|&nbsp; <a href="mailto:nisarahmed@gmail.com">nisarahmed@gmail.com</a><br>
-        <a href="https://linkedin.com" target="_blank">://linkedin.com</a> &nbsp;|&nbsp; 
-        <a href="https://github.com" target="_blank">://github.com</a> &nbsp;|&nbsp; 
-        <a href="https://github.io" target="_blank">nisar46.github.io/portfolio/</a>
-    </div>
-</div>
-
-<div class="container">
-
-    <a href="index.html" class="btn-back">&larr; Back to Main Portfolio Home</a>
-
-    <h3>Complete Professional Timeline (6 Distinct Roles)</h3>
-    
-    <div class="job-card">
-        <div class="card-header"><span>Health &ndash; Tech Data Analyst</span><span>Nov 2025 &ndash; Present</span></div>
-        <div class="card-sub">Open Source Core Developer (OmniIngest) | Remote</div>
-        <ul>
-            <li>Designed and built end-to-end clinical data pipelines using Python, Polars, and SQLite, standardizing multi-format EHR payloads into ABDM 2.0-compliant healthcare analytics datasets.</li>
-            <li>Developed OmniIngest — an open-source healthcare data engineering platform for ingesting, validating, and governing patient records across Hospital, Pharma, Diagnostics, Insurance, and Public Health verticals.</li>
-            <li>Engineered an offline Generative AI (RAG + NL-to-SQL) clinical query terminal (Clinosyn) using Llama3 and Ollama, enabling natural language data analysis without cloud-API dependencies.</li>
-            <li>Conducted applied research on FHIR R5, HL7 interoperability standards, and ABDM gateway specifications to translate clinical floor workflows into robust database schemas and API integration specifications.</li>
-            <li>Maintained patient data privacy compliance through automated PII masking, ABHA token validation, and DPDP Act 2023 cryptographic data shredding routines.</li>
-        </ul>
-    </div>
-
-    <div class="job-card">
-        <div class="card-header"><span>Data Analyst (Contractual)</span><span>Oct 2020 &ndash; Oct 2025</span></div>
-        <div class="card-sub">R K Nursing Home | Bangalore Rural, India</div>
-        <ul>
-            <li>Developed SQL queries and ETL workflows to cleanse and transform patient data, standardizing 15,000+ records across clinical registries and eliminating manual entry errors.</li>
-            <li>Built Power BI dashboards tracking patient admissions, treatment progress, billing, and operational KPIs — enabling real-time visibility for hospital management.</li>
-            <li>Automated compliance reporting using Python and Excel, reducing manual reporting effort and ensuring audit-readiness under ABDM and regulatory frameworks.</li>
-            <li>Designed relational database schemas to consolidate patient registration, treatment, and billing data into a unified, queryable system for analytics consumption.</li>
-            <li>Documented functional requirements, data dictionaries, and transformation logic for the OmniIngest workflow — translating clinical realities into engineering specifications.</li>
-        </ul>
-    </div>
-
-    <div class="job-card">
-        <div class="card-header"><span>Operations Manager</span><span>Dec 2018 &ndash; Aug 2020</span></div>
-        <div class="card-sub">K Arogia Advisory Services Pvt. Ltd. | Bengaluru, India</div>
-        <ul>
-            <li>Managed end-to-end operational data workflows and patient tracking pipelines for a health-tech startup specializing in post-discharge care management.</li>
-            <li>Coordinated digital tracking of post-discharge patient care plans across remote care teams, reducing follow-up gaps and improving recovery compliance.</li>
-            <li>Oversaw structured collection of daily patient health metrics, telehealth session logs, and remote monitoring records into the central coordination database.</li>
-        </ul>
-    </div>
-    <div class="job-card">
-        <div class="card-header"><span>Operations Manager</span><span>Nov 2016 &ndash; Nov 2018</span></div>
-        <div class="card-sub">R K Nursing Home | Bangalore Rural, India</div>
-        <ul>
-            <li>Managed full-facility daily operations including department coordination, staff management, vendor relations, and patient throughput optimization.</li>
-            <li>Orchestrated administrative and patient coordination workflows to eliminate inter-departmental bottlenecks, improving daily patient throughput while maintaining care quality.</li>
-        </ul>
-    </div>
-
-    <div class="job-card">
-        <div class="card-header"><span>Customer Care Executive</span><span>Nov 2015 &ndash; Nov 2016</span></div>
-        <div class="card-sub">Cloudnine Group of Hospitals | Bengaluru, India</div>
-        <ul>
-            <li>Managed patient relations and critical healthcare communication workflows at Bangalore's premier maternity and childcare hospital chain.</li>
-            <li><strong>The Catalyst:</strong> Observed firsthand how fragmented point-of-care data created administrative delays and compliance gaps &mdash; directly inspiring my career pivot toward ABDM interoperability, EHR standardization, and clinical data engineering.</li>
-        </ul>
-    </div>
-
-    <div class="job-card">
-        <div class="card-header"><span>PRO &amp; Operations Coordinator</span><span>May 2012 &ndash; Nov 2015</span></div>
-        <div class="card-sub">R K Nursing Home | Bangalore Rural, India</div>
-        <ul>
-            <li>Managed front-end public relations, multi-department coordination, and foundational administrative registration protocols across clinical wings.</li>
-            <li>Supervised manual patient admission records and ledger indexing, creating the initial structured workflow protocols that paved the way for future institutional data digitization.</li>
-        </ul>
-    </div>
-
-    <h3>Education &amp; Grouped Credentials</h3>
-    <div class="job-card" style="margin-bottom: 40px;">
-        <ul style="list-style-type: square; padding-left: 15px;">
-            <li style="color: var(--text-main); font-weight: bold; margin-bottom: 10px;">BCA (Bachelor of Computer Applications) <span style="color: var(--text-muted); font-weight: normal;">| University of Mysore | Expected 2026</span></li>
-            <li style="color: var(--text-main); font-weight: bold; margin-bottom: 10px;">Advanced Data Science &amp; AI Program (Master Course Completion) <span style="color: var(--text-muted); font-weight: normal;">| Learnbay</span>
-                <br><span style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal; font-style: italic;">Modules: Python Scripting, SQL &amp; MongoDB Database Design, Applied Machine Learning &amp; Statistics, Tableau &amp; Power BI Dashboard Automation</span>
-            </li>
-            <li style="color: var(--text-main); font-weight: bold; margin-bottom: 10px;">IBM Data Science Professional Validation <span style="color: var(--text-muted); font-weight: normal;">| IBM / Learnbay Institute</span></li>
-            <li style="color: var(--text-main); font-weight: bold; margin-bottom: 10px;">Generative AI &amp; LLM Workflows (Credential Awaited) <span style="color: var(--text-muted); font-weight: normal;">| E&amp;ICT Academy, IIT Guwahati</span></li>
-            <li style="color: var(--text-main); font-weight: bold; margin-bottom: 10px;">Medical Law (Elite Certification - DPDP Act 2023) <span style="color: var(--text-muted); font-weight: normal;">| IIT Kharagpur (NPTEL)</span></li>
-            <li style="color: var(--text-main); font-weight: bold; margin-bottom: 10px;">HIPAA Training <span style="color: var(--text-muted); font-weight: normal;">| HIPAA TRAINING.US (Credential ID: HIPAA-0022256)</span></li>
-            <li style="color: var(--text-main); font-weight: bold; margin-bottom: 10px;">DPDPA v1.1 Certification <span style="color: var(--text-muted); font-weight: normal;">| Adv. Prashant Mali (Legal Technology Compliance)</span></li>
-        </ul>
-    </div>
-
-    <a href="index.html" class="btn-back" style="margin-bottom: 30px;">&larr; Return to Main Portfolio Home</a>
-
-</div>
-
-<footer style="background-color: #0b0f19; color: #475569; text-align: center; padding: 25px; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05);">
-    &copy; 2026 Nisar Ahmed. All Rights Reserved. Full Extended CV Module Node.
-</footer>
 
 </body>
 </html>
