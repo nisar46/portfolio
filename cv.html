@@ -558,35 +558,58 @@
 
         <div class="project-block">
             <div class="project-header">
-                <span class="project-title">1. OmniIngest Platform — Universal Ingestion Container &amp; ABDM 2.0 Core <span class="status-badge status-completed">Completed</span></span>
+                <span class="project-title">1. OmniIngest ABDM 2.0 Engine <span class="status-badge status-completed">Completed</span></span>
                 <span class="project-meta">Nov 2025 – Present</span>
             </div>
             <div class="project-links no-print">
-                <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank"><i class="fab fa-github"></i> ABDM 2.0 Core</a>
-                <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank"><i class="fab fa-github"></i> Universal Container</a>
+                <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank"><i class="fab fa-github"></i> View Engine Repo</a>
             </div>
             <ul>
                 <li>Built a secure, ABDM 2.0-compliant data ingestion core standardizing heterogeneous EHR payloads, 14-digit ABHA tokens, and explicit consent metadata strictly in accordance with DPDP Act 2023 mandates.</li>
-                <li>Scaled the core data architecture into a comprehensive 5-sector interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing manual cross-departmental data wrangling by an estimated <strong>80%</strong>.</li>
-                <li>Engineered a real-time, asynchronous <strong>FastAPI</strong> ingress webhook listener fortified with <strong>AES-256-CBC decryption</strong>, enabling split-second operational floor transactions to stream securely into the centralized SQLite master database.</li>
                 <li>Designed a zero-bottleneck Hybrid Relational-JSON schema utilizing <strong>Polars LazyFrames</strong>, securely packing dynamic, polymorphic clinical variables into a single <code>payload_vault</code> column to mitigate <strong>99.9%</strong> of rigid database schema crashes.</li>
             </ul>
         </div>
 
         <div class="project-block">
             <div class="project-header">
-                <span class="project-title">2. Clinosyn Platform — Healthcare OS &amp; Universal Conversational System <span class="status-badge status-completed">Completed</span></span>
+                <span class="project-title">2. Clinosyn Healthcare OS <span class="status-badge status-completed">Completed</span></span>
                 <span class="project-meta">2026 – Present</span>
             </div>
             <div class="project-links no-print">
-                <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank"><i class="fab fa-github"></i> Healthcare OS UI</a>
-                <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank"><i class="fab fa-github"></i> Universal Conversational</a>
+                <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank"><i class="fab fa-github"></i> View OS Repo</a>
             </div>
             <ul>
-                <li>Architected an offline, privacy-first <strong>Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline</strong> leveraging local <strong>Llama3</strong> (via Ollama) to autonomously query both historic ABDM tables and live multi-sector transaction vaults.</li>
+                <li>Architected an offline, privacy-first <strong>Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline</strong> leveraging local <strong>Llama3</strong> (via Ollama) to autonomously query historic ABDM tables.</li>
                 <li>Executed native <code>json_extract()</code> querying algorithms to translate conversational text prompts into optimized SQLite commands, enabling seamless contextual analysis directly against unstructured payload vaults while eliminating cloud-API token fees and severe hallucination risks.</li>
                 <li>Engineered a <strong>Streamlit-powered clinical operating terminal</strong> featuring real-time ingestion analytics, active patient PII masking arrays, and a validated <strong>98.2%</strong> high-integrity FHIR pipeline processing success metric.</li>
-                <li>Integrated a comprehensive data governance suite equipped with an interactive, Rule 8.3 cascading cryptographic <strong>"Kill-Switch"</strong>, capable of autonomously severing downstream data access to guarantee instant DPDP Act compliance demonstrations.</li>
+            </ul>
+        </div>
+
+        <div class="project-block">
+            <div class="project-header">
+                <span class="project-title">3. OmniIngest Universal <span class="status-badge status-wip">In Progress</span></span>
+                <span class="project-meta">2026 – Present</span>
+            </div>
+            <div class="project-links no-print">
+                <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank"><i class="fab fa-github"></i> View Universal Repo</a>
+            </div>
+            <ul>
+                <li>Scaling the core data architecture into a comprehensive 5-sector interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing manual cross-departmental data wrangling by an estimated <strong>80%</strong>.</li>
+                <li>Engineering a real-time, asynchronous <strong>FastAPI</strong> ingress webhook listener fortified with <strong>AES-256-CBC decryption</strong>, enabling split-second operational floor transactions to stream securely into the centralized SQLite master database.</li>
+            </ul>
+        </div>
+
+        <div class="project-block">
+            <div class="project-header">
+                <span class="project-title">4. Clinosyn Universal <span class="status-badge status-wip">In Progress</span></span>
+                <span class="project-meta">2026 – Present</span>
+            </div>
+            <div class="project-links no-print">
+                <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank"><i class="fab fa-github"></i> View Universal Repo</a>
+            </div>
+            <ul>
+                <li>Developing an enterprise-scale dashboard offering natural language querying and analytical summary views over multi-sector databases.</li>
+                <li>Integrating a comprehensive data governance suite equipped with an interactive, Rule 8.3 cascading cryptographic <strong>"Kill-Switch"</strong>, capable of autonomously severing downstream data access to guarantee instant DPDP Act compliance demonstrations.</li>
             </ul>
         </div>
 
