@@ -6,30 +6,33 @@
     <title>Nisar Ahmed | Portfolio</title>
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --card-dark: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-blue: #0284c7;
-            --accent-green: #10b981;
-            --badge-purple: rgba(139, 92, 246, 0.15);
-            --badge-text: #c084fc;
+            --bg-light: #ffffff;
+            --bg-surface: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent-blue: #0066cc;
+            --accent-navy: #1e3a8a;
+            --accent-green: #059669;
+            --badge-purple: rgba(124, 58, 237, 0.08);
+            --badge-text: #6d28d9;
         }
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-light);
             color: var(--text-main);
             font-family: 'Calibri', 'Segoe UI', -apple-system, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
+            line-height: 1.55;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: rgba(15, 23, 42, 0.8);
+            padding: 18px 8%;
+            background-color: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -38,6 +41,7 @@
             font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 0.5px;
+            color: var(--text-main);
         }
         .logo span { color: var(--accent-blue); }
         .nav-links a {
@@ -48,9 +52,9 @@
             font-weight: 500;
             transition: color 0.2s;
         }
-        .nav-links a:hover { color: var(--text-main); }
+        .nav-links a:hover { color: var(--accent-blue); }
         .btn-cv-nav {
-            background-color: rgba(2, 132, 199, 0.1);
+            background-color: rgba(0, 102, 204, 0.05);
             color: var(--accent-blue) !important;
             padding: 6px 16px;
             border: 1px solid var(--accent-blue);
@@ -58,7 +62,7 @@
         }
         .btn-cv-nav:hover { background-color: var(--accent-blue) !important; color: #fff !important; }
         .hero-section {
-            padding: 80px 8% 60px 8%;
+            padding: 70px 8% 50px 8%;
             max-width: 900px;
             margin: 0 auto;
             text-align: left;
@@ -73,23 +77,24 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
         .hero-section h2 {
-            font-size: 3rem;
-            margin: 0 0 20px 0;
+            font-size: 2.8rem;
+            margin: 0 0 18px 0;
             font-weight: 800;
             letter-spacing: -0.5px;
+            color: var(--accent-navy);
         }
-        .hero-section h2 span { color: var(--accent-green); }
+        .hero-section h2 span { color: var(--accent-blue); }
         .hero-section p {
             font-size: 1.15rem;
             color: var(--text-muted);
-            margin-bottom: 35px;
-            max-width: 750px;
+            margin-bottom: 30px;
+            max-width: 785px;
             text-align: justify;
         }
-        .hero-buttons { display: flex; gap: 15px; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
         .btn-primary {
             background-color: var(--accent-blue);
             color: #fff;
@@ -100,55 +105,58 @@
             font-size: 0.95rem;
             transition: background 0.2s;
         }
-        .btn-primary:hover { background-color: #0369a1; }
+        .btn-primary:hover { background-color: var(--accent-navy); }
         .btn-secondary {
-            background-color: var(--card-dark);
+            background-color: var(--bg-surface);
             color: var(--text-main);
             padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--border-color);
+            transition: background 0.2s;
         }
-        .btn-secondary:hover { background-color: #2d3748; }
+        .btn-secondary:hover { background-color: #f1f5f9; border-color: #cbd5e1; }
         .container { max-width: 940px; margin: 0 auto; padding: 0 8% 60px 8%; }
         h3 {
-            font-size: 1.5rem;
-            margin: 45px 0 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.35rem;
+            margin: 40px 0 18px 0;
+            border-bottom: 2px solid var(--text-main);
             padding-bottom: 6px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: var(--text-main);
+            color: var(--accent-navy);
         }
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .skill-badge {
-            background-color: var(--card-dark);
+            background-color: var(--bg-surface);
             color: var(--text-main);
             padding: 6px 14px;
             border-radius: 6px;
             font-size: 0.9rem;
-            border: 1px solid rgba(255,255,255,0.05);
+            font-weight: 500;
+            border: 1px solid var(--border-color);
         }
         .project-card, .job-card {
-            background-color: var(--card-dark);
-            padding: 25px;
+            background-color: var(--bg-surface);
+            padding: 24px;
             border-radius: 8px;
             margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
         }
         .card-header {
             display: flex;
             justify-content: space-between;
             font-weight: bold;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin-bottom: 2px;
+            color: var(--text-main);
         }
         .card-sub {
             font-style: italic;
@@ -157,9 +165,9 @@
             margin-bottom: 12px;
         }
         .card-sub a { color: var(--accent-blue); text-decoration: none; font-weight: bold; }
-        .card-sub a:hover { text-decoration: underline; }
+        .card-sub a:hover { text-decoration: underline; color: var(--accent-navy); }
         ul { margin: 0; padding-left: 18px; color: var(--text-muted); }
-        li { margin-bottom: 6px; text-align: justify; font-size: 0.95rem; }
+        li { margin-bottom: 5px; text-align: justify; font-size: 0.95rem; color: #334155; }
     </style>
 </head>
 <body>
@@ -207,12 +215,11 @@
         <div class="skill-badge">Streamlit</div>
         <div class="skill-badge">SQLite</div>
     </div>
-
     <h3 id="projects">Key Projects</h3>
     
     <div class="project-card">
         <div class="card-header">1. OmniIngest Clinical Data Engine (ABDM 2.0)</div>
-        <div class="card-sub">Open Source Product Suite | Status: Completed | <a href="https://github.com/OmniIngest-Clinical-Engine" target="_blank">://github.com</a></div>
+        <div class="card-sub">Open Source Product Suite | Status: Completed | <a href="https://github.com" target="_blank">://github.com</a></div>
         <ul>
             <li>Built a high-performance, Rust-accelerated (Polars) data ingestion middleware standardizing unstructured EHR payloads into type-safe, ABDM-compliant streams.</li>
             <li>Designed a zero-bottleneck hybrid Relational-JSON schema utilizing Polars 'struct' types, securely packing dynamic, polymorphic clinical variables into a single 'payload' column to mitigate 99.9% of rigid database schema crashes.</li>
@@ -222,7 +229,7 @@
 
     <div class="project-card">
         <div class="card-header">2. Clinosyn Healthcare OS</div>
-        <div class="card-sub">Open Source Product Suite | Status: Completed | <a href="https://github.com/Clinosyn-Healthcare-OS" target="_blank">://github.com</a></div>
+        <div class="card-sub">Open Source Product Suite | Status: Completed | <a href="https://github.com" target="_blank">://github.com</a></div>
         <ul>
             <li>Engineered a Streamlit-powered clinical operating terminal featuring real-time ingestion analytics, active patient PII masking arrays, and a validated 98.2% high-integrity FHIR pipeline processing success metric.</li>
             <li>Architected an offline, privacy-first Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline leveraging local Llama3 (via Ollama) to autonomously query historic ABDM tables.</li>
@@ -232,15 +239,12 @@
 
     <div class="project-card">
         <div class="card-header">3. Enterprise Suite: OmniIngest Universal &amp; Clinosyn Universal</div>
-        <div class="card-sub">Open Source Product Suite | Status: In Progress | <a href="https://github.com/Clinosyn_Universal" target="_blank">://github.com</a></div>
+        <div class="card-sub">Open Source Product Suite | Status: In Progress | <a href="https://github.com" target="_blank">://github.com</a></div>
         <ul>
-***
-
-### Chunk 2 of 2: Experience Timeline, Grouped Certifications, and Active Node Footers
-
-Without leaving any blank lines, paste this second section directly underneath Chunk 1 inside the same `index.html` file, then save your work:
-
-```html
+            <li>Scaling the core architecture into a comprehensive 5-sector Interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing cross-departmental data wrangling by an estimated 80%.</li>
+            <li>Engineering a real-time, asynchronous FastAPI ingress webhook listener fortified with AES-256-CBC decryption, enabling split-second operational floor transactions to stream securely into a centralized SQLite master database.</li>
+        </ul>
+    </div>
     <h3 id="experience">Professional Experience</h3>
     
     <div class="job-card">
@@ -263,7 +267,7 @@ Without leaving any blank lines, paste this second section directly underneath C
         </ul>
     </div>
 
-    <p style="font-size: 0.95rem; color: var(--text-muted);">
+    <p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic;">
         *Note: To view my full historical career timeline from 2012 onwards, including roles at K Arogia Services and Cloudnine Hospitals, please see my <a href="cv.html" style="color: var(--accent-blue); text-decoration: none; font-weight: bold;">Extended CV Module</a>.*
     </p>
 
@@ -284,17 +288,17 @@ Without leaving any blank lines, paste this second section directly underneath C
 
     <h3>Profile Snapshot</h3>
     <div class="job-card">
-        <ul>
-            <li><strong>Domain Expertise:</strong> 13+ years clinical operations across hospitals, health-tech startups, and rural healthcare facilities (2012 &ndash; Present) | Technical Pivot: Active since 2020 &ndash; data analytics, ETL pipelines, ABDM compliance engineering, GenAI/RAG application development.</li>
-            <li><strong>Regulatory Niche:</strong> ABDM + DPDP Act 2023 &ndash; rare clinical ops + compliance + tech combination with deep domain credibility.</li>
-            <li><strong>Open Source Product Suite:</strong> OmniIngest ABDM 2.0 &ndash; Clinical Data Engine | Clinosyn Healthcare OS &ndash; Offline AI Clinical Query Terminal.</li>
-            <li><strong>Languages:</strong> English, Kannada, Hindi</li>
+        <ul style="color: var(--text-main);">
+            <li style="color: #334155;"><strong>Domain Expertise:</strong> 13+ years clinical operations across hospitals, health-tech startups, and rural healthcare facilities (2012 &ndash; Present) | Technical Pivot: Active since 2020 &ndash; data analytics, ETL pipelines, ABDM compliance engineering, GenAI/RAG application development.</li>
+            <li style="color: #334155;"><strong>Regulatory Niche:</strong> ABDM + DPDP Act 2023 &ndash; rare clinical ops + compliance + tech combination with deep domain credibility.</li>
+            <li style="color: #334155;"><strong>Open Source Product Suite:</strong> OmniIngest ABDM 2.0 &ndash; Clinical Data Engine | Clinosyn Healthcare OS &ndash; Offline AI Clinical Query Terminal.</li>
+            <li style="color: #334155;"><strong>Languages:</strong> English, Kannada, Hindi</li>
         </ul>
     </div>
 
 </div>
 
-<footer style="background-color: #0b0f19; color: #475569; text-align: center; padding: 25px; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05);">
+<footer style="background-color: var(--bg-surface); color: var(--text-muted); text-align: center; padding: 25px; font-size: 0.85rem; border-top: 1px solid var(--border-color);">
     &copy; 2026 Nisar Ahmed. All Rights Reserved. Fully Synchronized Health-Tech Engine Node.
 </footer>
 
