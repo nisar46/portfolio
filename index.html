@@ -3,306 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed | Health-Tech Data Analyst Portfolio</title>
+    <title>Nisar Ahmed | Portfolio</title>
     <style>
-        /* Strict Professional Corporate Light Mode Theme */
-        :root {
-            --bg-color: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #475569;
-            --accent-color: #0f766e; /* Deep Teal for Health-Tech branding */
-            --border-color: #e2e8f0;
-            --card-bg: #f8fafc;
-        }
-
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            line-height: 1.6;
             margin: 0;
-            padding: 40px 20px;
-            line-height: 1.5;
+            padding: 60px 40px;
         }
-
-        .container {
-            max-width: 800px;
+        .wrapper {
+            max-width: 750px;
             margin: 0 auto;
         }
-
-        /* Header Layout */
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+        
+        /* Typography & Minimal Layout */
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin: 0 0 4px 0;
+            color: #111111;
         }
-
-        header h1 {
-            font-size: 28px;
-            margin: 0 0 5px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-main);
-        }
-
-        header h2 {
+        .subtitle {
             font-size: 18px;
-            font-weight: 600;
-            margin: 0 0 15px 0;
-            color: var(--accent-color);
+            color: #0f766e;
+            font-weight: 500;
+            margin-bottom: 24px;
         }
-
-        .contact-info {
-            font-size: 14px;
-            color: var(--text-muted);
+        
+        /* Plain Link Grid */
+        .meta-links {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .contact-info a {
-            color: var(--text-muted);
-            text-decoration: none;
-            border-bottom: 1px dashed var(--text-muted);
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-color);
-            border-bottom-style: solid;
-        }
-
-        /* Animated Counters Layout */
-        .metrics-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .metric-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-        }
-
-        .metric-card h3 {
-            font-size: 32px;
-            color: var(--accent-color);
-            margin: 0 0 5px 0;
-            font-weight: 700;
-        }
-
-        .metric-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin: 0;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        /* Projects Section Layout */
-        .projects-section {
-            margin: 30px 0;
-        }
-
-        .projects-section h2 {
-            font-size: 20px;
-            color: var(--text-main);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .project-group-title {
-            font-size: 16px;
-            color: var(--accent-color);
-            margin: 20px 0 10px 0;
-            font-weight: 600;
-        }
-
-        .project-card {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--accent-color);
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .project-card h4 {
-            margin: 0 0 8px 0;
-            font-size: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-card h4 a {
-            color: var(--accent-color);
-            text-decoration: none;
+            gap: 16px;
             font-size: 14px;
-            font-weight: normal;
+            color: #555555;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
-
-        .project-card h4 a:hover {
-            text-decoration: underline;
-        }
-
-        .project-card p {
-            margin: 0;
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* In-Progress Inline Row Layout */
-        .inline-links {
-            display: flex;
-            align-items: center;
-            background: var(--card-bg);
-            border: 1px dashed var(--border-color);
-            padding: 12px 15px;
-            border-radius: 6px;
-            gap: 15px;
-            font-size: 14px;
-            color: var(--text-main);
-        }
-
-        .inline-links a {
-            color: var(--accent-color);
+        .meta-links a {
+            color: #0f766e;
             text-decoration: none;
             font-weight: 500;
         }
-
-        .inline-links a:hover {
+        .meta-links a:hover {
             text-decoration: underline;
         }
 
-        .inline-divider {
-            color: var(--border-color);
-            font-weight: bold;
+        /* Clean Fixed Numbers Layout */
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 10px 0;
+        }
+        .stat-item {
+            flex: 1;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 2px;
+        }
+        .stat-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666666;
+            font-weight: 600;
         }
 
-        /* Mobile Adjustments */
+        /* Section Headings */
+        h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #111111;
+            border-bottom: 1px solid #111111;
+            padding-bottom: 6px;
+            margin: 40px 0 20px 0;
+        }
+
+        /* Minimal Project Structure */
+        .project-block {
+            margin-bottom: 25px;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+        .project-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111111;
+        }
+        .project-link {
+            font-size: 13px;
+            color: #0f766e;
+            text-decoration: none;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        .project-desc {
+            font-size: 14px;
+            color: #444444;
+            margin: 0;
+        }
+
+        /* Inline Pending Items Layout */
+        .pipeline-row {
+            font-size: 14px;
+            color: #444444;
+            background-color: #f9f9f9;
+            padding: 14px;
+            border-left: 3px solid #0f766e;
+        }
+        .pipeline-row a {
+            color: #0f766e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .pipeline-row a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 600px) {
-            body { padding: 20px 10px; }
-            .metrics-container { grid-template-columns: 1fr; gap: 15px; }
-            .project-card h4 { flex-direction: column; align-items: flex-start; gap: 5px; }
-            .inline-links { flex-direction: column; align-items: flex-start; gap: 8px; }
-            .inline-divider { display: none; }
-        }
-
-        /* Print Adjustments */
-        @media print {
-            body { padding: 0; }
-            .metric-card { box-shadow: none; background: none; }
-            .inline-links { background: none; }
+            body { padding: 30px 20px; }
+            .stats-row { flex-direction: column; gap: 20px; }
+            .project-header { flex-direction: column; gap: 4px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- PART 2: THE HEADER SECTION -->
+
+    <div class="wrapper">
+        
+        <!-- HEADER BLOCK -->
         <header>
             <h1>Nisar Ahmed</h1>
-            <h2>Health-Tech Data Analyst</h2>
-            <div class="contact-info">
-                <span>📍 Bengaluru, Karnataka</span>
-                <span>✉️ <a href="mailto:nisar.ahmed@email.com">nisar.ahmed@email.com</a></span>
-                <span>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn</a></span>
-                <span>🌐 <a href="https://github.io" target="_blank">Portfolio</a></span>
-                <span>🛠️ <a href="https://github.com" target="_blank">GitHub</a></span>
+            <div class="subtitle">Health-Tech Data Analyst</div>
+            
+            <div class="meta-links">
+                <span>📍 Bengaluru, KA</span>
+                <span>•</span>
+                <a href="mailto:nisar.ahmed@email.com">nisar.ahmed@email.com</a>
+                <span>•</span>
+                <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+                <span>•</span>
+                <a href="https://github.io" target="_blank">Portfolio Link</a>
+                <span>•</span>
+                <a href="https://github.com" target="_blank">GitHub Profile</a>
             </div>
         </header>
-        <!-- PART 3: THE ANIMATED COUNTER DASHBOARD -->
-        <section class="metrics-container">
-            <div class="metric-card">
-                <h3 class="counter" data-target="13">0</h3>
-                <p>Domain Parameters</p>
+
+        <!-- STATIC METRICS (NO SCRIPTS, NO INCREASING LOOPS) -->
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="stat-number">13+</div>
+                <div class="stat-label">Domain Parameters</div>
             </div>
-            <div class="metric-card">
-                <h3 class="counter" data-target="150000">0</h3>
-                <p>Health Records Handled</p>
+            <div class="stat-item">
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Clinical Records</div>
             </div>
-            <div class="metric-card">
-                <h3 class="counter" data-target="99.4">0</h3>
-                <p>Pipeline Accuracy</p>
+            <div class="stat-item">
+                <div class="stat-number">99.4%</div>
+                <div class="stat-label">Pipeline Accuracy</div>
+            </div>
+        </div>
+
+        <!-- WORK STREAM & PROJECT MANIFEST -->
+        <section>
+            <h2>Completed Engineering Focus</h2>
+            
+            <div class="project-block">
+                <div class="project-header">
+                    <span class="project-title">OmniIngest Clinical Engine</span>
+                    <a href="https://github.com/OmniIngest-Clinical-Engine" target="_blank" class="project-link">Open Repository ↗</a>
+                </div>
+                <p class="project-desc">Advanced ETL data pipeline engine designed to ingest, clean, and validate complex electronic health records (EHR) and clinical metrics.</p>
+            </div>
+
+            <div class="project-block">
+                <div class="project-header">
+                    <span class="project-title">Clinosyn Healthcare OS</span>
+                    <a href="https://github.com/Clinosyn-Healthcare-OS" target="_blank" class="project-link">Open Repository ↗</a>
+                </div>
+                <p class="project-desc">Comprehensive healthcare operational analytics platform built to optimize hospital delivery workflows and patient transit systems.</p>
             </div>
         </section>
-        <!-- PART 4: TECHNICAL PROJECTS SECTION -->
-        <section class="projects-section">
-            <h2>Technical Analytics Projects</h2>
-            
-            <div class="project-group-title">🔑 Key Completed Engines</div>
-            
-            <div class="project-card">
-                <h4>
-                    <span>OmniIngest Clinical Engine</span>
-                    <a href="https://github.com" target="_blank">🔗 View Repository</a>
-                </h4>
-                <p>Advanced ETL data pipeline engine designed to ingest, clean, and validate complex electronic health records (EHR) and clinical metrics.</p>
-            </div>
 
-            <div class="project-card">
-                <h4>
-                    <span>Clinosyn Healthcare OS</span>
-                    <a href="https://github.com" target="_blank">🔗 View Repository</a>
-                </h4>
-                <p>Comprehensive healthcare operational analytics platform built to optimize hospital delivery workflows and patient transit systems.</p>
-            </div>
-
-            <div class="project-group-title">⏳ In-Progress Universal Frameworks</div>
-            
-            <div class="inline-links">
-                <div>
-                    <strong>OmniIngest Universal:</strong> 
-                    <a href="https://github.com" target="_blank">🔗 GitHub Repo</a>
-                </div>
-                <div class="inline-divider">|</div>
-                <div>
-                    <strong>Clinosyn Universal:</strong> 
-                    <a href="https://github.com" target="_blank">🔗 GitHub Repo</a>
-                </div>
+        <section>
+            <h2>In-Progress Analytics Frameworks</h2>
+            <div class="pipeline-row">
+                <strong>OmniIngest Universal:</strong> <a href="https://github.com/OmniIngest_Universal" target="_blank">View Repo ↗</a>
+                <span style="margin: 0 10px; color: #ccc;">|</span>
+                <strong>Clinosyn Universal:</strong> <a href="https://github.com/Clinosyn_Universal" target="_blank">View Repo ↗</a>
             </div>
         </section>
-    </div> <!-- Closing container div -->
-    <!-- PART 5: JAVASCRIPT FOR INCREASING COUNTER ANIMATION -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const counters = document.querySelectorAll('.counter');
-            
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText.replace(/[+,%]/g, '');
-                    
-                    const speed = target > 1000 ? target / 80 : 25; 
-                    const increment = target / speed;
 
-                    if (count < target) {
-                        const nextValue = count + increment;
-                        if (target % 1 !== 0) {
-                            counter.innerText = (Math.min(nextValue, target)).toFixed(1) + "%";
-                        } else {
-                            counter.innerText = Math.ceil(Math.min(nextValue, target)).toLocaleString() + "+";
-                        }
-                        setTimeout(updateCount, 20);
-                    } else {
-                        if (target % 1 !== 0) {
-                            counter.innerText = target + "%";
-                        } else {
-                            counter.innerText = target.toLocaleString() + "+";
-                        }
-                    }
-                };
-                updateCount();
-            });
-        });
-    </script>
+    </div>
+
 </body>
 </html>
