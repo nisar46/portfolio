@@ -1,202 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed | Healthcare Business &amp; Clinical Data Analyst</title>
-    <meta name="description" content="Nisar Ahmed — Healthcare Business &amp; Clinical Data Analyst with 13+ years of clinical operations depth, ABDM 2.0 compliance, DPDP data governance, and data quality framework architecture.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --primary-blue: #0284c7;
-            --primary-blue-hover: #0369a1;
-            --secondary-blue: #e0f2fe;
-            --secondary-blue-hover: #bae6fd;
-            --secondary-text: #0284c7;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nisar Ahmed | Healthcare Product Analyst & Health Systems Logic Architect</title>
+  <meta name="description" content="Portfolio of Nisar Ahmed — Healthcare Product Analyst, Health Systems Logic Architect, and Open Source Contributor specializing in ABDM 2.0, FHIR R5, and DPDP Act compliance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #0B132B;
+      --navy-mid: #111E3C;
+      --navy-light: #1A2B52;
+      --teal: #48CAE4;
+      --teal-dim: rgba(72,202,228,0.12);
+      --teal-glow: rgba(72,202,228,0.35);
+      --white: #FFFFFF;
+      --white-dim: rgba(255,255,255,0.75);
+      --white-faint: rgba(255,255,255,0.12);
+      --accent-line: rgba(72,202,228,0.25);
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            background-image: radial-gradient(circle at 50% 0%, #e0f2fe 0%, transparent 50%),
-                              radial-gradient(circle at 100% 100%, #f3e8ff 0%, transparent 50%);
-            background-attachment: fixed;
-        }
+    html { scroll-behavior: smooth; }
 
-        .profile-container {
-            background: var(--card-bg);
-            max-width: 800px;
-            width: 100%;
-            border-radius: 24px;
-            padding: 3.5rem 3rem;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.5);
-        }
+    body {
+      background-color: var(--navy);
+      color: var(--white-dim);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-        .profile-container::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #0284c7, #8b5cf6);
-        }
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
 
-        .name { font-size: 2.5rem; font-weight: 800; color: var(--primary-blue); margin-bottom: 0.4rem; letter-spacing: -0.02em; }
-        .title { font-size: 1.15rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem; line-height: 1.5; }
-        .title-sub { font-size: 0.88rem; font-weight: 500; color: var(--text-muted); margin-bottom: 1.5rem; letter-spacing: 0.01em; }
-        .description { font-size: 0.95rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 2rem; max-width: 650px; margin-inline: auto; }
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(11,19,43,0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--accent-line);
+      padding: 0 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-weight: 800; font-size: 1.1rem; color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--white-dim); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta {
+      padding: 8px 20px; border: 1px solid var(--teal); border-radius: 4px;
+      color: var(--teal); font-size: 0.8rem; font-weight: 600;
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal); color: var(--navy); }
 
-        /* ANIMATED STATS GRID */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            background: #f8fafc;
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-        }
-        .stat-item { text-align: center; padding: 0 0.5rem; }
-        .stat-item:not(:last-child) { border-right: 1px solid var(--border-color); }
-        .stat-value {
-            font-size: 1.75rem; font-weight: 800; color: var(--primary-blue); margin-bottom: 0.25rem;
-            animation: slideUpFade 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-        }
-        .stat-item:nth-child(1) .stat-value { animation-delay: 0.1s; }
-        .stat-item:nth-child(2) .stat-value { animation-delay: 0.25s; }
-        .stat-item:nth-child(3) .stat-value { animation-delay: 0.4s; }
-        @keyframes slideUpFade {
-            from { opacity: 0; transform: translateY(18px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 6vw 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -20%; right: -10%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(72,202,228,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem; align-items: center; max-width: 1280px; margin: 0 auto; width: 100%;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal-dim); border: 1px solid var(--accent-line);
+      border-radius: 2px; padding: 6px 14px; margin-bottom: 1.5rem;
+      font-size: 0.75rem; font-weight: 600; color: var(--teal);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .hero-name {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900; color: var(--white); line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 0.6rem;
+    }
+    .hero-title {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 400; color: var(--teal); margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-desc {
+      font-size: 1rem; color: var(--white-dim); line-height: 1.8;
+      max-width: 600px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 32px; background: var(--teal); color: var(--navy);
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none; border-radius: 4px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 28px var(--teal-glow); transform: translateY(-2px);
+    }
+    .btn-outline {
+      padding: 14px 32px; border: 1px solid var(--teal); color: var(--teal);
+      font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none; border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--teal); color: var(--navy); }
+    
+    /* ── SECTIONS SHARED ── */
+    section { padding: 100px 6vw; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; color: var(--teal);
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+      color: var(--white); line-height: 1.2; margin-bottom: 1rem;
+    }
+    .section-line {
+      width: 48px; height: 2px; background: var(--teal); margin-bottom: 3rem;
+    }
 
-        @media (max-width: 600px) {
-            .stats-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .stat-item:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; }
-        }
+    /* ── METRICS DASHBOARD ── */
+    #metrics { background: var(--navy-mid); border-top: 1px solid var(--accent-line); border-bottom: 1px solid var(--accent-line); }
+    .metrics-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; margin-top: 3rem;
+    }
+    .metric-card {
+      background: var(--navy); padding: 3rem 2rem; text-align: center;
+      border: 1px solid var(--accent-line); border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .metric-card:hover { border-color: var(--teal); transform: translateY(-5px); }
+    .metric-number-wrapper {
+      display: flex; align-items: baseline; justify-content: center; gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .metric-number {
+      font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900;
+      color: var(--white); font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+    .metric-suffix {
+      font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--teal);
+      font-weight: 700; line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.9rem; color: var(--teal);
+      font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    }
 
-        .divider { height: 1px; background: var(--border-color); margin: 2rem auto; width: 100%; }
+    /* ── PROJECTS ── */
+    #projects { background: var(--navy); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+    .project-card {
+      background: var(--navy-mid); border: 1px solid var(--accent-line);
+      border-radius: 8px; padding: 2.5rem; position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+    .project-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .status-completed { color: var(--teal); }
+    .status-wip { color: #FFB300; }
+    .project-title {
+      font-size: 1.4rem; font-weight: 700; color: var(--white);
+      margin-bottom: 1rem; line-height: 1.3;
+    }
+    .project-desc { font-size: 0.95rem; color: var(--white-dim); line-height: 1.6; flex: 1; margin-bottom: 1.5rem;}
+    .project-links { display: flex; flex-direction: column; gap: 0.75rem; margin-top: auto; }
+    .project-link {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; 
+      color: var(--teal); text-decoration: none; 
+      transition: opacity 0.2s; word-break: break-all;
+    }
+    .project-link:hover { opacity: 0.7; text-decoration: underline; }
+    
+    /* ── CREDENTIALS ── */
+    #credentials { background: var(--navy-mid); }
+    .cred-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .cred-item {
+      background: var(--navy); padding: 1.5rem; border: 1px solid var(--accent-line);
+      border-radius: 8px; border-left: 4px solid var(--teal);
+    }
+    .cred-title { font-weight: 700; color: var(--white); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .cred-desc { font-size: 0.9rem; color: var(--white-dim); }
 
-        .main-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
-        @media (max-width: 600px) { .main-actions { grid-template-columns: 1fr; } }
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); border-top: 1px solid var(--accent-line);
+      padding: 2rem 6vw; text-align: center;
+      font-size: 0.85rem; color: var(--white-dim);
+    }
 
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem;
-            padding: 1rem 1.5rem; border-radius: 12px; font-weight: 600; font-size: 1rem;
-            text-decoration: none; transition: var(--transition); cursor: pointer; border: none; width: 100%;
-        }
-        .btn-primary { background-color: var(--primary-blue); color: white; box-shadow: var(--shadow-sm); }
-        .btn-primary:hover { background-color: var(--primary-blue-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .btn-secondary { background-color: var(--secondary-blue); color: var(--secondary-text); }
-        .btn-secondary:hover { background-color: var(--secondary-blue-hover); transform: translateY(-2px); }
-
-        .project-links { display: flex; flex-direction: column; gap: 1rem; background: #ffffff; }
-        .btn-outline { background: white; border: 1px solid var(--border-color); color: var(--text-main); justify-content: flex-start; padding: 1rem 1.5rem; }
-        @media (max-width: 600px) { .btn-outline { justify-content: center; } }
-        .btn-outline:hover { border-color: var(--primary-blue); background: var(--secondary-blue); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-        .emoji-icon { font-size: 1.2rem; margin-right: 0.5rem; }
-    </style>
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="profile-container">
-        <h1 class="name">NISAR AHMED</h1>
-        <h2 class="title">Healthcare Business &amp; Clinical Data Analyst</h2>
-        <p class="title-sub">ABDM 2.0 · DPDP Compliance · Clinical Data Governance · Health-Tech Ops</p>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Nisar<span>.</span>Ahmed</div>
+    <ul class="nav-links">
+      <li><a href="#metrics">Impact</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+    </ul>
+    <a href="cv.html" class="nav-cta">View CV</a>
+  </nav>
 
-        <p class="description">
-            Specialist in cross-functional requirements gathering (BRD), clinical data mapping, business validation rule design, and data quality framework architecture. Bridging 13+ years of clinical operations depth with modern ABDM-interoperable analytics systems.
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">Senior Domain Specialist</div>
+        <h1 class="hero-name">Nisar Ahmed</h1>
+        <p class="hero-title">Healthcare Product Analyst &amp; Health Systems Logic Architect</p>
+        <p class="hero-desc">
+          Senior Healthcare Domain Specialist bridging the gap between clinical floor workflows and backend technical engineering teams. Designing robust functional specifications, complex data validation rules, and rigorous compliance guardrails natively optimized for ABDM 2.0 and FHIR R5 standards.
         </p>
-
-        <!-- Dynamic Counting-Up Stats -->
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-value" id="stat-years">0+</div>
-                <div class="stat-label">Years Clinical Operations Depth</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-records">0+</div>
-                <div class="stat-label">Patient Records Standardized</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="stat-crash">0%</div>
-                <div class="stat-label">Schema Crash Prevention Logic</div>
-            </div>
+        <div class="hero-btns">
+          <a href="cv.html" class="btn-primary">View Master Resume</a>
+          <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
+          <a href="https://nisar46.github.io/portfolio/" target="_blank" rel="noopener" class="btn-outline">Portfolio Home</a>
         </div>
-
-        <div class="main-actions">
-            <a href="cv.html" class="btn btn-primary">
-                <i class="fas fa-file-alt"></i> View Professional CV
-            </a>
-            <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank" class="btn btn-secondary">
-                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-            </a>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="project-links">
-            <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" class="btn btn-outline">
-                <span class="emoji-icon">📦</span> OmniIngest Engine — ABHA Validation &amp; DPDP Consent Logic
-            </a>
-            <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" class="btn btn-outline">
-                <span class="emoji-icon">🧠</span> Clinosyn OS Layer — PII Masking &amp; NL-to-SQL Data Flows
-            </a>
-            <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank" class="btn btn-outline">
-                <span class="emoji-icon">🏥</span> Enterprise Suite — 5-Sector Cross-Functional Workflow Mapping
-            </a>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <script>
-        function animateCounter(elementId, target, suffix, duration, isDecimal) {
-            const el = document.getElementById(elementId);
-            if (!el) return;
-            const startTime = performance.now();
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                if (isDecimal) {
-                    el.textContent = (eased * target).toFixed(1) + suffix;
-                } else if (target >= 1000) {
-                    el.textContent = Math.floor(eased * target).toLocaleString('en-IN') + suffix;
-                } else {
-                    el.textContent = Math.floor(eased * target) + suffix;
-                }
-                if (progress < 1) requestAnimationFrame(update);
+  <!-- METRICS -->
+  <section id="metrics">
+    <div class="section-inner">
+      <p class="section-label">Executive Dashboard</p>
+      <h2 class="section-title">Key Impact Metrics</h2>
+      <div class="section-line"></div>
+      
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number-wrapper">
+            <span class="metric-number" data-target="13" data-decimals="0">0</span>
+            <span class="metric-suffix">+</span>
+          </div>
+          <div class="metric-label">Years Clinical Operations Depth</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number-wrapper">
+            <span class="metric-number" data-target="15000" data-decimals="0">0</span>
+            <span class="metric-suffix">+</span>
+          </div>
+          <div class="metric-label">Patient Records Standardized</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number-wrapper">
+            <span class="metric-number" data-target="99.9" data-decimals="1">0</span>
+            <span class="metric-suffix">%</span>
+          </div>
+          <div class="metric-label">Schema Crash Prevention Logic</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label">Engineering & Architecture</p>
+      <h2 class="section-title">Key Product Portfolio</h2>
+      <div class="section-line"></div>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-status status-completed">● Completed</div>
+          <h3 class="project-title">OmniIngest Clinical Data Engine (ABDM 2.0)</h3>
+          <p class="project-desc">Engineered a high-performance, Rust-accelerated (Polars) data ingestion middleware standardizing unstructured EHR payloads into type-safe, ABDM-compliant streams. Enforced strict India DPDP Act 2023, DPDP Rules 2025, and DPDP 2026 Enforcement Standards compliance via autonomous PII shredding, 14-digit ABHA validation, and a cascading cryptographic "kill-switch".</p>
+          <div class="project-links">
+            <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" rel="noopener" class="project-link">github.com/nisar46/OmniIngest-Clinical-Engine</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-status status-completed">● Completed</div>
+          <h3 class="project-title">Clinosyn Healthcare OS</h3>
+          <p class="project-desc">Engineered a Streamlit-powered clinical operating terminal featuring real-time ingestion analytics, active patient PII masking arrays, and a validated 98.2% high-integrity FHIR pipeline processing success metric. Architected an offline, privacy-first Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline leveraging local Llama3 (via Ollama).</p>
+          <div class="project-links">
+            <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" rel="noopener" class="project-link">github.com/nisar46/Clinosyn-Healthcare-OS</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-status status-wip">◌ In Progress</div>
+          <h3 class="project-title">Enterprise Suite: OmniIngest Universal & Clinosyn Universal</h3>
+          <p class="project-desc">Scaling the core architecture into a comprehensive 5-sector Interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing cross-departmental data wrangling by an estimated 80%. Engineering a real-time, asynchronous FastAPI ingress webhook listener fortified with AES-256-CBC decryption.</p>
+          <div class="project-links">
+            <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank" rel="noopener" class="project-link">github.com/nisar46/OmniIngest_Universal</a>
+            <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank" rel="noopener" class="project-link">github.com/nisar46/Clinosyn_Universal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="section-inner">
+      <p class="section-label">Academic & Professional Background</p>
+      <h2 class="section-title">Elite Credentials</h2>
+      <div class="section-line"></div>
+      
+      <ul class="cred-list">
+        <li class="cred-item">
+          <div class="cred-title">IBM Data Science & AI / Generative AI Engineering Program — Master Tracks (2026)</div>
+          <div class="cred-desc">Certified in Data Science Methodology, Machine Learning with Python, Generative AI Essentials, and Developing Generative AI Applications.</div>
+        </li>
+        <li class="cred-item">
+          <div class="cred-title">Executive Program in Medical Law — IIT Kharagpur (NPTEL)</div>
+          <div class="cred-desc">Core Focus: Digital Personal Data Protection (DPDP) Act 2023, DPDP Rules 2025, and DPDP 2026 Enforcement Standards Compliance.</div>
+        </li>
+        <li class="cred-item">
+          <div class="cred-title">Advanced Gen AI & Health-Tech Specialization — E&ICT Academy, IIT Guwahati & Learnbay</div>
+          <div class="cred-desc">Integrated validation models including SQL & MongoDB Database Design, Tableau & PowerBI Automation, and Python for Advanced Data Analytics.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section-inner">
+      <p>&copy; 2026 Nisar Ahmed. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.metric-number');
+      const speed = 200; // The lower the slower
+
+      const animateCounters = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const isDecimal = counter.getAttribute('data-decimals') === "1";
+        
+        // Calculate increment based on target
+        const inc = target / speed;
+
+        if (count < target) {
+          let nextVal = count + inc;
+          if (isDecimal) {
+            counter.innerText = (nextVal > target ? target : nextVal).toFixed(1);
+          } else {
+            let val = Math.ceil(nextVal);
+            // format with commas if target is large like 15000
+            if (target >= 1000) {
+              counter.innerText = val > target ? target.toLocaleString() : val.toLocaleString();
+            } else {
+              counter.innerText = val > target ? target : val;
             }
-            requestAnimationFrame(update);
+          }
+          setTimeout(() => animateCounters(counter), 10);
+        } else {
+          if (target >= 1000 && !isDecimal) {
+            counter.innerText = target.toLocaleString();
+          } else if (isDecimal) {
+            counter.innerText = target.toFixed(1);
+          } else {
+            counter.innerText = target;
+          }
         }
-        window.addEventListener('load', function () {
-            setTimeout(() => animateCounter('stat-years',   13,    '+', 1400, false), 100);
-            setTimeout(() => animateCounter('stat-records', 15000, '+', 1800, false), 300);
-            setTimeout(() => animateCounter('stat-crash',   99.9,  '%', 2000, true),  500);
-        });
-    </script>
+      };
 
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters(entry.target.querySelector('.metric-number'));
+            // Unobserve once animated
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.metric-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>
