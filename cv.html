@@ -76,6 +76,7 @@
         p {
             margin: 0 0 15px 0;
             color: var(--text-muted);
+            text-align: justify;
         }
         .skills-grid {
             display: grid;
@@ -122,6 +123,7 @@
         }
         li {
             margin-bottom: 8px;
+            text-align: justify;
         }
         .cert-item {
             margin-bottom: 15px;
@@ -151,6 +153,12 @@
         .back-btn:hover {
             text-decoration: underline;
         }
+        .project-link {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
         
         @media print {
             body { background: white; padding: 0; }
@@ -165,53 +173,93 @@
         
         <div class="header">
             <h1>NISAR AHMED</h1>
-            <h2>HEALTHCARE BUSINESS ANALYST | HIS PRODUCT OWNER</h2>
+            <h2>HEALTHCARE BUSINESS ANALYST | CLINICAL PRODUCT OWNER</h2>
             <div class="contact-info">
                 <span>Bengaluru, Karnataka</span>
-                <span>nisarr.aahmed@gmail.com</span>
+                <span>nisarahmed@gmail.com</span>
                 <span>+91 7019522735</span>
                 <span><a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3">LinkedIn</a></span>
+                <span><a href="https://nisar46.github.io/portfolio/">GitHub Portfolio</a></span>
             </div>
         </div>
 
         <div class="section-title">PROFESSIONAL SUMMARY</div>
-        <p>Healthcare Business Analyst and HIS Product Owner with 13+ years of clinical operations mastery and deep expertise in Hospital Information Systems (HIS) and EMR/EHR domains. Proven ability to define product vision, manage complex backlogs, and bridge the gap between clinical stakeholders and engineering teams. Highly skilled in Agile methodologies, gathering comprehensive business requirements, authoring user stories with precise acceptance criteria, and driving sprint execution. Adept at cross-functional stakeholder management, ensuring seamless collaboration across clinicians, administrators, and IT to deliver scalable, high-quality healthcare technology solutions.</p>
+        <p>Domain expert bridging the critical gap between clinical realities and software engineering. I bring 13+ years of ground-zero hospital floor operations experience, transitioning into health-tech by defining workflow logic and business rules for healthcare data prototypes (SQLite). For the past 5 years, I operated as an independent CareOps contractor, conducting applied R&D on live clinical floors to identify the exact workflow failures legacy HMS software fails to solve. This hands-on context drives my ability to translate actual clinical chaos into structured product backlogs, clear PRDs, and precise workflow logic designed for early-stage and agile health-tech teams.</p>
 
         <div class="section-title">CORE SKILLS</div>
         <div class="skills-grid">
-            <div class="skill-item"><strong>Healthcare Domain Expertise:</strong> Hospital Information Systems (HIS), EMR/EHR Integration, Clinical Workflow Optimization, Healthcare Regulations (DPDPA).</div>
-            <div class="skill-item"><strong>Agile & Product Management:</strong> Product Vision & Roadmap, Backlog Prioritization, User Story Mapping, Acceptance Criteria, Sprint Planning, Jira, Confluence.</div>
-            <div class="skill-item"><strong>Stakeholder Management:</strong> Cross-functional Leadership, Clinician & Administrator Collaboration, Requirements Gathering, Expectation Management.</div>
-            <div class="skill-item"><strong>Technical Literacy:</strong> PRD/FRD Documentation, Quality Assurance (QA) Collaboration, UAT, Generative AI applications, Data Analytics.</div>
+            <div class="skill-item"><strong>Clinical Domain Expertise:</strong> Hospital Operations, Clinical Workflow Optimization, ABDM 2.0 Integration, FHIR R5 Data Models, India DPDP Act 2023 & Compliance Enforcement.</div>
+            <div class="skill-item"><strong>Agile Product Ownership:</strong> Product Backlog Prioritization, PRD/FRD Engineering, User Story Mapping, Acceptance Criteria, Cross-functional Stakeholder Management, Clinical UAT.</div>
+            <div class="skill-item"><strong>AI & Tech Awareness:</strong> Familiar with Generative AI concepts, offline LLM tools (Llama3 via Ollama), SQL-based database querying, and basic Python scripting for workflow prototyping.</div>
+            <div class="skill-item"><strong>Technical Literacy:</strong> SQL (Data Queries), Workflow Mapping, ABDM APIs, FHIR R5 Data Models, Python (Basic Prototyping), Jira, Confluence.</div>
         </div>
 
-        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+        <div class="section-title">PROOF OF WORK: CLINICAL PROTOTYPES</div>
         
         <div class="experience-item">
             <div class="experience-header">
-                <div class="experience-title">Health-Tech Business Analyst | Open Source Core Developer</div>
-                <div class="experience-date">Nov 2025 – Present</div>
+                <div class="experience-title">1. Clinosyn Healthcare OS (Offline Clinical AI)</div>
+                <div class="experience-date">[Functional Blueprint Available]</div>
             </div>
-            <div class="experience-company">Remote</div>
-            <ul>
-                <li>Analyze complex clinical floor workflows and translate them into actionable business requirements, user stories, and structural database schemas for OmniIngest HIS platform designs.</li>
-                <li>Manage and prioritize the product backlog for ABDM 2.0-compliant healthcare data analytics dashboards.</li>
-                <li>Participate in sprint planning and other Agile ceremonies to guide development efforts for Clinosyn's Generative AI query terminal features.</li>
-                <li>Collaborate with cross-functional teams (engineering, QA) to establish comprehensive data validation models.</li>
+            <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" class="project-link">[View GitHub Repository]</a>
+            <ul style="margin-top: 10px;">
+                <li><strong>The Clinical Problem:</strong> Hospitals leak sensitive data to cloud APIs when trying to query their own EHR records.</li>
+                <li><strong>The Solution:</strong> Defined the business requirements and workflow logic for an offline, privacy-first Natural Language-to-SQL Generative RAG pipeline to safely query historic ABDM tables.</li>
+                <li><strong>Outcome:</strong> Documented the logic models for database queries to translate conversational text prompts, writing strict acceptance criteria to ensure zero hallucination risks.</li>
             </ul>
         </div>
 
         <div class="experience-item">
             <div class="experience-header">
-                <div class="experience-title">HIS Product Owner & CareOps Lead</div>
+                <div class="experience-title">2. OmniIngest Clinical Data Engine (ABDM 2.0)</div>
+                <div class="experience-date">[Status: Completed]</div>
+            </div>
+            <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" class="project-link">[View GitHub Repository]</a>
+            <ul style="margin-top: 10px;">
+                <li><strong>The Clinical Problem:</strong> Unstructured EHR payloads create bottlenecks during high-volume patient admission hours.</li>
+                <li><strong>The Solution:</strong> Created the user stories and data validation criteria required to standardize unstructured EHR payloads into type-safe, ABDM-compliant streams.</li>
+                <li><strong>Outcome:</strong> Documented database schema requirements and data validation layouts to handle 15,000+ patient records smoothly under FHIR R5 constraints, writing logic rules for autonomous PII shredding.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">3. Enterprise Suite: OmniIngest & Clinosyn Universal</div>
+                <div class="experience-date">[Status: In Progress]</div>
+            </div>
+            <ul style="margin-top: 10px;">
+                <li>Exploring a phased expansion blueprint covering 5 healthcare sectors (Hospital, Pharma, Diagnostics, Insurance, Public Health) to reduce cross-departmental data wrangling.</li>
+                <li>Documenting the functional logic, data dictionaries, and data-routing specifications to stream clinical floor transactions securely into centralized database tables.</li>
+            </ul>
+        </div>
+
+        <div class="section-title">CLINICAL & PRODUCT EXPERIENCE</div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Data Analyst (Contractual)</div>
                 <div class="experience-date">Oct 2020 – Oct 2025</div>
             </div>
             <div class="experience-company">R K Nursing Home | Bangalore Rural, India</div>
+            <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 10px;">Contracted to manage clinical data workflows and operational processes at this rural facility. Scope included floor-level operations, patient data management, and process improvement.</p>
             <ul>
-                <li>Served as an independent CareOps contractor focusing on clinical workflow optimization, patient routing, and data management.</li>
-                <li>Acted as the internal HIS Product Owner to overhaul legacy clinical workforce tools; built dynamic capacity management dashboards and RBAC structures.</li>
-                <li>Authored high-quality Product Requirement Documents (PRDs), data dictionaries, and clear user stories with strict acceptance criteria in Jira.</li>
-                <li>Conducted User Acceptance Testing (UAT) and collaborated with external QA teams to ensure all HIS modules met regulatory standards.</li>
+                <li><strong>Workflow Redesign:</strong> Identified gaps in existing clinical workforce scheduling and patient coordination, proposing revised process flows and helping management understand structured digital tools.</li>
+                <li><strong>Workflow Optimization:</strong> Dissected floor workflows to design automated patient-routing and clinical assignment logic, lowering operational average handle times (AHT).</li>
+                <li><strong>Requirements Engineering:</strong> Authored high-quality PRDs, data dictionaries, and clear user stories with strict acceptance criteria in Jira to establish milestones for external vendor squads.</li>
+                <li><strong>Compliance Automation:</strong> Automated compliance reporting logic under regulatory frameworks, ensuring strict audit-readiness.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Health-Tech Business Analyst (Independent Projects)</div>
+                <div class="experience-date">Nov 2025 – Present</div>
+            </div>
+            <div class="experience-company">Remote</div>
+            <ul>
+                <li>Translating complex clinical floor workflows identified during my 5-year tenure into structural relational database schemas and clear functional requirements for the OmniIngest platform.</li>
+                <li>Authored functional requirements, user stories, and data validation models for Clinosyn's offline Generative AI (RAG + NL-to-SQL) query terminal proof-of-concept.</li>
+                <li>Directing applied research on FHIR R5 and HL7 standards, mapping clinical workflows to precise API integration specifications.</li>
             </ul>
         </div>
 
@@ -233,7 +281,29 @@
             </div>
             <div class="experience-company">R K Nursing Home | Bengaluru, India</div>
             <ul>
-                <li>Orchestrated daily administrative and HIS-related coordination workflows to eliminate bottlenecks and optimize facility throughput.</li>
+                <li>Orchestrated daily administrative and patient coordination workflows to eliminate bottlenecks and optimize facility throughput.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">Customer Care Executive</div>
+                <div class="experience-date">Nov 2015 – Nov 2016</div>
+            </div>
+            <div class="experience-company">Cloudnine Group of Hospitals | Bengaluru, India</div>
+            <ul>
+                <li>Managed critical healthcare communications and observed data fragmentation challenges that inspired the pivot toward ABDM engineering.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">PRO & Operations Coordinator</div>
+                <div class="experience-date">May 2012 – Nov 2015</div>
+            </div>
+            <div class="experience-company">R K Nursing Home | Bengaluru, India</div>
+            <ul>
+                <li>Supervised foundational administrative registration protocols and ledger indexing.</li>
             </ul>
         </div>
 
