@@ -1,171 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ahmed | Clinical Product Owner</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0f172a;
-            --surface: #1e293b;
-            --primary: #38bdf8;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #0284c7;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            animation: fadeIn 1s ease-in;
-        }
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        .about {
-            background: var(--surface);
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 40px;
-            border: 1px solid #334155;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
-        }
-        .about p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-        .actions {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        .btn-primary {
-            background: var(--primary);
-            color: #0f172a;
-        }
-        .btn-primary:hover {
-            background: #7dd3fc;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-        .btn-secondary:hover {
-            background: rgba(56, 189, 248, 0.1);
-            transform: translateY(-2px);
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        .project-card {
-            background: var(--surface);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-            transition: transform 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .project-card h3 {
-            color: var(--text);
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-        .project-card p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-        .project-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-        }
-        .project-link:hover {
-            text-decoration: underline;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nisar Ahmed | Healthcare Product Analyst & Health Systems Logic Architect</title>
+  <meta name="description" content="Portfolio of Nisar Ahmed — Healthcare Product Analyst, Health Systems Logic Architect, and Open Source Contributor specializing in ABDM 2.0, FHIR R5, and DPDP Act compliance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B132B;
+      --navy-mid: #111E3C;
+      --navy-light: #1A2B52;
+      --teal: #48CAE4;
+      --teal-dim: rgba(72,202,228,0.12);
+      --teal-glow: rgba(72,202,228,0.35);
+      --white: #FFFFFF;
+      --white-dim: rgba(255,255,255,0.75);
+      --white-faint: rgba(255,255,255,0.12);
+      --accent-line: rgba(72,202,228,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--navy);
+      color: var(--white-dim);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(11,19,43,0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--accent-line);
+      padding: 0 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-weight: 800; font-size: 1.1rem; color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--white-dim); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta {
+      padding: 8px 20px; border: 1px solid var(--teal); border-radius: 4px;
+      color: var(--teal); font-size: 0.8rem; font-weight: 600;
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal); color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 6vw 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -20%; right: -10%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(72,202,228,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem; align-items: center; max-width: 1280px; margin: 0 auto; width: 100%;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal-dim); border: 1px solid var(--accent-line);
+      border-radius: 2px; padding: 6px 14px; margin-bottom: 1.5rem;
+      font-size: 0.75rem; font-weight: 600; color: var(--teal);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .hero-name {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900; color: var(--white); line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 0.6rem;
+    }
+    .hero-title {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 400; color: var(--teal); margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-desc {
+      font-size: 1rem; color: var(--white-dim); line-height: 1.8;
+      max-width: 600px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 32px; background: var(--teal); color: var(--navy);
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none; border-radius: 4px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 28px var(--teal-glow); transform: translateY(-2px);
+    }
+    .btn-outline {
+      padding: 14px 32px; border: 1px solid var(--teal); color: var(--teal);
+      font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none; border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--teal); color: var(--navy); }
+    
+    /* ── SECTIONS SHARED ── */
+    section { padding: 100px 6vw; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; color: var(--teal);
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+      color: var(--white); line-height: 1.2; margin-bottom: 1rem;
+    }
+    .section-line {
+      width: 48px; height: 2px; background: var(--teal); margin-bottom: 3rem;
+    }
+
+    /* ── METRICS DASHBOARD ── */
+    #metrics { background: var(--navy-mid); border-top: 1px solid var(--accent-line); border-bottom: 1px solid var(--accent-line); }
+    .metrics-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; margin-top: 3rem;
+    }
+    .metric-card {
+      background: var(--navy); padding: 3rem 2rem; text-align: center;
+      border: 1px solid var(--accent-line); border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .metric-card:hover { border-color: var(--teal); transform: translateY(-5px); }
+    .metric-number-wrapper {
+      display: flex; align-items: baseline; justify-content: center; gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .metric-number {
+      font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900;
+      color: var(--white); font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+    .metric-suffix {
+      font-size: clamp(1.5rem, 3vw, 2.5rem); color: var(--teal);
+      font-weight: 700; line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.9rem; color: var(--teal);
+      font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--navy); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+    .project-card {
+      background: var(--navy-mid); border: 1px solid var(--accent-line);
+      border-radius: 8px; padding: 2.5rem; position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+    .project-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .status-completed { color: var(--teal); }
+    .status-wip { color: #FFB300; }
+    .project-title {
+      font-size: 1.4rem; font-weight: 700; color: var(--white);
+      margin-bottom: 1rem; line-height: 1.3;
+    }
+    .project-desc { font-size: 0.95rem; color: var(--white-dim); line-height: 1.6; flex: 1; margin-bottom: 1.5rem;}
+    .project-links { display: flex; flex-direction: column; gap: 0.75rem; margin-top: auto; }
+    .project-link {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; 
+      color: var(--teal); text-decoration: none; 
+      transition: opacity 0.2s; word-break: break-all;
+    }
+    .project-link:hover { opacity: 0.7; text-decoration: underline; }
+    
+    /* ── CREDENTIALS ── */
+    #credentials { background: var(--navy-mid); }
+    .cred-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .cred-item {
+      background: var(--navy); padding: 1.5rem; border: 1px solid var(--accent-line);
+      border-radius: 8px; border-left: 4px solid var(--teal);
+    }
+    .cred-title { font-weight: 700; color: var(--white); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .cred-desc { font-size: 0.9rem; color: var(--white-dim); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); border-top: 1px solid var(--accent-line);
+      padding: 2rem 6vw; text-align: center;
+      font-size: 0.85rem; color: var(--white-dim);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Nisar Ahmed</h1>
-            <div class="subtitle">Healthcare Business Analyst & Clinical Product Owner</div>
-            <p style="color: var(--text-muted); margin-top: 10px;">Bridging Hospital Workflows with Health-Tech (ABDM / EHR)</p>
-        </header>
 
-        <div class="actions">
-            <a href="cv.html" class="btn btn-primary">View Full Resume (CV)</a>
-            <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
-        </div>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Nisar<span>.</span>Ahmed</div>
+    <ul class="nav-links">
+      <li><a href="#metrics">Impact</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+    </ul>
+    <a href="cv.html" class="nav-cta">View CV</a>
+  </nav>
 
-        <div class="about">
-            <h2>About Me</h2>
-            <p>Domain expert bridging the critical gap between clinical realities and software engineering. I bring 13+ years of ground-zero hospital floor operations experience, transitioning into health-tech by defining workflow logic and business rules for healthcare data prototypes.</p>
-            <p>For the past 5 years, I operated as an independent CareOps contractor, conducting applied R&D on live clinical floors to identify the exact workflow failures legacy HMS software fails to solve. This hands-on context drives my ability to translate actual clinical chaos into structured product backlogs, clear PRDs, and precise workflow logic designed for early-stage and agile health-tech teams.</p>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">Senior Domain Specialist</div>
+        <h1 class="hero-name">Nisar Ahmed</h1>
+        <p class="hero-title">Healthcare Product Analyst &amp; Health Systems Logic Architect</p>
+        <p class="hero-desc">
+          Senior Healthcare Domain Specialist bridging the gap between clinical floor workflows and backend technical engineering teams. Designing robust functional specifications, complex data validation rules, and rigorous compliance guardrails natively optimized for ABDM 2.0 and FHIR R5 standards.
+        </p>
+        <div class="hero-btns">
+          <a href="cv.html" class="btn-primary">View Master Resume</a>
+          <a href="https://www.linkedin.com/in/nisar-ahmed-8440763a3" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
+          <a href="https://nisar46.github.io/portfolio/" target="_blank" rel="noopener" class="btn-outline">Portfolio Home</a>
         </div>
-
-        <h2 style="margin-bottom: 20px; font-size: 2rem;">Proof of Work: Clinical Prototypes</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>1. Clinosyn Healthcare OS (Offline Clinical AI)</h3>
-                <p>Defined the business requirements and workflow logic for an offline, privacy-first Natural Language-to-SQL Generative RAG pipeline to safely query historic ABDM tables without leaking sensitive data to cloud APIs.</p>
-                <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" class="project-link">View GitHub Repository →</a>
-            </div>
-            <div class="project-card">
-                <h3>2. OmniIngest Clinical Data Engine (ABDM 2.0)</h3>
-                <p>Created user stories and data validation criteria to standardize unstructured EHR payloads into type-safe, ABDM-compliant streams, documenting schema requirements to handle 15,000+ patient records smoothly under FHIR R5 constraints.</p>
-                <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" class="project-link">View GitHub Repository →</a>
-            </div>
-            <div class="project-card">
-                <h3>3. Enterprise Suite: Universal</h3>
-                <p>Exploring a phased expansion blueprint covering 5 healthcare sectors (Hospital, Pharma, Diagnostics, Insurance, Public Health). Documenting functional logic and data dictionaries to stream clinical floor transactions securely into centralized database tables.</p>
-            </div>
-        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- METRICS -->
+  <section id="metrics">
+    <div class="section-inner">
+      <p class="section-label">Executive Dashboard</p>
+      <h2 class="section-title">Key Impact Metrics</h2>
+      <div class="section-line"></div>
+      
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number-wrapper">
+            <span class="metric-number" data-target="13" data-decimals="0">0</span>
+            <span class="metric-suffix">+</span>
+          </div>
+          <div class="metric-label">Years Clinical Operations Depth</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number-wrapper">
+            <span class="metric-number" data-target="15000" data-decimals="0">0</span>
+            <span class="metric-suffix">+</span>
+          </div>
+          <div class="metric-label">Patient Records Standardized</div>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number-wrapper">
+            <span class="metric-number" data-target="99.9" data-decimals="1">0</span>
+            <span class="metric-suffix">%</span>
+          </div>
+          <div class="metric-label">Schema Crash Prevention Logic</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label">Engineering & Architecture</p>
+      <h2 class="section-title">Key Product Portfolio</h2>
+      <div class="section-line"></div>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-status status-completed">● Completed</div>
+          <h3 class="project-title">OmniIngest Clinical Data Engine (ABDM 2.0)</h3>
+          <p class="project-desc">Engineered a high-performance, Rust-accelerated (Polars) data ingestion middleware standardizing unstructured EHR payloads into type-safe, ABDM-compliant streams. Enforced strict India DPDP Act 2023, DPDP Rules 2025, and DPDP 2026 Enforcement Standards compliance via autonomous PII shredding, 14-digit ABHA validation, and a cascading cryptographic "kill-switch".</p>
+          <div class="project-links">
+            <a href="https://omniingest-clinical-engine.streamlit.app" target="_blank" rel="noopener" class="project-link">Live Demo: omniingest-clinical-engine.streamlit.app</a>
+            <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" rel="noopener" class="project-link">GitHub: github.com/nisar46/OmniIngest-Clinical-Engine</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-status status-completed">● Completed</div>
+          <h3 class="project-title">Clinosyn Healthcare OS</h3>
+          <p class="project-desc">Engineered a Streamlit-powered clinical operating terminal featuring real-time ingestion analytics, active patient PII masking arrays, and a validated 98.2% high-integrity FHIR pipeline processing success metric. Architected an offline, privacy-first Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline leveraging local Llama3 (via Ollama).</p>
+          <div class="project-links">
+            <a href="https://clinosyn-healthcare-os.streamlit.app" target="_blank" rel="noopener" class="project-link">Live Demo: clinosyn-healthcare-os.streamlit.app</a>
+            <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" rel="noopener" class="project-link">GitHub: github.com/nisar46/Clinosyn-Healthcare-OS</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-status status-wip">◌ In Progress</div>
+          <h3 class="project-title">Enterprise Suite: OmniIngest Universal & Clinosyn Universal</h3>
+          <p class="project-desc">Scaling the core architecture into a comprehensive 5-sector Interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing cross-departmental data wrangling by an estimated 80%. Engineering a real-time, asynchronous FastAPI ingress webhook listener fortified with AES-256-CBC decryption.</p>
+          <div class="project-links">
+            <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank" rel="noopener" class="project-link">github.com/nisar46/OmniIngest_Universal</a>
+            <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank" rel="noopener" class="project-link">github.com/nisar46/Clinosyn_Universal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="section-inner">
+      <p class="section-label">Academic & Professional Background</p>
+      <h2 class="section-title">Elite Credentials</h2>
+      <div class="section-line"></div>
+      
+      <ul class="cred-list">
+        <li class="cred-item">
+          <div class="cred-title">IBM Data Science & AI / Generative AI Engineering Program — Master Tracks (2026)</div>
+          <div class="cred-desc">Certified in Data Science Methodology, Machine Learning with Python, Generative AI Essentials, and Developing Generative AI Applications.</div>
+        </li>
+        <li class="cred-item">
+          <div class="cred-title">Executive Program in Medical Law — IIT Kharagpur (NPTEL)</div>
+          <div class="cred-desc">Core Focus: Digital Personal Data Protection (DPDP) Act 2023, DPDP Rules 2025, and DPDP 2026 Enforcement Standards Compliance.</div>
+        </li>
+        <li class="cred-item">
+          <div class="cred-title">Advanced Gen AI & Health-Tech Specialization — E&ICT Academy, IIT Guwahati & Learnbay</div>
+          <div class="cred-desc">Integrated validation models including SQL & MongoDB Database Design, Tableau & PowerBI Automation, and Python for Advanced Data Analytics.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section-inner">
+      <p>&copy; 2026 Nisar Ahmed. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.metric-number');
+      const speed = 200; // The lower the slower
+
+      const animateCounters = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const isDecimal = counter.getAttribute('data-decimals') === "1";
+        
+        // Calculate increment based on target
+        const inc = target / speed;
+
+        if (count < target) {
+          let nextVal = count + inc;
+          if (isDecimal) {
+            counter.innerText = (nextVal > target ? target : nextVal).toFixed(1);
+          } else {
+            let val = Math.ceil(nextVal);
+            // format with commas if target is large like 15000
+            if (target >= 1000) {
+              counter.innerText = val > target ? target.toLocaleString() : val.toLocaleString();
+            } else {
+              counter.innerText = val > target ? target : val;
+            }
+          }
+          setTimeout(() => animateCounters(counter), 10);
+        } else {
+          if (target >= 1000 && !isDecimal) {
+            counter.innerText = target.toLocaleString();
+          } else if (isDecimal) {
+            counter.innerText = target.toFixed(1);
+          } else {
+            counter.innerText = target;
+          }
+        }
+      };
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters(entry.target.querySelector('.metric-number'));
+            // Unobserve once animated
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.metric-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>
