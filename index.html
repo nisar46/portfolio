@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nisar Ahmed | Healthcare Product Analyst & Health Systems Logic Architect</title>
-  <meta name="description" content="Portfolio of Nisar Ahmed — Healthcare Product Analyst, Health Systems Logic Architect, and Open Source Contributor specializing in ABDM 2.0, FHIR R5, and DPDP Act compliance." />
+  <meta name="description" content="Portfolio of Nisar Ahmed â€” Healthcare Product Analyst, Health Systems Logic Architect, and Open Source Contributor specializing in ABDM 2.0, FHIR R5, and DPDP Act compliance." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -35,12 +35,12 @@
       overflow-x: hidden;
     }
 
-    /* ── SCROLLBAR ── */
+    /* â”€â”€ SCROLLBAR â”€â”€ */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--navy); }
     ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
 
-    /* ── NAV ── */
+    /* â”€â”€ NAV â”€â”€ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 999;
       background: rgba(11,19,43,0.92);
@@ -70,7 +70,7 @@
     }
     .nav-cta:hover { background: var(--teal); color: var(--navy); }
 
-    /* ── HERO ── */
+    /* â”€â”€ HERO â”€â”€ */
     .hero {
       min-height: 100vh; display: flex; align-items: center;
       padding: 120px 6vw 80px;
@@ -125,7 +125,7 @@
     }
     .btn-outline:hover { background: var(--teal); color: var(--navy); }
     
-    /* ── SECTIONS SHARED ── */
+    /* â”€â”€ SECTIONS SHARED â”€â”€ */
     section { padding: 100px 6vw; }
     .section-inner { max-width: 1280px; margin: 0 auto; }
     .section-label {
@@ -140,7 +140,7 @@
       width: 48px; height: 2px; background: var(--teal); margin-bottom: 3rem;
     }
 
-    /* ── METRICS DASHBOARD ── */
+    /* â”€â”€ METRICS DASHBOARD â”€â”€ */
     #metrics { background: var(--navy-mid); border-top: 1px solid var(--accent-line); border-bottom: 1px solid var(--accent-line); }
     .metrics-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -171,7 +171,7 @@
       font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
     }
 
-    /* ── PROJECTS ── */
+    /* â”€â”€ PROJECTS â”€â”€ */
     #projects { background: var(--navy); }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
     .project-card {
@@ -201,7 +201,7 @@
     }
     .project-link:hover { opacity: 0.7; text-decoration: underline; }
     
-    /* ── CREDENTIALS ── */
+    /* â”€â”€ CREDENTIALS â”€â”€ */
     #credentials { background: var(--navy-mid); }
     .cred-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 1rem; }
     .cred-item {
@@ -211,7 +211,7 @@
     .cred-title { font-weight: 700; color: var(--white); font-size: 1.1rem; margin-bottom: 0.5rem; }
     .cred-desc { font-size: 0.9rem; color: var(--white-dim); }
 
-    /* ── FOOTER ── */
+    /* â”€â”€ FOOTER â”€â”€ */
     footer {
       background: var(--navy); border-top: 1px solid var(--accent-line);
       padding: 2rem 6vw; text-align: center;
@@ -300,29 +300,27 @@
       
       <div class="projects-grid">
         <div class="project-card">
-          <div class="project-status status-completed">● Completed</div>
+          <div class="project-status status-completed">â— Completed</div>
           <h3 class="project-title">OmniIngest Clinical Data Engine (ABDM 2.0)</h3>
           <p class="project-desc">Engineered a high-performance, Rust-accelerated (Polars) data ingestion middleware standardizing unstructured EHR payloads into type-safe, ABDM-compliant streams. Enforced strict India DPDP Act 2023, DPDP Rules 2025, and DPDP 2026 Enforcement Standards compliance via autonomous PII shredding, 14-digit ABHA validation, and a cascading cryptographic "kill-switch".</p>
           <div class="project-links">
-            <a href="https://omniingest-clinical-engine.streamlit.app" target="_blank" rel="noopener" class="project-link">Live Demo: omniingest-clinical-engine.streamlit.app</a>
-            <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" rel="noopener" class="project-link">GitHub: github.com/nisar46/OmniIngest-Clinical-Engine</a>
+            <a href="https://github.com/nisar46/OmniIngest-Clinical-Engine" target="_blank" rel="noopener" class="project-link">github.com/nisar46/OmniIngest-Clinical-Engine</a>
           </div>
         </div>
         
         <div class="project-card">
-          <div class="project-status status-completed">● Completed</div>
+          <div class="project-status status-completed">â— Completed</div>
           <h3 class="project-title">Clinosyn Healthcare OS</h3>
-          <p class="project-desc">Engineered a Streamlit-powered clinical operating terminal featuring real-time ingestion analytics, active patient PII masking arrays, and a validated 98.2% high-integrity FHIR pipeline processing success metric. Architected an offline, privacy-first Natural Language-to-SQL (NL-to-SQL) Generative RAG pipeline leveraging local Llama3 (via Ollama).</p>
+          <p class="project-desc">BA Artifacts: PRD v1.0, 8 Jira User Stories, NL-to-SQL Logic Map, Confluence Process Page. Defined user personas (Doctor, Compliance Officer), mapped natural language query flows to SQLite logic, and authored acceptance criteria for a Rule 8.3 DPDP Kill-Switch governance mechanism.</p>
           <div class="project-links">
-            <a href="https://clinosyn-healthcare-os.streamlit.app" target="_blank" rel="noopener" class="project-link">Live Demo: clinosyn-healthcare-os.streamlit.app</a>
-            <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" rel="noopener" class="project-link">GitHub: github.com/nisar46/Clinosyn-Healthcare-OS</a>
+            <a href="https://github.com/nisar46/Clinosyn-Healthcare-OS" target="_blank" rel="noopener" class="project-link">github.com/nisar46/Clinosyn-Healthcare-OS</a>
           </div>
         </div>
         
         <div class="project-card">
-          <div class="project-status status-wip">◌ In Progress</div>
+          <div class="project-status status-wip">â—Œ In Progress</div>
           <h3 class="project-title">Enterprise Suite: OmniIngest Universal & Clinosyn Universal</h3>
-          <p class="project-desc">Scaling the core architecture into a comprehensive 5-sector Interoperability framework (Hospital, Pharma, Diagnostics, Insurance, Public Health), reducing cross-departmental data wrangling by an estimated 80%. Engineering a real-time, asynchronous FastAPI ingress webhook listener fortified with AES-256-CBC decryption.</p>
+          <p class="project-desc">Writing FRDs to scale the ingestion engine across 5 healthcare sectors: Hospital, Pharma, Diagnostics, Insurance, and Public Health. Mapping sector-specific data dictionaries and cross-departmental data flow specs for engineering teams.</p>
           <div class="project-links">
             <a href="https://github.com/nisar46/OmniIngest_Universal" target="_blank" rel="noopener" class="project-link">github.com/nisar46/OmniIngest_Universal</a>
             <a href="https://github.com/nisar46/Clinosyn_Universal" target="_blank" rel="noopener" class="project-link">github.com/nisar46/Clinosyn_Universal</a>
@@ -341,15 +339,15 @@
       
       <ul class="cred-list">
         <li class="cred-item">
-          <div class="cred-title">IBM Data Science & AI / Generative AI Engineering Program — Master Tracks (2026)</div>
+          <div class="cred-title">IBM Data Science & AI / Generative AI Engineering Program â€” Master Tracks (2026)</div>
           <div class="cred-desc">Certified in Data Science Methodology, Machine Learning with Python, Generative AI Essentials, and Developing Generative AI Applications.</div>
         </li>
         <li class="cred-item">
-          <div class="cred-title">Executive Program in Medical Law — IIT Kharagpur (NPTEL)</div>
+          <div class="cred-title">Executive Program in Medical Law â€” IIT Kharagpur (NPTEL)</div>
           <div class="cred-desc">Core Focus: Digital Personal Data Protection (DPDP) Act 2023, DPDP Rules 2025, and DPDP 2026 Enforcement Standards Compliance.</div>
         </li>
         <li class="cred-item">
-          <div class="cred-title">Advanced Gen AI & Health-Tech Specialization — E&ICT Academy, IIT Guwahati & Learnbay</div>
+          <div class="cred-title">Advanced Gen AI & Health-Tech Specialization â€” E&ICT Academy, IIT Guwahati & Learnbay</div>
           <div class="cred-desc">Integrated validation models including SQL & MongoDB Database Design, Tableau & PowerBI Automation, and Python for Advanced Data Analytics.</div>
         </li>
       </ul>
@@ -423,3 +421,4 @@
   </script>
 </body>
 </html>
+
