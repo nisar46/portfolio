@@ -1,4 +1,4 @@
-# Nisar Ahmed | Healthcare Functional Architect & Clinical Product Analyst
+# Nisar Ahmed | Healthcare Business Analyst & Clinical Product Owner
 
 **13+ Years Healthcare Operations | Specialized in ABDM 2.0 Workflows & DPDP Data Privacy Compliance**
 
